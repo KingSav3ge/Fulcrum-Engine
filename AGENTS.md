@@ -4,6 +4,16 @@ Follow the user's current directions. This repository develops independently on 
 
 Own `IRGS_3_3/` and `engine/`. Core checks require no App checkout. App changes belong in IRGS-APP-WEB.
 
+## Repository and development plan
+
+The default publication destination for this work is `KingSav3ge/IRGS-Engine`, using its `main` branch and `origin` remote. Verify the remote before pushing. Keep this chat's updates in IRGS-Engine unless the user redirects the work to another repository; joined IRGS, IRGS-Catalog and IRGS-APP-WEB have separate workstreams.
+
+Read `ROADMAP.md`, `DEVELOPMENT_LIST.md` and `CONTINUATION_STATUS.md` before selecting further development. Maintain completed work, work in progress and remaining work with each delivered increment. Keep stable DEV IDs and link implementation evidence. Partial implementations remain open until their stated completion criteria are met. Historical joined-repository branch names and validation records describe their original scope, not the current push workflow.
+
+## Design language
+
+Describe IRGS systems through their own world model, rules and supported behavior. Explain a mechanic's actors, authority, resources, time, information and consequences directly; another game's name or terminology is not a specification. Familiar historical and simulation concepts remain available. Refine how they work together within IRGS rather than merely renaming them. Keep accurate source attribution and labelled historical references. Editorial changes do not establish a new mechanic or implementation evidence. See `engine/ENGINE_MODEL.md` for the current overview.
+
 ## Engine and information rules
 
 Keep one authoritative world and the nine existing K-owners. Genre adapters, planners, UI projections, narration and persistence indexes must not become parallel authorities over the same people, resources or history.

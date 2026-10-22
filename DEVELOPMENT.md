@@ -2,6 +2,8 @@
 
 Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/IRGS-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/IRGS) joins both components.
 
+Publish this work to **KingSav3ge/IRGS-Engine**, on its `main` branch. Before choosing an increment, read [ROADMAP.md](ROADMAP.md) for completed, in-progress and remaining work, [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) for stable task IDs and completion criteria, and [CONTINUATION_STATUS.md](CONTINUATION_STATUS.md) for evidence and limits. Update the relevant status with each delivered increment. App, Catalog and joined integration work remain in their own repositories.
+
 ```bash
 python -B tools/verify_components.py --component engine
 python -B -m unittest discover -s IRGS_3_3/runtime -v

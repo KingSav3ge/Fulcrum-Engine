@@ -1,6 +1,10 @@
 # IRGS Engine
 
+IRGS develops a persistent world simulation connecting individual action, institutions, resources and history. Its design centers on one shared world, actions constrained by actual authority and resources, and information received by the acting character or institution. See the [Engine model](engine/ENGINE_MODEL.md) for these principles and their current implementation limits.
+
 Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/IRGS-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/IRGS) joins both components.
+
+Publish Engine updates to **KingSav3ge/IRGS-Engine**, on its `main` branch. The [development roadmap](ROADMAP.md) separates completed work, work in progress and remaining work; the [DEV checklist](DEVELOPMENT_LIST.md) supplies task IDs and completion criteria, and the [continuation log](CONTINUATION_STATUS.md) records delivered increments and verification limits. Update these records as Engine work progresses.
 
 ```bash
 python -B tools/verify_components.py --component engine

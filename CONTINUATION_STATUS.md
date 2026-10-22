@@ -1,4 +1,20 @@
-# Current continuation
+# Current Engine continuation
+
+## Current increment — 2026-10-22
+
+Publication destination: **KingSav3ge/IRGS-Engine**, on this repository's `main` branch. [ROADMAP.md](ROADMAP.md) is the current completed/in-progress/remaining summary; [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) retains task IDs and completion criteria.
+
+**Completed:** added the [Engine model](engine/ENGINE_MODEL.md), clarified behavior-based design language, refined archive introduction wording while retaining original source attribution, and aligned active development instructions with the standalone Engine repository. Gameplay rules and the scope of supported operations are unchanged.
+
+**In progress:** DEV-06–DEV-08 have bounded collection and rejected-path coverage; broader dependency and cross-engine qualification remain open. Authored local scenes, settlement work and historical initialization remain partial foundations for later milestones.
+
+**Next:** choose named DEV-06–DEV-08 gaps from [the operation register](engine/OPERATION_COVERAGE.md). General C2 resolution, durable phases, wider movement/dialogue and sustained institutional autonomy remain on the plan.
+
+**Verification:** the Engine runtime baseline ran 497 tests successfully with one historical private-save fixture skipped. All six archive-provider tests passed after the wording change, and Engine component integrity verified. This increment includes no fresh App/HTTP qualification and does not complete any additional C2 acceptance case.
+
+## Inherited component and joined-development record
+
+The entries below preserve earlier increment descriptions and evidence identities. Old branch names, App checks and original validation filenames describe those source runs. They do not direct current pushes or certify the present standalone Engine/App pair.
 
 2026-10-22: Rise foundation 1 adds a reviewed fictional settlement founding path: limited permission, finite work and provision, bounded delegation and actual household migration in the shared Core. The eight design families remain held. See [current Rise status](engine/design/rise/README.md) and [qualification](RISE_FOUNDATION_VALIDATION.json).
 

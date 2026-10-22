@@ -26,8 +26,8 @@ COLLECTIONS = {
     'routes': ('Reconstructed route references', '03_Data/itiner_routes.jsonl.gz'),
     'population': ('Country-year economic estimates', '03_Data/mpd_country_year.jsonl.gz'),
 }
-NOTICE = ('Historical research for the Creator. Assertions, reconstructions and game-source '
-          'concepts retain their supplied status. Reading creates no campaign facts, people, '
+NOTICE = ('Historical research for the Creator. Assertions, reconstructions and imported '
+          'concepts retain their source attribution and supplied status. Reading creates no campaign facts, people, '
           'resources, character knowledge or scheduled outcomes.')
 MAX_MEMBER = 64 * 1024 * 1024
 MAX_EXPANDED = 384 * 1024 * 1024
@@ -148,7 +148,7 @@ class HistoricalArchive:
                     'notice': NOTICE, 'campaign_effects': False,
                     'collections': [{'id': key, 'title': title} for key, (title, name) in COLLECTIONS.items()
                                     if name in self._manifest],
-                    'scope': 'Structured chronology, figures, research, citations, rights, concepts, places, routes and country-year estimates. Raw game files, books and the central database remain in the external archive.'}
+                    'scope': 'Structured chronology, figures, research, citations, rights, concepts, places, routes and country-year estimates. Original source files, books and the central database remain in the external archive.'}
 
     def verify_collections(self):
         with self._lock:
