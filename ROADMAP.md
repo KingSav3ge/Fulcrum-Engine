@@ -10,13 +10,13 @@ Use [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) for stable task IDs, dependencies
 - **DEV-05:** the operation inventory and scoped coverage register, with unqualified paths disclosed. See [the coverage register](engine/OPERATION_COVERAGE.md).
 - **Bounded campaign foundations:** authored local observation, movement and delivery; 37 dated historical starting references; the fictional Rise R00 settlement slice. See [local opening](engine/PLAYABLE_OPENING_IMPLEMENTATION.md), [historical review](provenance/century_of_conflict/HISTORICAL_REVIEW.md) and [Rise status](engine/design/rise/README.md). These increments do not complete their broader DEV milestones.
 - **Reference browsing:** the pinned, read-only historical archive provider, preserving source records and attribution. See [integration and limits](engine/HISTORICAL_REFERENCE_INTEGRATION.md).
-- **historical-details-01 reader:** verified multipart reconstruction, atomic installation cache publication and preserved ZIP-reader/source-row semantics are implemented with synthetic evidence. See [API, pins and dependency status](engine/HISTORICAL_DETAILS_API.md). This completes the reader increment, not the missing Catalog import or App integration.
+- **historical-details-01 reader and real delivery:** verified multipart reconstruction, atomic installation caching and preserved ZIP-reader/source-row semantics now work with the 32 real Catalog parts. All 387,273 reader rows match the ten pinned collection counts. See [API, pins and dependency status](engine/HISTORICAL_DETAILS_API.md). This qualifies the reference reader/source combination, not historical truth or joined App integration.
 - **Engine framing:** the [Engine model](engine/ENGINE_MODEL.md), behavior-based design guidance and neutral archive introduction. Source provenance remains available; this increment adds no gameplay resolver.
 - **Kira atlas reference:** [six illustrated regional plates and creator-supplied regional foundations](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) are published beside the Kira worldbook. This is world reference content; it adds no executable capability or starting snapshot.
 
 ## Work in progress
 
-- **Historical Details coordination:** the full original archive and a compatible published Catalog manifest are missing. Qualify the real dataset and App's exact Engine/Catalog pins before claiming the new combined set is ready. DEV-06–DEV-08 remain the continuing general dependency priority.
+- **Historical Details coordination:** the real archive and compatible Catalog manifest are verified at exact source pins. App still needs its coordinator-reviewed Engine/Catalog dependencies and connected qualification before the combined set is ready. DEV-06–DEV-08 remain the continuing general dependency priority.
 - **DEV-06–DEV-08 — dependency qualification:** collection observation and named rejected-path cases exist. Broader conflict, authorization and cross-engine coverage remain open. See [rejected dependencies](engine/REJECTED_DEPENDENCIES_IMPLEMENTATION.md).
 - **DEV-10, DEV-12–DEV-14 and DEV-18–DEV-20 — processes and campaign continuity:** local actions, bounded settlement work and dated initialization supply partial implementations. General interrupted travel/search, evolving historical authority and full setup regressions remain open.
 - **DEV-24–DEV-26 — evidence and delivery:** the [scoped acceptance ledger](engine/ACCEPTANCE_EXECUTION.md) and component integrity checks exist. Each new Engine capability needs its own behavioral evidence; connected App behavior is qualified in the App workstream.
@@ -31,6 +31,8 @@ Use [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) for stable task IDs, dependencies
 6. **DEV-24–DEV-27.** Maintain scoped acceptance evidence, publish verified Engine increments here, and qualify separately requested App or joined integration in its owning repository. The eight Rise start families, historical calibration and Co-Op retain their documented holds or deferred status.
 
 ## Delivery sequence and completion evidence
+
+The [AI provider foundation plan](engine/AI_PROVIDER_PLAN.md) carries AIP-01–AIP-09 as staged, unimplemented requirements. Its first delivery is an offline, disabled-by-default scoped contract/fake transport/validation/ledger foundation, then one opt-in direct adapter after checking its exact official API. Provider quality, policy approval and conditional live checks remain separate evidence gates; the current archive/gameplay/dependency priorities continue.
 
 ## 1. Resolve one consequential action
 

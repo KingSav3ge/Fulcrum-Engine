@@ -2,7 +2,7 @@
 
 The separately supplied Grand Archive 1.1 is attached as a read-only Creator reference library. It does not replace the selected Core, initialize a historical start, populate a continuing world, infer character eligibility or grant a player knowledge of historical outcomes.
 
-The Engine also supports verified multipart storage for **Historical Details**. See [the reader API and manifest contract](HISTORICAL_DETAILS_API.md) for Catalog/App integration, explicit installation caching, failure codes and preserved ZIP attachment support. Full dataset and three-component qualification remain pending the actual Catalog payload.
+The Engine also supports verified multipart storage for **Historical Details**. See [the reader API and manifest contract](HISTORICAL_DETAILS_API.md) for the verified 32-part Catalog delivery, explicit installation caching, failure codes, deep row-count verification and preserved ZIP attachment support. Connected App and three-component qualification remain separate gates.
 
 ## Ownership and provenance
 

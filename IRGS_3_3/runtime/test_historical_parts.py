@@ -7,6 +7,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+import zipfile
 
 from historical_archive import HistoricalArchive, file_hash, from_catalog_manifest, from_registration
 from historical_parts import HistoricalPartsError
@@ -27,6 +28,8 @@ class HistoricalPartsTests(unittest.TestCase):
     def install_archive(self, original):
         self.original = original
         self.data = self.original.read_bytes()
+        for old in (self.catalog / 'parts').glob('archive.*'):
+            old.unlink()
         size = 512  # Small synthetic parts exercise the same bounded reader.
         parts = []
         for start in range(0, len(self.data), size):
@@ -163,11 +166,76 @@ class HistoricalPartsTests(unittest.TestCase):
         self.assert_atomic_failure('incomplete')
 
     def test_nonportable_and_escaping_paths_are_rejected(self):
-        for name in ('../outside', '/absolute', 'parts/../outside', 'parts\\outside', 'C:/outside', 'parts//one'):
+        for name in ('../outside', '/absolute', 'parts/../outside', 'parts\\outside', 'C:/outside',
+                     'parts//one', 'parts/CON', 'parts/NUL.bin', 'parts/part.', 'parts/part ', 'parts/a?b'):
             with self.subTest(path=name):
                 self.document['parts'][0]['path'] = name
                 self.write_manifest()
                 self.assert_atomic_failure('invalid_manifest')
+
+    def test_internal_links_and_linked_part_directory_are_rejected(self):
+        first = self.catalog / self.document['parts'][0]['path']
+        copy_path = self.catalog / 'part-copy'
+        copy_path.write_bytes(first.read_bytes())
+        first.unlink()
+        first.symlink_to(copy_path)
+        self.assert_atomic_failure('invalid_manifest')
+        first.unlink()
+        first.write_bytes(copy_path.read_bytes())
+        source = self.catalog / 'parts'
+        source.rename(self.catalog / 'source-parts')
+        source.symlink_to(self.catalog / 'source-parts', target_is_directory=True)
+        self.assert_atomic_failure('invalid_manifest')
+
+    def test_unrecorded_parts_are_refused_even_after_cache_is_ready(self):
+        library = self.library()
+        library.status()
+        (self.catalog / 'parts' / 'extra.part').write_bytes(b'unrecorded')
+        with self.assertRaisesRegex(HistoricalPartsError, 'unrecorded'):
+            library.search('chronology')
+
+    def test_linked_manifest_is_refused(self):
+        original = self.catalog / 'original-manifest.json'
+        self.manifest.rename(original)
+        self.manifest.symlink_to(original)
+        self.assert_atomic_failure('invalid_manifest')
+
+    def add_coverage(self):
+        counts = {'chronology': 1, 'figures': 1, 'research': 1, 'sources': 1, 'rights': 1, 'concepts': 2,
+                  'claims': 0, 'places': 0, 'routes': 0, 'population': 0}
+        from historical_archive import COLLECTIONS
+        with zipfile.ZipFile(self.original) as archive:
+            rows = []
+            for key, (_, name) in COLLECTIONS.items():
+                member = 'Synthetic/' + name
+                data = archive.read(member)
+                rows.append({'id': key, 'member': member, 'bytes': len(data),
+                             'sha256': hashlib.sha256(data).hexdigest(), 'record_count': counts[key]})
+        self.document['coverage'] = {'collections': rows}
+        self.write_manifest()
+        return counts
+
+    def test_deep_verification_checks_actual_row_counts_and_original_member_bindings(self):
+        expected = self.add_coverage()
+        result = self.library().verify_delivery()
+        self.assertEqual(result['record_counts'], expected)
+        self.assertTrue(result['catalog_coverage_verified'])
+        self.assertFalse(result['historical_truth_verified'])
+        self.assertFalse(result['campaign_effects'])
+        for field, value in (('record_count', 999), ('sha256', '0' * 64), ('member', 'other/source.json')):
+            with self.subTest(field=field):
+                self.add_coverage()
+                self.document['coverage']['collections'][0][field] = value
+                self.write_manifest()
+                with self.assertRaisesRegex(HistoricalPartsError, 'coverage differs'):
+                    self.library().verify_delivery()
+
+    def test_deep_verification_refuses_duplicate_or_missing_collection_metadata(self):
+        self.add_coverage()
+        self.document['coverage']['collections'][1] = self.document['coverage']['collections'][0]
+        self.write_manifest()
+        with self.assertRaisesRegex(HistoricalPartsError, 'incomplete or duplicated'):
+            self.library().verify_delivery()
 
     def test_symlink_to_source_outside_manifest_directory_is_rejected(self):
         part = self.catalog / self.document['parts'][0]['path']

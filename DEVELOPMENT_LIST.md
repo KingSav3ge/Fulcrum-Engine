@@ -111,7 +111,11 @@ Attached the supplied Grand Archive 1.1 through an external, read-only source pr
 
 Completed the Engine reader increment: pinned manifest/part verification, exact reconstruction into an ignored installation cache, atomic publication/retry, bounded failure codes, ten-collection binding validation and unchanged source-row identity through the existing reference API. Explicit local ZIP attachment remains supported. See [the API and cross-component contract](engine/HISTORICAL_DETAILS_API.md).
 
-Active/blocked: qualify an actual Catalog manifest and complete archive, then the App's exact reviewed component pins. The source ZIP is unavailable here and no real Catalog part hashes have been invented. Synthetic reader/recovery evidence does not qualify the full historical dataset or complete DEV-06–DEV-08; those remain the continuing general dependency priority.
+The subsequent delivery increment verifies Catalog `58ce55672bdd75076b94882bd8715a1d2a1f383a`: 32 actual parts reconstruct the original archive, and all ten reader collections match their pinned record counts. It adds deep verification and a repeatable qualification command, plus stricter portable-path, link and exact part-directory checks. App's reviewed dependency pins and coordinator integration remain separate gates. This reference verification does not complete DEV-06–DEV-08 or establish historical truth.
+
+## Staged AI provider foundation — AIP-01–AIP-09
+
+Read [the Engine provider plan](engine/AI_PROVIDER_PLAN.md) for all nine open requirements, AIP-S1–S4 sequencing and the 16 unexecuted model-evaluation cases. Preparation is complete; provider implementation is not started. Historical Details integration, supported gameplay and DEV-06–DEV-08 retain priority. The first provider increment uses a disabled-by-default registry, scoped contracts, fake transport, validation and attempt ledger before one reviewed opt-in direct adapter. No credentials, budget, entitlement, paid calls, model-quality winner or new authoritative owner is supplied by that plan.
 
 ## Kira atlas reference delivery
 

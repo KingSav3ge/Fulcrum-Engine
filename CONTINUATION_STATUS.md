@@ -1,5 +1,13 @@
 # Current Engine continuation
 
+## Historical Details real delivery — 2026-10-22
+
+**Completed:** Catalog `58ce55672bdd75076b94882bd8715a1d2a1f383a` supplies the actual 32-part archive. The Engine verifies the 533,064,680 original bytes and SHA-256 `51246eb6898a228f42f0794ed19ce69af275a2a4661c0fb6a1d3baebe3efc773`, all ten reader bindings and all 387,273 rows against pinned Catalog counts. New deep verification and `tools/qualify_historical_details.py` reproduce that check. Portable-path, symbolic-link and exact part-directory checks now match the published source contract. See [delivery evidence and exact inputs](engine/HISTORICAL_DETAILS_DELIVERY_VALIDATION.json).
+
+**Verification:** 70 focused historical tests passed; the full suite ran 527 tests with 526 passes and one historical private-save fixture skipped. Six negative cases on the real delivery refused missing/changed/unrecorded/linked/reordered/duplicated inputs despite a valid cache. Search and detail match the legacy ZIP reader for all ten collections. The exact App boundary module at `e8ef2b0e683a46fab4fe586e86afd26196ab2869` passed status/search/detail through explicitly supplied inputs; this is not HTTP/interface or approved-pair qualification. Engine integrity, Kira canon and active documentation links pass.
+
+**In progress / remaining:** coordinator approval, App's exact Engine/Catalog pins and connected qualification remain separate gates. Source identity is verified; historical truth, expanded rights, campaign adoption and new gameplay are not asserted. DEV-06–DEV-08 remain open. The [AI provider plan](engine/AI_PROVIDER_PLAN.md) now records all nine staged AIP requirements and the 16 evaluation cases; no provider code, live call or quality result is activated by that preparation.
+
 ## Historical Details reader — 2026-10-22
 
 **Completed:** `historical-details-01` implements pinned multipart assembly into an ignored installation cache, verified original ZIP identity and all ten collection bindings, atomic publication/retry, changed-source detection and the existing read-only reference API. Original source names, attribution, rights, uncertainty, dates and source-row addresses survive unchanged. Explicit local ZIP attachment remains supported. See [API and pin contract](engine/HISTORICAL_DETAILS_API.md) and [executed verification](engine/HISTORICAL_DETAILS_VALIDATION.json).

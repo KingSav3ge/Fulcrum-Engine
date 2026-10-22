@@ -4,8 +4,8 @@ No archive members are extracted and no supplied source instructions are run.
 """
 from __future__ import annotations
 
-import hashlib
 import errno
+import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -38,7 +38,10 @@ def _relative(value):
             and not PurePosixPath(value).is_absolute()
             and all(p not in ('', '.', '..') for p in value.split('/'))
             and not any(c in value for c in '\\:')
-            and not any(ord(c) < 32 for c in value))
+            and not any(ord(c) < 32 for c in value)
+            and all(not p.endswith(('.', ' ')) and not any(c in p for c in '<>"|?*')
+                    and not re.fullmatch(r'(?i:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\..*)?', p)
+                    for p in value.split('/')))
 
 
 def _stamp(info):
@@ -59,6 +62,8 @@ class PinnedParts:
         if not _sha(manifest_sha256):
             raise HistoricalPartsError('invalid_manifest', 'A pinned Historical Details manifest SHA-256 is required')
         self.manifest_path = Path(manifest_path)
+        if self.manifest_path.is_symlink():
+            raise HistoricalPartsError('invalid_manifest', 'Historical Details manifest must not be a link')
         self.manifest_sha256 = manifest_sha256
         self.root = self.manifest_path.parent.resolve()
         self.cache_dir = Path(cache_dir).resolve()
@@ -76,6 +81,8 @@ class PinnedParts:
 
     def _document(self):
         try:
+            if self.manifest_path.is_symlink() or not stat.S_ISREG(self.manifest_path.stat().st_mode):
+                raise HistoricalPartsError('invalid_manifest', 'Historical Details manifest must be a regular source file')
             with self.manifest_path.open('rb') as stream:
                 data = stream.read(MAX_MANIFEST + 1)
         except OSError as exc:
@@ -124,7 +131,12 @@ class PinnedParts:
         for part in self.parts:
             ordinal = part['ordinal']
             try:
-                path = (self.root / part['path']).resolve(strict=True)
+                path = self.root
+                for component in part['path'].split('/'):
+                    path = path / component
+                    if path.is_symlink():
+                        raise HistoricalPartsError('invalid_manifest', 'Historical Details parts must not contain links')
+                path = path.resolve(strict=True)
                 if not path.is_relative_to(self.root):
                     raise HistoricalPartsError('invalid_manifest', 'Historical Details part escapes its source directory')
                 info = path.stat()
@@ -135,6 +147,14 @@ class PinnedParts:
             if not stat.S_ISREG(info.st_mode) or info.st_size != part['bytes']:
                 raise HistoricalPartsError('corrupt', f'Historical Details part {ordinal} has an incorrect size or type')
             result.append((path, _stamp(info)))
+        # Catalog's flat parts/ directory is an exact source inventory. Ignore
+        # sibling documentation/indexes, but never silently ignore extra parts.
+        if all(PurePosixPath(part['path']).parent == PurePosixPath('parts') for part in self.parts):
+            expected = {part['path'] for part in self.parts}
+            with os.scandir(self.root / 'parts') as entries:
+                for entry in entries:
+                    if entry.is_symlink() or 'parts/' + entry.name not in expected:
+                        raise HistoricalPartsError('invalid_manifest', 'Historical Details contains unrecorded parts or links')
         return tuple(result)
 
     def _stream(self, snapshot, output):

@@ -271,6 +271,33 @@ class MultipartHistoricalArchive(HistoricalArchive):
         return {**super().status(), 'title': 'Historical Details', 'storage': 'catalog_parts',
                 'manifest_sha256': self._parts.manifest_sha256}
 
+    def verify_delivery(self):
+        """Explicit deep check of reader rows and optional Catalog coverage metadata."""
+        from historical_parts import HistoricalPartsError
+        with self._lock:
+            self.verify_collections()
+            counts = {key: sum(1 for _ in self._rows(key)) for key in COLLECTIONS}
+            coverage = self._parts._document().get('coverage')
+            if coverage is not None:
+                rows = coverage.get('collections') if isinstance(coverage, dict) else None
+                if (not isinstance(rows, list) or len(rows) != len(COLLECTIONS)
+                        or any(not isinstance(row, dict) or not isinstance(row.get('id'), str) for row in rows)
+                        or {row['id'] for row in rows} != set(COLLECTIONS)):
+                    raise HistoricalPartsError('corrupt', 'Historical Details collection coverage is incomplete or duplicated')
+                for row in rows:
+                    name = COLLECTIONS[row['id']][1]
+                    binding = self._manifest[name]
+                    if (row.get('member') != self._prefix + name or row.get('bytes') != binding['bytes']
+                            or row.get('sha256') != binding['sha256']
+                            or type(row.get('record_count')) is not int or row['record_count'] != counts[row['id']]):
+                        raise HistoricalPartsError('corrupt', 'Historical Details collection coverage differs from the original records')
+            self._ready()
+            return {'status': 'verified', 'archive_sha256': self.sha256,
+                    'archive_bytes': self._parts.archive_bytes, 'manifest_sha256': self._parts.manifest_sha256,
+                    'part_count': len(self._parts.parts), 'record_counts': counts,
+                    'catalog_coverage_verified': coverage is not None,
+                    'historical_truth_verified': False, 'campaign_effects': False, 'adoption_performed': False}
+
 
 def from_catalog_manifest(manifest_path, manifest_sha256, *, cache_dir):
     """Select one pinned manifest and explicit installation cache; never discover sources."""
