@@ -232,6 +232,46 @@ def from_registration(path):
     if not isinstance(document, dict) or document.get('schema_version') != 1:
         raise ValueError('Unsupported local reference registration')
     source = document.get('historical_archive')
-    if not isinstance(source, dict) or not isinstance(source.get('path'), str):
+    if not isinstance(source, dict):
+        raise ValueError('Invalid local historical reference attachment')
+    if source.get('type') == 'catalog_parts':
+        if not all(isinstance(source.get(key), str) and source[key]
+                   for key in ('manifest_path', 'manifest_sha256', 'cache_dir')):
+            raise ValueError('Invalid local Historical Details attachment')
+        root = Path(path).resolve().parent
+        return from_catalog_manifest(root / source['manifest_path'], source['manifest_sha256'],
+                                     cache_dir=root / source['cache_dir'])
+    if source.get('type', 'zip') != 'zip' or not isinstance(source.get('path'), str):
         raise ValueError('Invalid local historical reference attachment')
     return HistoricalArchive(source['path'], source['sha256'])
+
+
+class MultipartHistoricalArchive(HistoricalArchive):
+    """The existing reference API backed by verified, pinned Catalog byte parts."""
+
+    def __init__(self, manifest_path, manifest_sha256, *, cache_dir):
+        from historical_parts import PinnedParts
+        self._parts = PinnedParts(manifest_path, manifest_sha256, cache_dir)
+        super().__init__(self._parts.path, self._parts.archive_sha256)
+
+    def _ready(self):
+        self._parts.prepare(validate=self._verify_zip)
+        super()._ready()
+
+    def _verify_zip(self, path):
+        from historical_parts import HistoricalPartsError
+        try:
+            result = HistoricalArchive(path, self.sha256).verify_collections()
+            if {row['id'] for row in result['collections']} != set(COLLECTIONS):
+                raise ValueError('Missing required collection')
+        except (OSError, ValueError, KeyError, zipfile.BadZipFile, RuntimeError) as exc:
+            raise HistoricalPartsError('corrupt', 'Historical Details ZIP or required reference bindings are invalid') from exc
+
+    def status(self):
+        return {**super().status(), 'title': 'Historical Details', 'storage': 'catalog_parts',
+                'manifest_sha256': self._parts.manifest_sha256}
+
+
+def from_catalog_manifest(manifest_path, manifest_sha256, *, cache_dir):
+    """Select one pinned manifest and explicit installation cache; never discover sources."""
+    return MultipartHistoricalArchive(manifest_path, manifest_sha256, cache_dir=cache_dir)

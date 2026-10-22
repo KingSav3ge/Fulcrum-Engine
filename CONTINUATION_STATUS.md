@@ -1,5 +1,15 @@
 # Current Engine continuation
 
+## Historical Details reader — 2026-10-22
+
+**Completed:** `historical-details-01` implements pinned multipart assembly into an ignored installation cache, verified original ZIP identity and all ten collection bindings, atomic publication/retry, changed-source detection and the existing read-only reference API. Original source names, attribution, rights, uncertainty, dates and source-row addresses survive unchanged. Explicit local ZIP attachment remains supported. See [API and pin contract](engine/HISTORICAL_DETAILS_API.md) and [executed verification](engine/HISTORICAL_DETAILS_VALIDATION.json).
+
+**Verification:** 65 focused historical tests passed, including 25 new multipart/recovery cases and the six existing ZIP cases. The full Engine suite ran 522 tests: 521 passed and one historical private-save fixture was skipped. Engine integrity, Kira canon verification, all 16 atlas checksums and active planning/API links passed. No user campaigns or private saves were used.
+
+**Active/blocked:** the actual Grand Archive, a published compatible Catalog manifest, and the App's exact reviewed dependency pair remain unavailable/unqualified. Catalog work-order input `5c007e16be6ab8930b3bcd4ad10ab320733102a6` and App work-order input `d3dae7b0092b65b2c7902488a1a99aa82a7522cc` were reviewed; neither is a new component-set approval. App/HTTP and joined integration checks were not run. The completed increment is the Engine reader, not the full import or playable historical content.
+
+**Next:** coordinate the documented manifest/API with the real Catalog delivery, qualify that source and the App's pinned pair, and continue general dependency qualification under DEV-06–DEV-08. No additional C2 completion is claimed.
+
 ## Current increment — 2026-10-22
 
 Publication destination: **KingSav3ge/IRGS-Engine**, on this repository's `main` branch. [ROADMAP.md](ROADMAP.md) is the current completed/in-progress/remaining summary; [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) retains task IDs and completion criteria.

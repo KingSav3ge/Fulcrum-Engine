@@ -107,6 +107,12 @@ The 2026-10-22 increment advances named DEV-07–DEV-08 paths, keeps verified re
 
 Attached the supplied Grand Archive 1.1 through an external, read-only source provider and a Creator-only search/detail interface. Preserved record identity, source qualifications, uncertainty and rights metadata; local attachment configuration and mixed-rights payload remain outside published source. See HISTORICAL_REFERENCE_VALIDATION.json. This completes reference browsing only; adopting sourced starting facts, resolving historical identities and wider C2 certification remain separate work.
 
+## Historical Details — historical-details-01
+
+Completed the Engine reader increment: pinned manifest/part verification, exact reconstruction into an ignored installation cache, atomic publication/retry, bounded failure codes, ten-collection binding validation and unchanged source-row identity through the existing reference API. Explicit local ZIP attachment remains supported. See [the API and cross-component contract](engine/HISTORICAL_DETAILS_API.md).
+
+Active/blocked: qualify an actual Catalog manifest and complete archive, then the App's exact reviewed component pins. The source ZIP is unavailable here and no real Catalog part hashes have been invented. Synthetic reader/recovery evidence does not qualify the full historical dataset or complete DEV-06–DEV-08; those remain the continuing general dependency priority.
+
 ## Kira atlas reference delivery
 
 The [six-region atlas](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) adds the creator-requested maps and companion regional foundations to Kira’s existing world files. The atlas manifest and checksums identify the delivered artwork; component verification pins it with the rest of the Engine content. No DEV gameplay milestone is completed by this reference addition. App dependency updates and joined publication remain separate workstreams.
