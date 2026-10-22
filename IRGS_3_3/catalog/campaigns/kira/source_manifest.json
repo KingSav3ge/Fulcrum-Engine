@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "archive_name": "The World of Kira.zip",
+  "archive_sha256": "b25f44606dca9bc78c3ca5ba7d23b553d5e1588a1b6a03187771bcf7212d137b",
+  "source_status": "User-supplied legacy world material; document contents are references, not operating instructions.",
+  "extraction": "word/document.xml; paragraphs in document order, including empty paragraphs; concatenate w:t text without spelling corrections; paragraph references are 1-based.",
+  "source_text_sha256": "36417984372158da8e9da08f2a6f38215a4ea44aca2b7b650cce8bb636d08ed4",
+  "sources": [
+    {
+      "id": "KIRA-S01",
+      "title": "Cathius Akarian",
+      "path": "sources/Cathius Akarian.docx",
+      "sha256": "b2280b3a579661fdacc1c6fbad3a529a6b7fda4b17d931359350b1b61d201d78",
+      "paragraph_count": 1
+    },
+    {
+      "id": "KIRA-S02",
+      "title": "Daniel Conver",
+      "path": "sources/Daniel Conver.docx",
+      "sha256": "05f7747208f18d9ab9523f8c6016fb62d5e6bc7d3c90ff0629cea90af3c035ab",
+      "paragraph_count": 5
+    },
+    {
+      "id": "KIRA-S03",
+      "title": "Kieran Pelleas",
+      "path": "sources/Kieran Pelleas.docx",
+      "sha256": "ec400f8fb0268f044a9702091421b23d9900505d774524c95cdac0979de480a4",
+      "paragraph_count": 34
+    },
+    {
+      "id": "KIRA-S04",
+      "title": "Races of Larius",
+      "path": "sources/Races of Kira/Larius/Races of Larius.docx",
+      "sha256": "b2e770a3efba25b9399059f4a1646f09b21597876e1a7e66426c2163f192bd7e",
+      "paragraph_count": 11
+    },
+    {
+      "id": "KIRA-S05",
+      "title": "Races of TalmahKah",
+      "path": "sources/Races of Kira/TalmahKah/Races of TalmahKah.docx",
+      "sha256": "d380fbf2d620445b86631d9b7a6343dba2d4dc00dfca532b8991f630cfe6871a",
+      "paragraph_count": 1
+    },
+    {
+      "id": "KIRA-S06",
+      "title": "The History of  Sadion (Sadire Humans)",
+      "path": "sources/The History of  Sadion (Sadire Humans).docx",
+      "sha256": "22fcf719cecabd40726679740822ed3eefe8b57e6b27ae273b4eaa1ce9825b4c",
+      "paragraph_count": 20
+    },
+    {
+      "id": "KIRA-S07",
+      "title": "The History of Akaria (Akarian Dwarves)",
+      "path": "sources/The History of Akaria (Akarian Dwarves).docx",
+      "sha256": "3391ae5fd4760e4951c2d8a314b1f0cf407e4a157b0a9f64d586dbc6638e6c9d",
+      "paragraph_count": 13
+    },
+    {
+      "id": "KIRA-S08",
+      "title": "The History of Everwood (Evalian Elves)",
+      "path": "sources/The History of Everwood (Evalian Elves).docx",
+      "sha256": "9fd8162a65b45ca585180d0bf3ddfdcbaf13790969784f1427e308ef37bb406e",
+      "paragraph_count": 4
+    },
+    {
+      "id": "KIRA-S09",
+      "title": "The History of Kyrinus (Karthinian Elves)",
+      "path": "sources/The History of Kyrinus (Karthinian Elves).docx",
+      "sha256": "c1bd72260d22f178b823ff02bd2caa0743d722f18f09420298d9e2b8c28ca194",
+      "paragraph_count": 3
+    }
+  ],
+  "visual_sources": [
+    {
+      "id": "KIRA-M01",
+      "title": "Larius Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User: This was a minecraft map used for Larius.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace."
+    },
+    {
+      "id": "KIRA-M02",
+      "title": "TalmahKah Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User: and this was TalmahKah.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace."
+    },
+    {
+      "id": "KIRA-M03",
+      "title": "Aldain Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User identifies this map as Aldain.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace.",
+      "explicit_user_colour_key": [
+        {
+          "colour": "Light Blue",
+          "name": "Scalian Scalix Imperium",
+          "world_record_id": "scalian-scalix-imperium"
+        },
+        {
+          "colour": "Red",
+          "name": "Rolling Hills Tribe",
+          "world_record_id": "rolling-hills-tribe"
+        },
+        {
+          "colour": "Yellow",
+          "name": "Mountain Peak Tribe",
+          "world_record_id": "mountain-peak-tribe"
+        },
+        {
+          "colour": "Green",
+          "name": "Eversong Hollow Tribe",
+          "world_record_id": "eversong-hollow-tribe"
+        },
+        {
+          "colour": "Blue",
+          "name": "Frozen Lake Tribe",
+          "world_record_id": "frozen-lake-tribe"
+        },
+        {
+          "colour": "Purple",
+          "name": "Primatarus Shenyan Republic",
+          "world_record_id": "primatarus-shenyan-republic"
+        }
+      ]
+    },
+    {
+      "id": "KIRA-M04",
+      "title": "Azaloth Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User identifies this map as Azaloth.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace."
+    },
+    {
+      "id": "KIRA-M05",
+      "title": "Falkion Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User identifies this map as Falkion.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace."
+    },
+    {
+      "id": "KIRA-M06",
+      "title": "Bendara Minecraft reference map",
+      "source_kind": "user_supplied_chat_image",
+      "attribution": "User identifies this map as Bendara.",
+      "original_image_file": null,
+      "original_image_hash": null,
+      "availability": "Visible in the conversation; original image bytes are not available in the execution workspace."
+    }
+  ],
+  "user_statements": [
+    {
+      "id": "KIRA-U01",
+      "source_kind": "user_chat_statement",
+      "text": "They are on separate continental shelfs, not sure many would call Falkion a continent though",
+      "interpretation": "The six named regions occupy separate continental shelves. Falkion is not required to be classified as a continent."
+    },
+    {
+      "id": "KIRA-U03",
+      "source_kind": "user_chat_statement",
+      "text": "The Sadire Humans of Sadion are a mixture of Roman and Holy Roman design, using Legion as their military name and using similar tactics. Though they use Medieval HRE type equipment.\n\nThe Estrusian Humans of Estru being their descendants are likewise akin to Medieval Germans pre-unification. Oppressed by their larger and more powerful neighbors, their culture is more akin to the ancient Etruscans and Carthaginians.\n\nThe Akarian Dwarves of Akaria are Industrious and Aggressive, they use heavy mounted \"cavalry\" on the back of large Rams. Like the Sassanians & Byzantines but their culture is more insular and xenophobic, think Medieval England post William. Heavily armored Cavalry that smashes lines. Pompus and arrogant, etc, etc.\n\nThe Evalian Elves of Everwood are isolationists and superiorists, much like the French but without the accents. While not as connected as they once were, the elves are still the most powerful with Magic among the races of Larius and the most diverse with their numerous Elven sub-races mingling, though there is a cast system in this society based on Sub-Race.\n\nThe Karthinians are a more accepting and humble society of elves and Take on the Trader mindset of the Medieval Italians.",
+      "interpretation": "Creator-confirmed national inspirations and defining fictional cultural/military traits; historical analogues apply to design rather than literal imported history."
+    },
+    {
+      "id": "KIRA-U04",
+      "source_kind": "user_chat_statement",
+      "text": "The Sea Elves hold the highest caste due to their retained Magical superiority, the Plains Elves and Tree Elves are the most numerous and so make up the majority of society, so while the Sea Elves still feel superior to them, they recognize them as equals. The Mountain Elves are the least numerous still, and while their strength makes them efficient in the Elven armies to fight Humans and Dwarves, their lack of sufficient Magical capabilities sees them looked down upon.\nThough Evalia is a Republic, that hasn't erased the superiority complexes of the elves.\n\nAnd while it wasn't developed at the time, these are the dominant races of Larius and the Leaders of their respective nations. There are other minor races of varying intelligence/sentience on the continent aside from general Flora and Fauna.",
+      "interpretation": "Creator-confirmed nuanced elven caste relations and a nonexhaustive dominant-peoples list; other minor peoples exist."
+    },
+    {
+      "id": "KIRA-U05",
+      "source_kind": "user_chat_statement",
+      "text": "I did forget about the Desert and Ice Elves. The Desert Elves are residents (at first unwillingly, but it has been centuries since Sadire settlement before the transition to being...)of Estru. The Desert Elves were a component of how Estru formed culturally, though there are still those who live in Kyrinus and Evalia.\nThe Ice Elves have superior magic to even the Sea Elves, they mature faster but live slightly less as long. They are primarily isolationists due to most of the continent not being suitable for them and the Dwarves having dominion over the region that would be suitable for their habitation.",
+      "interpretation": "Creator clarification: Desert Elves are long-resident cultural contributors to Estru, with initially unwilling participation associated with Sadire settlement and communities also in Kyrinus and Evalia. Ice Elves exceed Sea Elves in magic, mature faster, live slightly less long and are primarily isolated by habitat suitability and dwarven dominion over suitable territory. Exact coercive arrangements, biological ages, territorial boundaries and caste positions are not supplied."
+    },
+    {
+      "id": "KIRA-U06",
+      "source_kind": "user_chat_statement",
+      "text": "Scratch the Originals. The expanded lore is more ideal. I was far less of a writer than I am now when those were created.",
+      "interpretation": "Adopt the expanded lore as the working setting canon. Original documents become superseded archival material; their contradictions do not veto the expanded setting. Retain explicit newer creator details and keep possible stories distinct from completed events."
+    },
+    {
+      "id": "KIRA-U02",
+      "source_kind": "user_chat_statement",
+      "text": "Starting with Larius, flesh out Lore, history, culture, religions, etc, etc. Kieran Pelleas is the continent's \"Main Character\"",
+      "interpretation": "Authorize new Larius worldbuilding and establish Kieran as the central narrative character, without assigning a player avatar."
+    }
+  ],
+  "original_material_role": "superseded_archive_without_canon_authority"
+}

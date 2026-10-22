@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "User-requested publication of the Rise specification, Kira world package and Century of Conflict paused submission. Original inputs preserved byte for byte; inactive design and WIP inputs are not campaign adoption or executable qualification.",
+  "imports": [
+    {
+      "path": "provenance/rise/IRGS_The_Rise_of_You_Design_Specification_v0_4.docx",
+      "original_filename": "IRGS_The_Rise_of_You_Design_Specification_v0_4.docx",
+      "bytes": 101997,
+      "sha256": "8e8c16d8590280780064e1f566e3a595d1914da36c369fbb954ca0e3a670b49c"
+    },
+    {
+      "path": "provenance/kira/Kira_Campaign_World_v0_1.zip",
+      "original_filename": "Kira_Campaign_World_v0_1.zip",
+      "bytes": 607581,
+      "sha256": "1d6e1f8305994accc5fc306d8b0a13e0e3c8525d0d2a81c4b4ecda3d20ac3287"
+    },
+    {
+      "path": "provenance/century_of_conflict/Century_of_Conflict_WIP_2026-10-21.zip",
+      "original_filename": "Century_of_Conflict_WIP_2026-10-21.zip",
+      "bytes": 237826,
+      "sha256": "9fa171451cdd5f09c584f3d8a8093685648037c7abfb4e88803f7c5b9d4236a1",
+      "status": "paused_work_in_progress"
+    },
+    {
+      "path": "provenance/century_of_conflict/PAUSED_SUBMISSION.md",
+      "original_filename": "PAUSED_SUBMISSION.md",
+      "bytes": 4733,
+      "sha256": "a1ac6695f0911fbd3b5e052a3b8f0ad4058effe71c61acba9850934169e42b57",
+      "status": "paused_work_in_progress"
+    },
+    {
+      "path": "provenance/kira/Kira_Larius_Expanded_v0_5.zip",
+      "original_filename": "Kira_Larius_Expanded_v0_5.zip",
+      "bytes": 815009,
+      "sha256": "53196479c8e4489bd42022217991467a89ca8df6918624e9b717c6d9fd05b6a8",
+      "status": "working_setting_canon_explicitly_adopted_by_user_2026_10_22",
+      "integration": "Canonical Kira world reference only; supplied application patches not applied."
+    },
+    {
+      "path": "IRGS_Web/design/campaign_catalogue/IRGS_Complete_Campaign_Catalogue_v0_4.md",
+      "original_filename": "Pasted text.txt",
+      "bytes": 64747,
+      "sha256": "6ce0298f5a6157414d30f345c21907725d25257fa24e3d98ba9527a4e2d5952b",
+      "status": "user_authorized_catalogue_previews_only"
+    }
+  ]
+}
