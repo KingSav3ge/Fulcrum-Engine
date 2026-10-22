@@ -12,6 +12,14 @@ Publication destination: **KingSav3ge/IRGS-Engine**, on this repository's `main`
 
 **Verification:** the Engine runtime baseline ran 497 tests successfully with one historical private-save fixture skipped. All six archive-provider tests passed after the wording change, and Engine component integrity verified. This increment includes no fresh App/HTTP qualification and does not complete any additional C2 acceptance case.
 
+## Kira atlas reference delivery — 2026-10-22
+
+Added six [illustrated regional atlas plates](IRGS_3_3/catalog/campaigns/kira/atlas/README.md), their creator statements and regional foundations beside the existing Kira worldbook. The notes record the Lupine desert and raids, Aldain’s five lizard-folk homelands and monkey-folk republic, open cultural design for Azaloth and Bendara, and Falkion’s selected fortified-island and maritime direction. Atlas views establish no shared distance scale, executable travel rules or starting snapshots. The PNGs are preserved byte for byte; archive and component verification qualify source integrity, not pixel-perfect survey accuracy or new gameplay behavior.
+
+The Engine development milestones above retain their existing status. App dependency updates and joined IRGS integration are separate from this Engine reference publication.
+
+Verification: all six PNGs match the delivered artwork byte for byte; atlas manifest checksums, the reintroduced Lupine sheet and relative README links pass. The existing Kira canon/archive verifier and Engine component integrity check pass. See [atlas validation](IRGS_3_3/catalog/campaigns/kira/atlas/VALIDATION.json). No fresh App or gameplay qualification is claimed.
+
 ## Inherited component and joined-development record
 
 The entries below preserve earlier increment descriptions and evidence identities. Old branch names, App checks and original validation filenames describe those source runs. They do not direct current pushes or certify the present standalone Engine/App pair.

@@ -11,6 +11,7 @@ Use [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) for stable task IDs, dependencies
 - **Bounded campaign foundations:** authored local observation, movement and delivery; 37 dated historical starting references; the fictional Rise R00 settlement slice. See [local opening](engine/PLAYABLE_OPENING_IMPLEMENTATION.md), [historical review](provenance/century_of_conflict/HISTORICAL_REVIEW.md) and [Rise status](engine/design/rise/README.md). These increments do not complete their broader DEV milestones.
 - **Reference browsing:** the pinned, read-only historical archive provider, preserving source records and attribution. See [integration and limits](engine/HISTORICAL_REFERENCE_INTEGRATION.md).
 - **Engine framing:** the [Engine model](engine/ENGINE_MODEL.md), behavior-based design guidance and neutral archive introduction. Source provenance remains available; this increment adds no gameplay resolver.
+- **Kira atlas reference:** [six illustrated regional plates and creator-supplied regional foundations](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) are published beside the Kira worldbook. This is world reference content; it adds no executable capability or starting snapshot.
 
 ## Work in progress
 

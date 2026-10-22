@@ -106,3 +106,7 @@ The 2026-10-22 increment advances named DEV-07–DEV-08 paths, keeps verified re
 ## Completed reference integration — historical-reference-1
 
 Attached the supplied Grand Archive 1.1 through an external, read-only source provider and a Creator-only search/detail interface. Preserved record identity, source qualifications, uncertainty and rights metadata; local attachment configuration and mixed-rights payload remain outside published source. See HISTORICAL_REFERENCE_VALIDATION.json. This completes reference browsing only; adopting sourced starting facts, resolving historical identities and wider C2 certification remain separate work.
+
+## Kira atlas reference delivery
+
+The [six-region atlas](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) adds the creator-requested maps and companion regional foundations to Kira’s existing world files. The atlas manifest and checksums identify the delivered artwork; component verification pins it with the rest of the Engine content. No DEV gameplay milestone is completed by this reference addition. App dependency updates and joined publication remain separate workstreams.

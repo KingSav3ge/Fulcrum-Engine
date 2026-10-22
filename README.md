@@ -18,4 +18,4 @@ Engine source pins are in `IRGS_3_3/release.json`; App pins belong to its reposi
 
 The App pins an Engine commit through its `Engine` submodule. Qualify the pair before updating that pointer or joined IRGS. See [joined integration instructions](https://github.com/KingSav3ge/IRGS/blob/main/COMPONENT_REPOSITORIES.md). Historical operation/evidence documents retain the source identities of their original joined runs; they are not fresh standalone or all-branch certification.
 
-Kira v0.5 is adopted working setting canon. It initializes no player, resources, numerical magic rules or future outcomes. Source/provenance archives remain labelled historical material. No user saves are included or migrated.
+Kira v0.5 is adopted working setting canon, with a [six-region illustrated atlas and regional foundations](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) beside its worldbook. It initializes no player, resources, numerical magic rules or future outcomes. Source/provenance archives remain labelled historical material. No user saves are included or migrated.
