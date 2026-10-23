@@ -22,7 +22,7 @@ The user prioritizes completion of the runnable Solo systems. `solo-runtime-01` 
 
 ## Work in progress
 
-- **Solo runtime:** the provider/action contract, direct adapter and connected AI-assisted player flow are not implemented. Historical Details source review, compatible App pins and joined qualification are complete; no archive input is missing. Qualify DEV-06–DEV-11 for operations exposed by the active increment.
+- **Solo runtime:** the [offline provider/action API](engine/SOLO_PROVIDER_API.md) now implements typed actor scope, disabled dispatch, durable attempts and finite reservations, proposal validation and explicit acceptance through the existing local Core handler. Direct HTTP and connected App flow remain in progress. Historical Details is integrated. DEV-06–DEV-11 remain open beyond the named local action/dependency/recovery cases.
 - **DEV-06–DEV-08 — dependency qualification:** collection observation and named rejected-path cases exist. Broader conflict, authorization and cross-engine coverage remain open. See [rejected dependencies](engine/REJECTED_DEPENDENCIES_IMPLEMENTATION.md).
 - **DEV-10, DEV-12–DEV-14 and DEV-18–DEV-20 — processes and campaign continuity:** local actions, bounded settlement work and dated initialization supply partial implementations. General interrupted travel/search, evolving historical authority and full setup regressions remain open.
 - **DEV-24–DEV-26 — evidence and delivery:** the [scoped acceptance ledger](engine/ACCEPTANCE_EXECUTION.md) and component integrity checks exist. Each new Engine capability needs its own behavioral evidence; connected App behavior is qualified in the App workstream.
@@ -38,7 +38,7 @@ The user prioritizes completion of the runnable Solo systems. `solo-runtime-01` 
 
 ## Delivery sequence and completion evidence
 
-The [AI provider foundation plan](engine/AI_PROVIDER_PLAN.md) carries AIP-01–AIP-09 as staged, unimplemented requirements. Its first delivery is an offline, disabled-by-default scoped contract/fake transport/validation/ledger foundation, then one opt-in direct adapter after checking its exact official API. Provider quality, policy approval and conditional live checks remain separate evidence gates; the active Solo runtime work order and relevant gameplay/dependency checks take priority.
+The [AI provider foundation plan](engine/AI_PROVIDER_PLAN.md) carries AIP-01–AIP-09 as broader open requirements with a bounded offline foundation now executable. Next is one opt-in direct adapter after checking its exact official API. Provider quality, policy approval and conditional live checks remain separate evidence gates; the active Solo runtime work order and relevant gameplay/dependency checks take priority.
 
 ## 1. Resolve one consequential action
 

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "work_order": "solo-runtime-01",
+  "delivery": "offline-foundation-api-1",
+  "target_iteration": "IRGS 3.4.0 — in development",
+  "coordinator_update": "e2d7fd3d2c3aef436fda280c45c0e4508c02618a (iteration designation only)",
+  "base_commit": "5ef18f7d75d8a477af06921288569220f3475f85",
+  "status": "OFFLINE_ENGINE_BOUNDARY_PASSED_WITH_LIMITS",
+  "implementation": [
+    "IRGS_3_3/runtime/solo_provider.py",
+    "IRGS_3_3/runtime/solo_actions.py"
+  ],
+  "fixture": {
+    "kind": "existing synthetic local Core fixture",
+    "source": "IRGS_3_3/runtime/test_scene_actions.py:fixture",
+    "storage": "TemporaryDirectory only; no user saves or source runtime databases",
+    "catalog_r00": "Not present in the inspected Catalog main tree; adoption remains pending delivery",
+    "model_input": "Received options and evidence only; paired hidden-blocker and unreceived-oracle variants produce identical model inputs"
+  },
+  "actual_effect_evidence": {
+    "handler": "execute_scene_action / execute_player_scene_action on CoreWorld",
+    "sequence": ["enter-passage", "reach-desk", "deliver"],
+    "elapsed_seconds": 39,
+    "sealed_dispatch_final": {"pc": 0, "clerk-tray": 1, "total": 1},
+    "recovery": "Reload after each atomic synthetic host save; original receipt on duplicate; one write after lost acknowledgment",
+    "dependency_evidence": "Existing execution-derived success/rejection observation; private certificates retained in technical ledger"
+  },
+  "checks": {
+    "focused": {
+      "command": "python -B -m unittest test_solo_provider test_scene_actions test_player_actions test_work_recovery -q (runtime cwd)",
+      "tests": 86,
+      "new_provider_cases": 22,
+      "status": "PASS"
+    },
+    "full_runtime": {
+      "command": "python -B -m unittest discover -s IRGS_3_3/runtime -q",
+      "tests": 549,
+      "passed": 548,
+      "skipped": 1,
+      "skip_reason": "historical local save not packaged (existing private fixture)",
+      "status": "PASS"
+    },
+    "engine_integrity": {"command": "python -B tools/verify_components.py --component engine", "status": "PASS"},
+    "whitespace": {"command": "git -c core.whitespace=cr-at-eol diff --check", "status": "PASS"}
+  },
+  "solo_scope": {
+    "SOLO-01": "Offline request/proposal with unchanged world; explicit review still requires App integration",
+    "SOLO-02": "Actual local Core effects, conservative stock and elapsed work, persisted receipt and next action",
+    "SOLO-03": "Duplicate/concurrent dispatch and acceptance, restart ambiguity, reload, lost acknowledgment and restore fencing under mandatory host CAS",
+    "SOLO-04": "Foreign actor, revoked control, hidden input exclusion, unsupported action and conflicting commitment; depleted dispatch uses existing unsuccessful-attempt rule with no transfer",
+    "SOLO-05": "Malformed/denied/timeout/cancelled/late output, disallowed fallback, bounded reservations and unknown charge retained",
+    "SOLO-06": "Scope checked before presentation and acceptance; state/restore/session invalidation tested; real App lifecycle pending",
+    "SOLO-07": "Only committed handler outcome supplies narration; semantic intention/action agreement and character fidelity require human/model evaluation",
+    "SOLO-08": "Not qualified: exact App/Catalog joined candidate and conditional live smoke remain separate"
+  },
+  "aip_evaluation_scope": {
+    "offline_boundary_evidence": ["AIP-E02", "AIP-E05", "AIP-E06", "AIP-E07", "AIP-E08", "AIP-E09", "AIP-E10", "AIP-E11"],
+    "partial_only": ["AIP-E01", "AIP-E03", "AIP-E04", "AIP-E12", "AIP-E15", "AIP-E16"],
+    "not_executed": ["AIP-E13", "AIP-E14"],
+    "qualification": "Named integration checks cover portions of these requirements; original coordinator model cases and blinded semantic evaluation are not reported passed",
+    "executed_model_cases": 0,
+    "model_quality_winners": []
+  },
+  "dev_scope": {
+    "DEV-06": "Reuses actual handler observation; no general refinement of collection granularity",
+    "DEV-07": "Current control/commitment/resource/stale and host-write conflicts tested; wider rejected branches remain open",
+    "DEV-08": "One shared Core handler and host CAS; no new general simultaneous frontier/cross-scale qualification",
+    "DEV-09": "One action identity and durable Core receipt; general phase scheduler remains open",
+    "DEV-10": "Existing authored atomic elapsed seconds only; no new interrupted process",
+    "DEV-11": "Bounded restart/replay and host-supplied branch/restore/CAS contract; actual App integration remains unqualified"
+  },
+  "live_calls": 0,
+  "remaining": [
+    "Opt-in direct HTTP adapter with official-contract review and fake HTTP tests",
+    "Catalog R00 fixture adoption when delivered",
+    "App authenticated scope/session lifecycle and existing atomic save integration",
+    "Exact reviewed App/Engine/Catalog clean-extract joined qualification",
+    "Approved server credential, account-available model, permitted data/workload, current price ceiling and explicit finite live budget",
+    "Human semantic/character review and measured model quality",
+    "General DEV-06 through DEV-11 completion, accounting reconciliation and wider routing/migration"
+  ]
+}

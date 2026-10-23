@@ -1,6 +1,6 @@
 # AI provider foundation backlog
 
-Status: active implementation assignment under `solo-runtime-01`; no provider runtime or paid inference is implemented by this plan. Historical Details is integrated. Implement the offline provider/action contract and one opt-in direct adapter beside qualified existing Core operations, with the relevant DEV-06–DEV-11 dependency/recovery checks. Follow the current root work order and the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md).
+Status: `solo-runtime-01` now has an executable offline foundation: typed scoped requests, the initial registry/Capability Broker, conservative concurrent reservations, durable attempt/replay accounting and explicit acceptance through the existing local Core handler. See [the version 1 API](SOLO_PROVIDER_API.md). Direct HTTP integration is in progress; no paid inference, model-quality result or connected App qualification is claimed. Historical Details is integrated. Follow the current root work order and the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md).
 
 The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_STRATEGY.md), [checked research](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_REVIEW.md) and [16 evaluation requirements](https://github.com/KingSav3ge/IRGS/blob/main/provenance/qa/ai_provider_strategy/EVALUATION_CASES.json) were reviewed. These extend master Part XI; the original AI-01–AI-12 sections retain their identities. Research observations and token-price examples do not activate runtime configuration or establish a model-quality winner.
 
@@ -12,7 +12,7 @@ The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob
 
 ## Required implementation
 
-All nine items remain open. Planning and synthetic archive verification supply no provider implementation or model-quality evidence.
+All nine broader items remain open. AIP-01–AIP-06 and AIP-08–AIP-09 have the bounded offline implementation described in the API: only approved local proposals, static explicit routing and conservative lifetime ceilings. AIP-07 uses the existing local synthetic fixture pending Catalog's R00 fixture; this is integration evidence, not model evaluation. Direct HTTP, connected App/session persistence, policy review, reconciliation and model-quality evidence retain their separate gates.
 
 | ID | Engine work | Completion evidence |
 | --- | --- | --- |

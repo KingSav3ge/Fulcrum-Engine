@@ -439,7 +439,10 @@
     "runtime/test_suite.py": "5bec891f6a1f3d602527889ab24c8b47a9f93503e51d2dbc637ba5a7fb914a6e",
     "runtime/test_temporal_registry.py": "929ebbfca5997c03e9a447b475816963cd633a9f7ed33c2f9d90b8fdf07e4d36",
     "runtime/test_unification.py": "0da2440c200257fd2d2f0e9c3a750dff5ddbca91d1e1c31d085b30e3e21dc6e9",
-    "runtime/test_work_recovery.py": "ea21ce83d3c0cf521533b852efd41236269a6d8fd8cfd2d4146997217e2a2806"
+    "runtime/test_work_recovery.py": "ea21ce83d3c0cf521533b852efd41236269a6d8fd8cfd2d4146997217e2a2806",
+    "runtime/solo_actions.py": "1401d601d3a81fa0796d8ad735fb35f385b22a6fb671276e533920fd29072a51",
+    "runtime/solo_provider.py": "624285f3467016df63f3ae0fc1125929b6fe9125d9703d35d77a612d64d075ce",
+    "runtime/test_solo_provider.py": "2e3971087d2825ad93173b7467cc712a4a1bee906fc2b5aa734e4f2d1053711a"
   },
   "existing_save_migration": false,
   "development_designations": {
