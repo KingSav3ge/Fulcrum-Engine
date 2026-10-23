@@ -1,6 +1,6 @@
 # AI provider foundation backlog
 
-Status: staged requirements; no provider foundation or paid inference is activated by this plan. Historical Details is the current component integration cycle, and DEV-06–DEV-08 remain the continuing dependency/recovery priority.
+Status: active implementation assignment under `solo-runtime-01`; no provider runtime or paid inference is implemented by this plan. Historical Details is integrated. Implement the offline provider/action contract and one opt-in direct adapter beside qualified existing Core operations, with the relevant DEV-06–DEV-11 dependency/recovery checks. Follow the current root work order and the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md).
 
 The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_STRATEGY.md), [checked research](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_REVIEW.md) and [16 evaluation requirements](https://github.com/KingSav3ge/IRGS/blob/main/provenance/qa/ai_provider_strategy/EVALUATION_CASES.json) were reviewed. These extend master Part XI; the original AI-01–AI-12 sections retain their identities. Research observations and token-price examples do not activate runtime configuration or establish a model-quality winner.
 

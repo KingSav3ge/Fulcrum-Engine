@@ -1,5 +1,9 @@
 # Current Engine continuation
 
+## Active priority — 23 October 2026
+
+The user prioritizes completion of the systems needed for a continuing Solo campaign. `solo-runtime-01` now assigns the offline scoped provider/action/validation/attempt-ledger contract, qualified actual Core effects/recovery, a documented App API and one opt-in direct adapter. No provider runtime is implemented by this assignment. Historical Details is integrated at Engine `723627e629231b5e90f38b9d52b65c9a3967b92a`, App `d8dc35ed653e516ccd0cacf91ee9693258491032` and Catalog `3e898acb2179f18a41d7967817bedf429df29d3f`; no archive or historical integration input is missing. Follow [the current work order](COORDINATOR_WORK_ORDER.md). Entries below preserve their original dates, source identities and then-pending gates.
+
 ## Historical Details real delivery — 2026-10-22
 
 **Completed:** Catalog `58ce55672bdd75076b94882bd8715a1d2a1f383a` supplies the actual 32-part archive. The Engine verifies the 533,064,680 original bytes and SHA-256 `51246eb6898a228f42f0794ed19ce69af275a2a4661c0fb6a1d3baebe3efc773`, all ten reader bindings and all 387,273 rows against pinned Catalog counts. New deep verification and `tools/qualify_historical_details.py` reproduce that check. Portable-path, symbolic-link and exact part-directory checks now match the published source contract. See [delivery evidence and exact inputs](engine/HISTORICAL_DETAILS_DELIVERY_VALIDATION.json).

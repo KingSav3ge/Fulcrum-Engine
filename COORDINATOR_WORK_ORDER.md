@@ -1,43 +1,31 @@
-# IRGS Engine work order — historical-details-01
+# IRGS Engine work order — solo-runtime-01
 
-Assigned by the user through IRGS Enviroment on 2026-10-22. Owner: **IRGS Engine**. Repository: `KingSav3ge/IRGS-Engine`.
+Assigned through IRGS Enviroment on 23 October 2026 following the user's direction to complete the systems needed to run IRGS. Owner: **IRGS Engine**. Push only to `KingSav3ge/IRGS-Engine/main`.
 
-## Current state
+## Baseline and priority
 
-The joined baseline selects Engine `2c5590bcb2d7ee7e02f597526c3cb341841bd2dd`. New Engine source `33f76542b594b6fe8d49dba71a11359027d59a0d` adds design-language/planning changes and a six-region Kira atlas. Initial coordinator checks passed Engine integrity, the six historical-reference tests and atlas checksum inventory. These do not yet qualify the new three-component set. Preserve adopted Kira foundations; atlas illustrations establish no distance scale or executable world events.
+Reviewed integrated Engine: `723627e629231b5e90f38b9d52b65c9a3967b92a`. Historical Details is complete and its previous work order is preserved in `COORDINATOR_WORK_ORDER_HISTORICAL_DETAILS_01.md`. App currently pins this Engine and Catalog `3e898acb2179f18a41d7967817bedf429df29d3f`. Do not repeat archive acquisition or wait for another historical import approval.
 
-## Deliverable
+Read the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md), existing DEV list and `engine/AI_PROVIDER_PLAN.md`. The immediate delivery is the Engine boundary required for a continuing AI-assisted Solo action loop. Preserve the master C2 requirements, nine K-owners and six Director categories. Existing broader DEV work stays open; qualify the touched operations while implementing this delivery.
 
-Review the Catalog's Historical Details manifest/part contract with the other work orders. Support a complete, pinned multipart archive from the Catalog while retaining explicit local ZIP attachment compatibility. Use bounded reads or verified reconstruction into an ignored installation cache. Verify every part, ordering, reconstructed size and original archive SHA-256 before exposing historical records. Missing, changed, duplicated or reordered parts must fail with a useful bounded error. Never silently read an arbitrary owner path or execute source assets.
+## First implementation
 
-Keep historical records, their original names/attribution, uncertainty, source IDs, rights and dates as reference data. Imported records do not create campaign facts, stocks, people, player knowledge or scheduled historical outcomes. Keep the existing nine owners and the source-only Creator boundary. Preserve original source attribution when describing IRGS in its own terms.
+1. Implement typed actor-scoped request, proposed action, validated result and unavailable/error contracts beside the existing Core. Use existing registry/Capability Broker boundaries. Requests bind campaign/branch, actor, state/restore identity, exact player intention, allowed information and operations, source references, prompt/schema/config versions, deadline/output limits and explicit route/budget eligibility.
+2. Implement disabled-by-default dispatch with fake transport, deterministic proposal/schema validation, finite concurrent reservations and an attempt/replay ledger. Keep technical inference accounting distinct from authoritative campaign state. Record requested versus reported route and known versus unknown usage; a failed or timed-out attempt is not automatically free. Retry, restart and late completion cannot silently authorize a second paid dispatch.
+3. Map an accepted structured proposal to a real already supported local/Rise action handler. Selecting a proposal changes no state. Explicit player acceptance retains its original semantic payload, checks current actor control, rule, resources and freshness, and uses existing atomic effects and durable receipts. Unsupported freeform/combat remains unresolved until its actual rule exists. An AI result cannot commit arbitrary events or authorize itself.
+4. Publish a small documented Engine API and passing offline commit early for App qualification. Then implement one opt-in direct adapter after checking its exact current official API/model contract. Keep keys server-side; build and test HTTP success/error/timeout/usage handling without needing live credentials. OpenAI direct is an initial candidate, not a measured model winner.
+5. Narration derives from actor-legitimate committed results; dialogue expression cannot change accepted intent or invent player decisions. Expose sources and uncertainty needed for validation and disclose semantic/human-review limits. No full world/template or evaluator-only oracle enters actor/model context.
 
-## Acceptance
+## Required evidence
 
-- Synthetic multipart assembly reproduces exact bytes; incomplete/corrupt/changed sets are rejected atomically.
-- Existing ZIP reader and six reference tests continue to pass.
-- Required collections, citations, rights and source-row identities retain their actual meaning.
-- New reader APIs and pin format are documented for App and Catalog.
-- Run relevant runtime/recovery tests without private user saves. Maintain DEV-06–DEV-08 as the continuing dependency-qualification priority; do not claim that the archive work completes them.
+Use Catalog's labelled synthetic R00-derived fixture when delivered; initial contract tests can use local temporary fixtures. Execute the applicable SOLO-01–SOLO-08 and AIP evaluation requirements, including denial, malformed/unsupported output, revoked authority, depleted stock, conflict, stale state/restore, cancellation/timeout, disallowed fallback, duplicate/concurrent delivery and exhausted reservations. Effect claims require the selected actual Core handler, not a fake world mutation. Reuse actual dependency observation and qualify relevant DEV-06–DEV-11 gaps for the operations exposed.
 
-## Delivery and review
+Run Engine integrity and meaningful runtime regressions. Include a two-action sequence and persisted/restarted recovery evidence. No key is needed for this offline implementation. Live smoke is separately pending until a server credential, account-available model, permitted workload and finite budget are configured; no paid call is authorized merely by this assignment. Do not report offline fake transport as live AI gameplay or model-quality evidence.
 
-Work only in your component repository and push its `main`. Do not publish component source to joined IRGS, change another component, or reset existing work. Read repository instructions and current plans first. Keep completed, active and remaining work explicit. Preserve accurate source attribution and distinguish implemented behavior, design requirements and reference data.
+## Delivery and coordinator review
 
-Return the full pushed commit SHA, changed behavior, dependency commits, checks actually executed, skipped/unrun checks, open findings and any missing input to the coordinator chat **IRGS Enviroment**. Update the development plan with that increment. A planning-only commit is not the requested viable component update.
+Work in your own component repository on `main`. Preserve existing work and adopted content. Return the exact pushed commit, changed executable behavior or validated test content, tested dependencies, executed checks, skips, remaining requirements and live prerequisites to **IRGS Enviroment**. Update completed, active and remaining work. Documentation and hash-only changes are not a viable runtime delivery.
 
-The coordinator reviews exact commits. When Engine, App and Catalog each have an approved viable update for this cycle, and the App pins exactly those Engine and Catalog commits, the coordinator tests an isolated joined candidate and imports it into `KingSav3ge/IRGS/main`. Until then the existing integrated component set remains selected. Changes requested by the user take precedence.
+The coordinator reviews an actual Engine/App/Catalog update set, checks exact App pins and tests an isolated joined candidate before integrating product source. No previous-cycle approval applies to a new commit. Test with temporary synthetic saves only. The original Historical Grand Archive remains exact, and no private campaign or reference payload is sent to a provider by this work order.
 
-## Coordinator source review
-
-Source commit `33f76542b594b6fe8d49dba71a11359027d59a0d` passed fresh runtime checks (497 run, 496 passed, one historical-save policy skip), six reference-reader tests, atlas checksum verification and the existing Kira canon verifier. This establishes that bounded source scope; multipart reader delivery and App/Catalog compatibility remain pending.
-
-## Additional backlog — AI provider foundation
-
-The user supplied an AI provider strategy. Read the coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_STRATEGY.md), [checked research](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_REVIEW.md) and [16 evaluation cases](https://github.com/KingSav3ge/IRGS/blob/main/provenance/qa/ai_provider_strategy/EVALUATION_CASES.json). Carry AIP-01–AIP-09 in the Engine plan as staged requirements, with implementation and model-quality evidence tracked separately. This extends existing master Part XI; it does not add Directors or authoritative state owners.
-
-Keep DEV-06–DEV-08, supported gameplay and the current Historical Details deliverable in progress. For the first provider increment, implement the Engine-owned disabled-by-default registry, request/result and access contracts, fake transport, response validation and attempt ledger. Then add one opt-in direct adapter, with the exact model/API contract checked against current official documentation. OpenAI is an initial integration candidate, not a measured quality winner. No credential, budget or model entitlement is supplied by this work order. Offline contract/recovery checks can proceed without them.
-
-Require finite dispatch reservations, explicit eligible fallbacks, actor-scoped data, actual/requested route identities and honest unknown usage. Test rejection, replay, timeout, stale state/restore, disallowed fallback and concurrent budget use. Use actual selected Core handlers for effect/recovery claims. General freeform still remains unresolved unless its real rule is implemented and qualified; an LLM may never create an authoritative outcome through narration. Preserve character intention separately from its expression where the task requires it.
-
-Deliver Engine APIs and executed offline checks for App qualification. Live smoke is a separate conditional check requiring server credentials, an authorized workload and a finite configured budget. No paid calls, benchmark victories or provider-policy approval are implied by these requirements. Update the plan and report exact pushed commits as above; this planning addition does not complete the active integration cycle.
+The coordinator can read these chats and publish repository work orders but has no direct chat-start/send tool. This file is the assignment; publication does not claim that your chat was resumed. The QA monitor tests pushed source, not development activity.
