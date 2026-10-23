@@ -1,5 +1,7 @@
 # IRGS Engine work order — solo-runtime-01
 
+Target iteration: **IRGS 3.4.0 — in development**. Use 3.4.0 for this iteration's delivery and release notes. Preserve existing Core compatibility IDs, content/schema versions and historical qualification labels; the integrated release receives its 3.4.0 identity after qualification.
+
 Assigned through IRGS Enviroment on 23 October 2026 following the user's direction to complete the systems needed to run IRGS. Owner: **IRGS Engine**. Push only to `KingSav3ge/IRGS-Engine/main`.
 
 ## Baseline and priority
