@@ -1,6 +1,6 @@
 # AI provider foundation backlog
 
-Status: `solo-runtime-01` now has an executable offline foundation: typed scoped requests, the initial registry/Capability Broker, conservative concurrent reservations, durable attempt/replay accounting and explicit acceptance through the existing local Core handler. See [the version 1 API](SOLO_PROVIDER_API.md). Direct HTTP integration is in progress; no paid inference, model-quality result or connected App qualification is claimed. Historical Details is integrated. Follow the current root work order and the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md).
+Status: IRGS 3.4.0 development under `solo-runtime-01` now has typed scoped requests, the initial registry/Capability Broker, conservative concurrent reservations, durable attempt/replay accounting and explicit acceptance through existing local/Rise Core handlers. See [the version 1 API](SOLO_PROVIDER_API.md), [opt-in direct adapter review](OPENAI_ADAPTER_REVIEW.md) and [pinned Catalog R00 execution](SOLO_CATALOG_VALIDATION.json). HTTP integration is implemented with synthetic tests; no paid inference, model-quality result or connected App qualification is claimed. Historical Details is integrated. Follow the current root work order and the coordinator's [Solo completion plan](https://github.com/KingSav3ge/IRGS/blob/main/SOLO_COMPLETION_PLAN.md).
 
 The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_STRATEGY.md), [checked research](https://github.com/KingSav3ge/IRGS/blob/main/AI_PROVIDER_REVIEW.md) and [16 evaluation requirements](https://github.com/KingSav3ge/IRGS/blob/main/provenance/qa/ai_provider_strategy/EVALUATION_CASES.json) were reviewed. These extend master Part XI; the original AI-01–AI-12 sections retain their identities. Research observations and token-price examples do not activate runtime configuration or establish a model-quality winner.
 
@@ -12,7 +12,7 @@ The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob
 
 ## Required implementation
 
-All nine broader items remain open. AIP-01–AIP-06 and AIP-08–AIP-09 have the bounded offline implementation described in the API: only approved local proposals, static explicit routing and conservative lifetime ceilings. AIP-07 uses the existing local synthetic fixture pending Catalog's R00 fixture; this is integration evidence, not model evaluation. Direct HTTP, connected App/session persistence, policy review, reconciliation and model-quality evidence retain their separate gates.
+All nine broader items remain open. AIP-01–AIP-06 and AIP-08–AIP-09 have the bounded implementation described in the API: approved local/Rise proposals, static explicit routing and conservative lifetime ceilings. AIP-07 now uses Catalog `2e4f389882df0807fc8064c1a0b533aaa3b1bcd3` R00 inputs plus local synthetic cases; this is integration evidence, not model evaluation. The direct adapter's official contract and fake HTTP paths are checked. Connected App/session persistence, policy/price/account review, reconciliation and model-quality evidence retain their separate gates.
 
 | ID | Engine work | Completion evidence |
 | --- | --- | --- |

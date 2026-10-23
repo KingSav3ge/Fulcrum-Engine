@@ -6,6 +6,7 @@ the proposal schema's independent version remains `solo-proposal-1`.
 `solo_provider.py` and `solo_actions.py` implement the first bounded Capability
 Broker beside Core 3.3. Dispatch and every route default to disabled. The only
 task is `propose_local_action`, assigned to the existing Local Director category.
+It supports the existing authored-scene and bounded Rise settlement operations.
 No Director, K-owner, resource ledger or world authority is added.
 
 ## Host integration
@@ -33,11 +34,15 @@ after explicit operator configuration. The API does not choose a budget, rate,
 credential, workload permission or host policy for the operator.
 
 The immutable request binds campaign, branch, restore identity, whole-state
-digest, actor, exact intention, received information, allowed actions/routes,
+digest, actor, exact intention, received information, allowed operation/actions/routes,
 classification/policy, prompt/schema/config versions, deadline and output limits.
 New dispatch has a maximum 300-second horizon. Request/output/context sizes are
 bounded. A route needs explicit qualification, tested schema capability, workload,
 classification, policy/config agreement, versioned price/ceiling and approval.
+`Route.operations` defaults to `execute_player_scene_action`; explicitly include
+`execute_settlement_action` to allow Rise. The operation is fixed by the trusted
+world binding and request, never chosen by provider output. Older local requests
+retain their original implicit-operation fingerprints and receipt identity.
 Missing values stay unavailable. There are no automatic retries or fallbacks.
 The required `scope_reader(request)` returns the host's currently authorized
 `WorldScope`, or `None` for a closed/inaccessible session. It is checked before
@@ -51,6 +56,12 @@ options and allowed action/source IDs. Private world/restore hashes, full saves,
 rules, unreceived evidence, hidden stock/blockers and evaluator oracles are absent.
 Source records are data, never instructions or transfer authorization. The host
 must review rights and policy for the complete scoped input before dispatch.
+The builder retains the latest 32 received records by receipt time and ID and
+discloses the total/limit in `context.received_window`. Earlier records stay in
+Core; no model summary replaces them. This keeps continued requests bounded as
+history grows. It does not promise that every past fact is in each prompt.
+Rise uses published conditional action descriptions and only this actor's
+settlement receipts; private stocks/projects are never scanned for a winning menu.
 
 ## Draft, acceptance and persistence
 
@@ -85,7 +96,8 @@ serialize against every host writer and atomically compare campaign, branch,
 restore identity and state digest, then durably save candidate and receipt, or
 raise. Reuse the host's existing save transaction; do not create another world
 store. A missing callback is unavailable. Candidate execution uses the actual
-`execute_scene_action` handler and its execution-derived dependency certificate.
+`execute_scene_action` or `settlement_runtime.execute` handler and its
+execution-derived dependency certificate.
 Current control, rules, location, commitments and resources retain that handler's
 checks. Failed physical attempts retain its supported unsuccessful outcome and
 authored elapsed time; they never become a fabricated successful transfer.
@@ -94,6 +106,11 @@ The Core event retains the exact accepted intention and structured action.
 Result narration is exclusively the committed handler's actor-legitimate summary
 and observations. Private dependency certificates stay in the technical ledger.
 No generated dialogue, new player decisions or arbitrary event API is exposed.
+Rise results use the same `status/outcome/receipt` envelope, with the primary
+committed receipt as `outcome.summary`, local inspection as `observations` and
+the receipt's `elapsed_total`. They omit a per-action duration if the existing
+receipt does not establish it. Project completion remains separate from the
+completion of a request to advance qualified work.
 
 **Host obligations:** rotate restore identity whenever restoring a save, including
 identical bytes; keep branch identity stable and explicit; invalidate/close old
@@ -108,7 +125,8 @@ save CAS. This is not qualification of another host's persistence implementation
 
 An attempt and its full conservative reservation are committed before transport.
 The ledger stores request identity/versions, requested and reported route,
-provider request ID, start/completion times, validation result, known token reports
+provider request/response IDs, route/config/adapter/price metadata,
+start/completion times, validation result, known token reports
 and a private acceptance certificate. No credentials or provider error bodies are
 stored. Null/empty usage means **unknown**, never zero cost. Reported tokens are
 not a verified bill; actual charges remain unknown. Reservation units are an
@@ -140,9 +158,17 @@ commitments, depleted stock, malformed/unsupported output, denial, timeout,
 cancellation, late reply, disabled/missing policy, fallback denial and finite budget.
 It does not certify general simultaneous-frontier allocation or interrupted phases.
 
-DEV-06–DEV-11 remain open beyond this handler's observed reads/writes, bounded
-atomic action/receipt and host-assisted restore/replay contract. App session/save
-integration, Catalog R00 fixture adoption when delivered, exact joined pair,
-semantic/character human review, calibration and model quality remain separate.
-The direct HTTP adapter and conditional live smoke are subsequent gates; no paid
-call is authorized or claimed by these offline tests.
+`test_solo_rise.py` additionally checks real settlement movement/founding/work,
+reservations, conservation, reload/replay, atomic denial and bounded received
+history. `tools/qualify_solo_provider.py --catalog-root /path/to/IRGS_Catalog`
+qualifies the exact pinned Catalog R00 export/loader against this boundary. See
+[Catalog execution](SOLO_CATALOG_VALIDATION.json) for ten cases, five real commits,
+3,900 elapsed seconds and actor/oracle separation. Fixture actor exports enter
+only the offline harness; they never initialize or overwrite world facts.
+
+The [opt-in direct adapter](OPENAI_ADAPTER_REVIEW.md) is implemented and tested
+with synthetic HTTP. DEV-06–DEV-11 remain open beyond the named observed
+handlers, bounded action/work receipts and host-assisted recovery contract.
+App session/save integration, exact joined pair, semantic/character human review,
+calibration, accounting reconciliation and model quality remain separate.
+Conditional live smoke is pending; no paid call is authorized or claimed.

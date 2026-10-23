@@ -175,7 +175,8 @@ class SoloProviderTests(unittest.TestCase):
             ('malformed_output', lambda reply: replace(reply, body=reply.body[:-1] + ',"events":[]}')),
             ('unsupported_action', lambda reply: replace(reply, body=reply.body.replace('enter-passage', 'combat'))),
             ('intent_changed', lambda reply: replace(reply, body=reply.body.replace('take the passage', 'attack'))),
-            ('unknown_source', lambda reply: replace(reply, body=reply.body.replace('setup:position', 'hidden:oracle'))),
+            ('unknown_source', lambda reply: replace(reply, body=canon({**json.loads(reply.body),
+                                                                     'source_refs': ['hidden:oracle']}))),
             ('route_mismatch', lambda reply: replace(reply, reported_identity_json='{}')),
             ('output_limit', lambda reply: replace(reply, body='x' * 20000)),
             ('provider_denied', lambda reply: replace(reply, error='provider_denied')),
@@ -200,6 +201,16 @@ class SoloProviderTests(unittest.TestCase):
         self.assertEqual(self.broker.dispatch(replace(request, intention='different'), 'offline', fake).code,
                          'request_identity_conflict')
         self.assertEqual(self.broker.dispatch(request, 'unlisted-fallback', fake).code, 'route_denied')
+        self.assertEqual(fake.calls, 1)
+
+    def test_route_mutation_without_version_change_cannot_reuse_a_proposal(self):
+        request = self.request()
+        fake = FakeTransport()
+        self.propose(request, fake)
+        self.registry.routes['offline'] = route(model='replacement-model-with-same-config-version')
+        result = self.broker.dispatch(request, 'offline', fake)
+        self.assertEqual(result.code, 'route_configuration_changed')
+        self.assertIsNone(result.proposal)
         self.assertEqual(fake.calls, 1)
 
     def test_restart_after_dispatch_and_before_result_never_redispatches(self):

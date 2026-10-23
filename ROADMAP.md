@@ -22,14 +22,14 @@ The user prioritizes completion of the runnable Solo systems. `solo-runtime-01` 
 
 ## Work in progress
 
-- **Solo runtime:** the [offline provider/action API](engine/SOLO_PROVIDER_API.md) now implements typed actor scope, disabled dispatch, durable attempts and finite reservations, proposal validation and explicit acceptance through the existing local Core handler. Direct HTTP and connected App flow remain in progress. Historical Details is integrated. DEV-06–DEV-11 remain open beyond the named local action/dependency/recovery cases.
+- **Solo runtime:** the [provider/action API](engine/SOLO_PROVIDER_API.md) now implements typed actor scope, disabled dispatch, durable attempts and finite reservations, proposal validation and explicit acceptance through existing local/Rise Core handlers. The [opt-in direct adapter](engine/OPENAI_ADAPTER_REVIEW.md) and [ten pinned Catalog R00 cases](engine/SOLO_CATALOG_VALIDATION.json) pass offline checks. Connected App flow, conditional live smoke and wider DEV-06–DEV-11 qualification remain open.
 - **DEV-06–DEV-08 — dependency qualification:** collection observation and named rejected-path cases exist. Broader conflict, authorization and cross-engine coverage remain open. See [rejected dependencies](engine/REJECTED_DEPENDENCIES_IMPLEMENTATION.md).
 - **DEV-10, DEV-12–DEV-14 and DEV-18–DEV-20 — processes and campaign continuity:** local actions, bounded settlement work and dated initialization supply partial implementations. General interrupted travel/search, evolving historical authority and full setup regressions remain open.
 - **DEV-24–DEV-26 — evidence and delivery:** the [scoped acceptance ledger](engine/ACCEPTANCE_EXECUTION.md) and component integrity checks exist. Each new Engine capability needs its own behavioral evidence; connected App behavior is qualified in the App workstream.
 
 ## Remaining work
 
-1. **Next: solo-runtime-01 with DEV-06–DEV-11.** Implement the provider/action boundary and qualify collection, failed-decision, simultaneous-frontier and recovery behavior for its actual supported operations. Deliver a reusable App contract and one opt-in direct adapter; keep remaining register gaps explicit.
+1. **Next: solo-runtime-01 integration with DEV-06–DEV-11.** Qualify App consumption of the delivered provider/action API and direct adapter against the exact reviewed Catalog input. Broaden collection, failed-decision, simultaneous-frontier and recovery coverage while keeping general register gaps explicit. Live smoke requires a separately permitted workload, account model and finite budget.
 2. **DEV-09–DEV-11.** Complete general durable phases, supported elapsed processes, interruption, restart and restore fencing through the existing Core owners.
 3. **DEV-12–DEV-17.** Extend movement and observation beyond authored local scenes, then add supported speech, testimony, offers, acceptance and result-grounded character responses.
 4. **DEV-18–DEV-20.** Finish broader opening, eligibility and continuing-world authority checks using actual committed state and verified historical evidence.
@@ -38,7 +38,7 @@ The user prioritizes completion of the runnable Solo systems. `solo-runtime-01` 
 
 ## Delivery sequence and completion evidence
 
-The [AI provider foundation plan](engine/AI_PROVIDER_PLAN.md) carries AIP-01–AIP-09 as broader open requirements with a bounded offline foundation now executable. Next is one opt-in direct adapter after checking its exact official API. Provider quality, policy approval and conditional live checks remain separate evidence gates; the active Solo runtime work order and relevant gameplay/dependency checks take priority.
+The [AI provider foundation plan](engine/AI_PROVIDER_PLAN.md) carries AIP-01–AIP-09 as broader open requirements with a bounded foundation and one opt-in direct adapter now executable. The exact official API and synthetic HTTP behavior are checked. Provider quality, policy approval, connected App/joined qualification and conditional live checks remain separate evidence gates.
 
 ## 1. Resolve one consequential action
 

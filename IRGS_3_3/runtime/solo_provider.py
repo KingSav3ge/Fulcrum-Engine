@@ -24,9 +24,12 @@ SCHEMA_VERSION = 'solo-proposal-1'
 PROMPT_VERSION = 'solo-local-1'
 TASK = 'propose_local_action'
 DIRECTOR = 'Local'
+LOCAL_OPERATION = 'execute_player_scene_action'
+RISE_OPERATION = 'execute_settlement_action'
 TRANSPORT_ERRORS = frozenset({'provider_error', 'provider_denied', 'rate_limited',
     'provider_unavailable', 'transport_timeout', 'transport_error', 'malformed_output',
-    'provider_refusal', 'incomplete_output', 'output_limit', 'credential_unavailable'})
+    'provider_refusal', 'incomplete_output', 'output_limit', 'credential_unavailable',
+    'provider_disabled', 'route_unqualified', 'limit_exceeded', 'invalid_request'})
 
 
 class CapabilityUnavailable(Exception):
@@ -73,6 +76,7 @@ class ActorRequest:
     schema_version: str = SCHEMA_VERSION
     task: str = TASK
     director: str = DIRECTOR
+    operation_id: str = LOCAL_OPERATION
 
     def validate(self):
         require(all(nonempty(x) for x in (self.request_id, self.actor_id,
@@ -81,6 +85,7 @@ class ActorRequest:
         require(nonempty(self.intention, 4096))
         require(self.task == TASK and self.director == DIRECTOR and
                 self.schema_version == SCHEMA_VERSION and self.prompt_version == PROMPT_VERSION)
+        require(self.operation_id in (LOCAL_OPERATION, RISE_OPERATION), 'unsupported_action')
         require(type(self.deadline) in (int, float) and math.isfinite(self.deadline))
         require(type(self.max_output_tokens) is int and 1 <= self.max_output_tokens <= 4096)
         require(type(self.max_output_bytes) is int and 256 <= self.max_output_bytes <= 65536)
@@ -98,7 +103,11 @@ class ActorRequest:
                 'source_refs': list(self.source_refs)}
 
     def fingerprint(self):
-        return digest(asdict(self))
+        data = asdict(self)
+        if self.operation_id == LOCAL_OPERATION:
+            # Preserve the first published API's implicit local-operation binding.
+            data.pop('operation_id')
+        return digest(data)
 
     @classmethod
     def from_json(cls, value):
@@ -131,6 +140,8 @@ class Route:
     approval_ref: str = ''
     lifecycle: str = 'candidate'
     tested_capabilities: tuple[str, ...] = ()
+    adapter_version: str = 'offline-1'
+    operations: tuple[str, ...] = (LOCAL_OPERATION,)
 
     def identity(self):
         return {key: getattr(self, key) for key in
@@ -151,10 +162,11 @@ class SpecialistRegistry:
         require(route.lifecycle == 'qualified' and nonempty(route.approval_ref) and
                 SCHEMA_VERSION in route.tested_capabilities, 'route_unqualified')
         require(all(nonempty(value) for value in route.identity().values()), 'route_unqualified')
+        require(nonempty(route.adapter_version), 'route_unqualified')
         require(route.config_version == request.config_version and
                 route.policy_ref == request.policy_ref and nonempty(route.price_revision), 'policy_denied')
         require(request.classification in route.classifications and
-                request.task in route.workloads, 'policy_denied')
+                request.task in route.workloads and request.operation_id in route.operations, 'policy_denied')
         require(type(route.reservation_units) is int and route.reservation_units > 0,
                 'budget_unconfigured')
         require(len(canon(request.model_input()).encode()) <= route.max_input_bytes and
@@ -169,6 +181,7 @@ class TransportReply:
     usage_json: str = '{}'
     provider_request_id: str | None = None
     error: str | None = None
+    provider_response_id: str | None = None
 
 
 class ProposalTransport(Protocol):
@@ -243,13 +256,19 @@ class AttemptLedger:
                 type(max_inflight) is int and max_inflight > 0, 'invalid_configuration')
         self.path = str(Path(path).resolve())
         with self.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
             db.execute('CREATE TABLE IF NOT EXISTS limits (id INTEGER PRIMARY KEY, budget INTEGER, inflight INTEGER)')
             db.execute('CREATE TABLE IF NOT EXISTS attempts (id TEXT PRIMARY KEY, fingerprint TEXT NOT NULL,'
                 ' request TEXT NOT NULL, route TEXT NOT NULL, reserved INTEGER NOT NULL,'
                 ' status TEXT NOT NULL, finished INTEGER NOT NULL DEFAULT 0, result TEXT,'
                 ' requested_identity TEXT NOT NULL, reported_identity TEXT, usage TEXT,'
                 ' provider_request_id TEXT, started REAL NOT NULL, completed REAL, accepted TEXT,'
-                ' dependencies TEXT)')
+                ' dependencies TEXT, route_config TEXT, provider_response_id TEXT)')
+            # Compatible addition to the published offline technical ledger.
+            columns = {row[1] for row in db.execute('PRAGMA table_info(attempts)')}
+            for name in ('route_config', 'provider_response_id'):
+                if name not in columns:
+                    db.execute('ALTER TABLE attempts ADD COLUMN ' + name + ' TEXT')
             db.execute('INSERT OR IGNORE INTO limits VALUES (1, ?, ?)', (budget_units, max_inflight))
             require(db.execute('SELECT budget,inflight FROM limits WHERE id=1').fetchone() ==
                     (budget_units, max_inflight), 'budget_configuration_changed')
@@ -292,9 +311,9 @@ class AttemptLedger:
             require(reserved + route.reservation_units <= budget, 'budget_exhausted')
             require(active < inflight, 'concurrency_exhausted')
             db.execute('INSERT INTO attempts (id,fingerprint,request,route,reserved,status,'
-                'requested_identity,started) VALUES (?,?,?,?,?,?,?,?)',
+                'requested_identity,started,route_config) VALUES (?,?,?,?,?,?,?,?,?)',
                 (request.request_id, request.fingerprint(), canon(asdict(request)), route.route_id,
-                 route.reservation_units, 'processing', canon(route.identity()), now))
+                 route.reservation_units, 'processing', canon(route.identity()), now, canon(asdict(route))))
             return True
 
     def finish(self, result, now):
@@ -318,9 +337,9 @@ class AttemptLedger:
         # This may run after cancellation/deadline. It records accounting only;
         # a late reply never creates/replaces an accepted or available proposal.
         with self.connection() as db:
-            db.execute('UPDATE attempts SET finished=1,reported_identity=?,usage=?,provider_request_id=?'
+            db.execute('UPDATE attempts SET finished=1,reported_identity=?,usage=?,provider_request_id=?,provider_response_id=?'
                 ' WHERE id=?', (reply.reported_identity_json, reply.usage_json,
-                               reply.provider_request_id, request_id))
+                               reply.provider_request_id, reply.provider_response_id, request_id))
 
 
 class CapabilityBroker:
@@ -348,7 +367,12 @@ class CapabilityBroker:
                 require(row['route'] == route_id, 'route_denied')
                 if self.ledger.result(request.request_id).status == 'proposal_ready':
                     require(self.enabled, 'provider_disabled')
-                    self.registry.eligible(request, route_id)
+                    current_route = self.registry.eligible(request, route_id)
+                    if row['route_config'] is not None:
+                        require(row['route_config'] == canon(asdict(current_route)), 'route_configuration_changed')
+                    else:
+                        require(row['requested_identity'] == canon(current_route.identity()),
+                                'route_configuration_changed')
                     self._fresh(request)
                 return self.ledger.result(request.request_id)
             require(self.enabled, 'provider_disabled')
@@ -379,6 +403,8 @@ class CapabilityBroker:
                         all(type(v) is int and v >= 0 for v in usage.values()), 'malformed_output')
                     require(reply.provider_request_id is None or nonempty(reply.provider_request_id),
                             'malformed_output')
+                    require(reply.provider_response_id is None or nonempty(reply.provider_response_id),
+                            'malformed_output')
                 except Exception:
                     reply = TransportReply(error='transport_error')
                 try:
@@ -401,7 +427,7 @@ class CapabilityBroker:
                     reply = replies.get(timeout=min(0.01, remaining))
                     require(not cancelled(), 'cancelled')
                     require(self.clock() < request.deadline, 'deadline_exceeded')
-                    self.registry.eligible(request, route_id)
+                    require(self.registry.eligible(request, route_id) == route, 'route_configuration_changed')
                     self._fresh(request)
                     proposal = validate_proposal(request, reply, route)
                     return self.ledger.finish(ValidatedResult(request.request_id, 'proposal_ready',

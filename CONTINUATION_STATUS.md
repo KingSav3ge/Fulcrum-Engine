@@ -2,7 +2,17 @@
 
 ## Active priority — 23 October 2026
 
-The user prioritizes completion of the systems needed for a continuing Solo campaign. `solo-runtime-01` now has the executable offline boundary described below; direct HTTP and connected App qualification remain active. Historical Details is integrated at Engine `723627e629231b5e90f38b9d52b65c9a3967b92a`, App `d8dc35ed653e516ccd0cacf91ee9693258491032` and Catalog `3e898acb2179f18a41d7967817bedf429df29d3f`; no archive or historical integration input is missing. Follow [the current work order](COORDINATOR_WORK_ORDER.md). Entries below preserve their original dates, source identities and then-pending gates.
+The user prioritizes completion of the systems needed for a continuing Solo campaign. `solo-runtime-01` now has the executable offline boundary, opt-in direct adapter and pinned R00 execution described below; connected App/joined qualification remains active. Historical Details is integrated at Engine `723627e629231b5e90f38b9d52b65c9a3967b92a`, App `d8dc35ed653e516ccd0cacf91ee9693258491032` and Catalog `3e898acb2179f18a41d7967817bedf429df29d3f`; no archive or historical integration input is missing. Follow [the current work order](COORDINATOR_WORK_ORDER.md). Entries below preserve their original dates, source identities and then-pending gates.
+
+## Solo direct adapter and Catalog R00 — 2026-10-23
+
+**Completed for IRGS 3.4.0 development:** published the passing offline API early at `500ab4286aed5354719a78006195922316b41023`, then implemented [the opt-in direct OpenAI adapter](engine/OPENAI_ADAPTER_REVIEW.md) after checking current official API/model/data/error contracts. Default dispatch remains disabled. Typed requests now explicitly bind the existing local or Rise operation. Technical traces retain complete route/adapter/price metadata and distinct provider request/response IDs. The received-record window remains bounded during continued play.
+
+**Actual dependencies/effects:** Catalog `2e4f389882df0807fc8064c1a0b533aaa3b1bcd3`, fixture `irgs-solo-r00-eval-v1` version 1.0.0, hash-checked loader/manifest/actor exports and physically separate evaluator data. Ten [Catalog cases](engine/SOLO_CATALOG_VALIDATION.json) pass with zero skips through the real `execute_settlement_action` handler. Five accepted actions persist/reload, reach 3,900 elapsed seconds, consume three founder timber plus one NPC repair timber and produce two founder shelter places. Denied, unsupported, stale and changed-replay requests cause no effects; duplicate lookup returns the original receipt. Evaluator-only facts remain outside model inputs. See [the complete delivery record](engine/SOLO_PROVIDER_VALIDATION.json) for current regression counts.
+
+**Verification:** 133 focused regressions pass, including 43 new provider/HTTP/Rise cases. The full runtime suite runs 570 tests: 569 pass and the existing historical private-save fixture is skipped. Engine integrity, Kira canon and delivery documentation links pass.
+
+**Remaining:** App authentication/session cancellation, its existing save CAS and restore-identity integration, exact reviewed component pins and clean-extract joined qualification. This delivery uses temporary synthetic host persistence and fake HTTP, with zero live inference calls. A server credential, account-available exact model, permitted input/workload, current reviewed policy/price ceiling and finite explicit budget are required for conditional live smoke. Semantic/character review, measured model quality, automatic billing reconciliation, broader routing and general DEV-06–DEV-11 completion remain open.
 
 ## Solo offline foundation — 2026-10-23
 
