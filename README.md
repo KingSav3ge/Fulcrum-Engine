@@ -1,4 +1,4 @@
-# IRGS Engine
+# IRGS Engine — 3.4.0 development
 
 IRGS develops a persistent world simulation connecting individual action, institutions, resources and history. Its design centers on one shared world, actions constrained by actual authority and resources, and information received by the acting character or institution. See the [Engine model](engine/ENGINE_MODEL.md) for these principles and their current implementation limits.
 
