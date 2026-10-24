@@ -170,7 +170,11 @@ def qualify(catalog_root):
             'target_iteration': 'IRGS 3.4.0 — in development', 'catalog_commit': CATALOG_COMMIT,
             'engine_sources_sha256': {name: hashlib.sha256((ROOT/'IRGS_3_3/runtime'/name).read_bytes()).hexdigest()
                 for name in ('core_world.py', 'settlement_runtime.py', 'scene_actions.py',
-                             'solo_provider.py', 'solo_actions.py', 'r9_runtime.py', 'r8_dependencies.py')},
+                             'solo_provider.py', 'solo_actions.py', 'r9_runtime.py', 'r8_dependencies.py',
+                             'offline_responses.py', 'routine_format.py', 'process_runtime.py',
+                             'communication_runtime.py')},
+            'engine_response_data_sha256': {name: hashlib.sha256((ROOT/'IRGS_3_3/data/responses'/name).read_bytes()).hexdigest()
+                for name in ('engine_routine_v1.json', 'PROVENANCE.json')},
             'manifest_sha256': MANIFEST_SHA256, 'loader_sha256': LOADER_SHA256,
             'fixture': validated, 'operation': RISE_OPERATION, 'cases': records,
             'successful_actions': host.writes, 'elapsed_seconds': world.s['elapsed_time']['seconds'],

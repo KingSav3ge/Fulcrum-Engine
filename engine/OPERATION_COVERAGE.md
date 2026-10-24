@@ -1,5 +1,7 @@
 # Operation coverage register — DEV-05
 
+2026-10-24 extension: Core now exposes `continue_player_process` and `execute_local_communication`, with named actual success/rejection/frontier evidence in [ENGINE_TASKS_VALIDATION.json](ENGINE_TASKS_VALIDATION.json). The counts/register below retain their prior captured input identity; they do not include these new operations or certify the new source. The coordinator must recapture the joined inventory for a reviewed component set. This component's selected new handlers are verified separately and require no App checkout.
+
 This is a current-source inventory and execution record, not blanket certification. Run `python -B tools/build_operation_register.py --check engine/qualification/operation_register.json` to check freshness. That check does not rerun the tests.
 
 85 spellings across 170 backend/operation pairs. 87 pairs have observed successful cases; 83 still lack one. 33 pairs have named rejected-path evidence.
