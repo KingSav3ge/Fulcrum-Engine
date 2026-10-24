@@ -279,11 +279,11 @@ class SoloProviderTests(unittest.TestCase):
 
     def test_pre_dispatch_cancel_deadline_or_fallback_has_no_call(self):
         fake = FakeTransport()
-        self.assertEqual(self.broker.dispatch(self.request(), 'offline', fake, cancelled=lambda: True).code,
+        self.assertEqual(self.broker.dispatch(self.request('pre-cancel'), 'offline', fake, cancelled=lambda: True).code,
                          'cancelled')
-        self.assertEqual(self.broker.dispatch(self.request(deadline=time.time() - 1), 'offline', fake).code,
+        self.assertEqual(self.broker.dispatch(self.request('pre-deadline', deadline=time.time() - 1), 'offline', fake).code,
                          'deadline_exceeded')
-        self.assertEqual(self.broker.dispatch(self.request(), 'different-route', fake).code, 'route_denied')
+        self.assertEqual(self.broker.dispatch(self.request('pre-route'), 'different-route', fake).code, 'route_denied')
         self.assertEqual(fake.calls, 0)
 
     def test_explicit_acceptance_keeps_original_semantics_and_sources(self):

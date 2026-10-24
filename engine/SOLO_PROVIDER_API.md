@@ -144,6 +144,33 @@ must reconcile uncertainty before deliberately provisioning a new budget/attempt
 Use a fresh explicit request ID for a new authorized attempt; never auto-generate
 one as a retry. Reopening with different budget limits is rejected.
 
+### Cancellation and dispatch admission — 24 October 2026
+
+The trusted host can call `ledger.cancel(request_id)` before request registration.
+That cancellation is durable across restart and blocks subsequent dispatch of the
+same ID without reserving budget. A true cancellation callback before registration
+records the same decision. Mint globally unique IDs for new intentions; retain
+the original ID/payload for recovery. A rejected duplicate using another route
+cannot terminate the valid attempt already in flight.
+
+After reservation, the worker rechecks route eligibility/configuration and current
+authorized scope. Dispatch admission and cancellation serialize in the technical
+database. Cancellation or expiry observed before admission prevents transport.
+After admission, a call may already incur a charge: cancellation fences its result
+and retains accounting, without promising an HTTP abort or refund.
+
+Technical `transport_state` is `not_started`, `admitted` or legacy `unknown`.
+`dispatch_started` timestamps admission, not a confirmed provider receipt or bill.
+Known unstarted workers release their in-flight slot when suppressed, retaining
+the reservation and unknown usage. Legacy unknown attempts keep their uncertainty,
+reservation and recovery hold; migration cannot classify them as unsent or admit
+them again. No automatic retry is introduced.
+
+Cached drafts recheck deadline and cancellation before presentation. Unavailable
+broker results omit the draft. The ledger privately retains the original proposal
+for existing Core receipt recovery, including a lost acknowledgment; expiry or
+cancellation cannot rewrite or repeat a committed action.
+
 The database retains exact submitted text and received context for durable
 validation. Protect it like the host's private campaign storage; never include it
 in source, diagnostics exports, model context for another actor, or browser status.
@@ -157,6 +184,8 @@ acceptance, host CAS failure, stale state/restore, revoked control, conflicting
 commitments, depleted stock, malformed/unsupported output, denial, timeout,
 cancellation, late reply, disabled/missing policy, fallback denial and finite budget.
 It does not certify general simultaneous-frontier allocation or interrupted phases.
+`test_solo_lifecycle.py` adds 13 deterministic registration/admission/cancellation,
+duplicate-route, cached expiry and legacy-upgrade checks. See [lifecycle evidence](SOLO_LIFECYCLE_VALIDATION.json).
 
 `test_solo_rise.py` additionally checks real settlement movement/founding/work,
 reservations, conservation, reload/replay, atomic denial and bounded received

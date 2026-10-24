@@ -2,7 +2,7 @@
 
 Target iteration: **IRGS 3.4.0 — in development**. See the active Solo runtime work order and completion plan. Previously qualified versions and evidence retain their recorded identities.
 
-Maintained in **KingSav3ge/IRGS-Engine**, updated 2026-10-23. The stable DEV IDs originated in **3.3.3 Unified Development D1**. Selected executable Core: **3.3**. Publish Engine increments to this repository's `main` branch. This list defines completion criteria; it does not adopt new mechanics or certify unfinished capabilities.
+Maintained in **KingSav3ge/IRGS-Engine**, updated 2026-10-24. The stable DEV IDs originated in **3.3.3 Unified Development D1**. Selected executable Core: **3.3**. Publish Engine increments to this repository's `main` branch. This list defines completion criteria; it does not adopt new mechanics or certify unfinished capabilities.
 
 The immediate target is a complete Solo action cycle: a player makes a supported decision, the engine commits its legitimate consequences, the player sees the outcome, and play can continue after reload. Complete that cycle before widening the historical catalogue or adding interface sections.
 
@@ -122,6 +122,8 @@ Read [the Engine provider plan](engine/AI_PROVIDER_PLAN.md) for all nine open re
 The 2026-10-23 `solo-runtime-01` increment now implements that bounded offline foundation. See [the version 1 API](engine/SOLO_PROVIDER_API.md) and [executed evidence](engine/SOLO_PROVIDER_VALIDATION.json). Existing local Core handlers provide actual effects, observed dependencies and durable receipts; temporary host CAS tests cover successive actions, restart/replay and conflict. This advances named DEV-06–DEV-11 paths without completing general frontier allocation, multi-phase processes or another host's persistence/restore integration. Direct HTTP and App integration remain active; no live model evaluation is claimed. The paragraph above records the original planning-only state.
 
 Its next delivered slice adds the opt-in direct HTTP adapter, explicit local/Rise operation eligibility and bounded received history, with synthetic HTTP failures/accounting and actual settlement work/replay checks. All ten cases from Catalog `2e4f389882df0807fc8064c1a0b533aaa3b1bcd3` pass through the real provider/Core boundary with zero skips; five actions save/reload and conserve shared materials. See [adapter review](engine/OPENAI_ADAPTER_REVIEW.md) and [Catalog execution](engine/SOLO_CATALOG_VALIDATION.json). Connected App/host and exact joined qualification, conditional live smoke, semantic review and broader DEV/AIP work remain open.
+
+The 2026-10-24 continuation fixes three reproduced Solo lifecycle races and qualifies 13 additional cases: early cancellation survives registration/restart, invalid duplicate routes cannot terminate another caller's valid attempt, and cached drafts respect expiry/cancellation. Dispatch admission rechecks current route/scope; legacy admission uncertainty is retained. See [executed lifecycle evidence](engine/SOLO_LIFECYCLE_VALIDATION.json). DEV-11 and the broader AIP requirements remain open beyond these named paths.
 
 ## Kira atlas reference delivery
 

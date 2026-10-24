@@ -14,6 +14,8 @@ The coordinator's [master-spec addendum](https://github.com/KingSav3ge/IRGS/blob
 
 All nine broader items remain open. AIP-01–AIP-06 and AIP-08–AIP-09 have the bounded implementation described in the API: approved local/Rise proposals, static explicit routing and conservative lifetime ceilings. AIP-07 now uses Catalog `2e4f389882df0807fc8064c1a0b533aaa3b1bcd3` R00 inputs plus local synthetic cases; this is integration evidence, not model evaluation. The direct adapter's official contract and fake HTTP paths are checked. Connected App/session persistence, policy/price/account review, reconciliation and model-quality evidence retain their separate gates.
 
+The [24 October lifecycle increment](SOLO_LIFECYCLE_VALIDATION.json) qualifies early cancellation, serialized admission, independent rejected duplicates and cached expiry/cancellation. These strengthen AIP-02/AIP-04–AIP-06/AIP-08 without enabling dispatch by default, refunding uncertainty or claiming App/live-model qualification.
+
 | ID | Engine work | Completion evidence |
 | --- | --- | --- |
 | AIP-01 | Disabled-by-default provider/model registry: developer, gateway, actual host, exact API ID, known/unknown version, claimed/tested capabilities, limits, lifecycle, workload approvals, policies and versioned rates. | Missing configuration stays unavailable; candidate entries do not authorize dispatch. |

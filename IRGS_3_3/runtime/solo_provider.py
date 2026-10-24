@@ -214,6 +214,14 @@ class ValidatedResult:
         return cls(**data)
 
 
+def _present(result):
+    # Cancellation retains the original proposal privately for lost-ack receipt
+    # recovery. An unavailable broker response must not present that draft.
+    if result.status != 'proposal_ready' and result.proposal is not None:
+        return ValidatedResult(result.request_id, result.status, result.code)
+    return result
+
+
 def validate_proposal(request, reply, route):
     require(reply.error is None, reply.error if reply.error in TRANSPORT_ERRORS else 'provider_error')
     require(json.loads(reply.reported_identity_json) == route.identity(), 'route_mismatch')
@@ -258,17 +266,24 @@ class AttemptLedger:
         with self.connection() as db:
             db.execute('BEGIN IMMEDIATE')
             db.execute('CREATE TABLE IF NOT EXISTS limits (id INTEGER PRIMARY KEY, budget INTEGER, inflight INTEGER)')
+            db.execute('CREATE TABLE IF NOT EXISTS cancellations (id TEXT PRIMARY KEY)')
             db.execute('CREATE TABLE IF NOT EXISTS attempts (id TEXT PRIMARY KEY, fingerprint TEXT NOT NULL,'
                 ' request TEXT NOT NULL, route TEXT NOT NULL, reserved INTEGER NOT NULL,'
                 ' status TEXT NOT NULL, finished INTEGER NOT NULL DEFAULT 0, result TEXT,'
                 ' requested_identity TEXT NOT NULL, reported_identity TEXT, usage TEXT,'
                 ' provider_request_id TEXT, started REAL NOT NULL, completed REAL, accepted TEXT,'
-                ' dependencies TEXT, route_config TEXT, provider_response_id TEXT)')
+                ' dependencies TEXT, route_config TEXT, provider_response_id TEXT, dispatch_started REAL,'
+                " transport_state TEXT NOT NULL DEFAULT 'unknown')")
             # Compatible addition to the published offline technical ledger.
             columns = {row[1] for row in db.execute('PRAGMA table_info(attempts)')}
-            for name in ('route_config', 'provider_response_id'):
+            for name in ('route_config', 'provider_response_id', 'dispatch_started'):
                 if name not in columns:
-                    db.execute('ALTER TABLE attempts ADD COLUMN ' + name + ' TEXT')
+                    db.execute('ALTER TABLE attempts ADD COLUMN ' + name +
+                               (' REAL' if name == 'dispatch_started' else ' TEXT'))
+            if 'transport_state' not in columns:
+                # A legacy attempt may already have incurred a charge. Missing
+                # admission telemetry never establishes that it was not sent.
+                db.execute("ALTER TABLE attempts ADD COLUMN transport_state TEXT NOT NULL DEFAULT 'unknown'")
             db.execute('INSERT OR IGNORE INTO limits VALUES (1, ?, ?)', (budget_units, max_inflight))
             require(db.execute('SELECT budget,inflight FROM limits WHERE id=1').fetchone() ==
                     (budget_units, max_inflight), 'budget_configuration_changed')
@@ -292,10 +307,16 @@ class AttemptLedger:
     def result(self, request_id):
         row = self.lookup(request_id)
         if row is None:
+            if self.is_cancelled(request_id):
+                return ValidatedResult(request_id, 'unavailable', 'cancelled')
             return ValidatedResult(request_id, 'unavailable', 'unknown_request')
         if row['result']:
             return ValidatedResult.from_json(row['result'])
         return ValidatedResult(request_id, 'unavailable', 'in_progress_or_in_doubt')
+
+    def is_cancelled(self, request_id):
+        with self.connection() as db:
+            return db.execute('SELECT 1 FROM cancellations WHERE id=?', (request_id,)).fetchone() is not None
 
     def claim(self, request, route, now):
         with self.connection() as db:
@@ -305,15 +326,18 @@ class AttemptLedger:
                 require(row[0] == request.fingerprint(), 'request_identity_conflict')
                 require(row[1] == route.route_id, 'route_denied')
                 return False
+            require(db.execute('SELECT 1 FROM cancellations WHERE id=?',
+                               (request.request_id,)).fetchone() is None, 'cancelled')
             budget, inflight = db.execute('SELECT budget,inflight FROM limits WHERE id=1').fetchone()
             reserved, active = db.execute('SELECT COALESCE(SUM(reserved),0),'
                 ' COALESCE(SUM(CASE WHEN finished=0 THEN 1 ELSE 0 END),0) FROM attempts').fetchone()
             require(reserved + route.reservation_units <= budget, 'budget_exhausted')
             require(active < inflight, 'concurrency_exhausted')
             db.execute('INSERT INTO attempts (id,fingerprint,request,route,reserved,status,'
-                'requested_identity,started,route_config) VALUES (?,?,?,?,?,?,?,?,?)',
+                'requested_identity,started,route_config,transport_state) VALUES (?,?,?,?,?,?,?,?,?,?)',
                 (request.request_id, request.fingerprint(), canon(asdict(request)), route.route_id,
-                 route.reservation_units, 'processing', canon(route.identity()), now, canon(asdict(route))))
+                 route.reservation_units, 'processing', canon(route.identity()), now, canon(asdict(route)),
+                 'not_started'))
             return True
 
     def finish(self, result, now):
@@ -323,15 +347,55 @@ class AttemptLedger:
         return self.result(result.request_id)
 
     def cancel(self, request_id):
+        require(nonempty(request_id))
         with self.connection() as db:
             db.execute('BEGIN IMMEDIATE')
-            old = db.execute('SELECT result FROM attempts WHERE id=?', (request_id,)).fetchone()
+            old = db.execute('SELECT result,status,accepted FROM attempts WHERE id=?', (request_id,)).fetchone()
+            if old is None or (old[2] is None and old[1] in ('processing', 'proposal_ready')):
+                # A host may cancel while its dispatcher is still preparing the
+                # request. Keep that decision across registration and restart.
+                db.execute('INSERT OR IGNORE INTO cancellations VALUES (?)', (request_id,))
             proposal = ValidatedResult.from_json(old[0]).proposal if old and old[0] else None
             result = ValidatedResult(request_id, 'unavailable', 'cancelled', proposal)
             db.execute('UPDATE attempts SET status=?,result=? WHERE id=? AND accepted IS NULL'
                 ' AND status IN (?,?)', ('unavailable', canon(asdict(result)), request_id,
                                         'processing', 'proposal_ready'))
         return self.result(request_id)
+
+    def begin_transport(self, request_id, deadline, clock):
+        """Serialize dispatch admission against cancellation. Never admit twice."""
+        with self.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
+            row = db.execute('SELECT status,transport_state FROM attempts WHERE id=?',
+                             (request_id,)).fetchone()
+            if row is None or row[1] != 'not_started':
+                return False
+            if row[0] != 'processing':
+                db.execute('UPDATE attempts SET finished=1 WHERE id=?', (request_id,))
+                return False
+            now = clock()
+            if now >= deadline:
+                result = ValidatedResult(request_id, 'unavailable', 'deadline_exceeded')
+                db.execute('UPDATE attempts SET finished=1,status=?,result=?,completed=? WHERE id=?',
+                           (result.status, canon(asdict(result)), now, request_id))
+                return False
+            db.execute("UPDATE attempts SET dispatch_started=?,transport_state='admitted' WHERE id=?",
+                       (now, request_id))
+            return True
+
+    def finish_without_transport(self, result, now):
+        """Release the in-flight slot only when this attempt never entered transport.
+
+        Retain its conservative reservation. This does not assert zero usage or
+        refund a possible charge, and cannot alter a dispatched attempt.
+        """
+        with self.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
+            db.execute('UPDATE attempts SET status=?,result=?,completed=? WHERE id=?'
+                " AND transport_state='not_started' AND status=?",
+                (result.status, canon(asdict(result)), now, result.request_id, 'processing'))
+            db.execute("UPDATE attempts SET finished=1 WHERE id=? AND transport_state='not_started'",
+                       (result.request_id,))
 
     def record_transport(self, request_id, reply):
         # This may run after cancellation/deadline. It records accounting only;
@@ -357,6 +421,7 @@ class CapabilityBroker:
 
     def dispatch(self, request: ActorRequest, route_id: str,
                  transport: ProposalTransport, *, cancelled: Callable[[], bool] = lambda: False):
+        claimed = False
         try:
             request.validate()
             # Lookup precedes route/config revalidation: no retry after a crash,
@@ -366,6 +431,9 @@ class CapabilityBroker:
                 require(row['fingerprint'] == request.fingerprint(), 'request_identity_conflict')
                 require(row['route'] == route_id, 'route_denied')
                 if self.ledger.result(request.request_id).status == 'proposal_ready':
+                    if cancelled():
+                        return _present(self.ledger.cancel(request.request_id))
+                    require(self.clock() < request.deadline, 'deadline_exceeded')
                     require(self.enabled, 'provider_disabled')
                     current_route = self.registry.eligible(request, route_id)
                     if row['route_config'] is not None:
@@ -374,19 +442,31 @@ class CapabilityBroker:
                         require(row['requested_identity'] == canon(current_route.identity()),
                                 'route_configuration_changed')
                     self._fresh(request)
-                return self.ledger.result(request.request_id)
+                return _present(self.ledger.result(request.request_id))
+            require(not self.ledger.is_cancelled(request.request_id), 'cancelled')
             require(self.enabled, 'provider_disabled')
-            require(not cancelled(), 'cancelled')
+            if cancelled():
+                return _present(self.ledger.cancel(request.request_id))
             require(self.clock() < request.deadline, 'deadline_exceeded')
             require(request.deadline - self.clock() <= 300, 'limit_exceeded')
             self._fresh(request)
             route = self.registry.eligible(request, route_id)
             if not self.ledger.claim(request, route, self.clock()):
-                return self.ledger.result(request.request_id)
+                return _present(self.ledger.result(request.request_id))
+            claimed = True
             replies = queue.Queue(maxsize=1)
 
             def run():
+                started = False
                 try:
+                    if cancelled():
+                        self.ledger.cancel(request.request_id)
+                    require(self.registry.eligible(request, route_id) == route, 'route_configuration_changed')
+                    self._fresh(request)
+                    started = self.ledger.begin_transport(request.request_id, request.deadline, self.clock)
+                    if not started:
+                        replies.put(TransportReply(error='transport_error'))
+                        return
                     reply = transport(request.model_input(), route,
                         timeout=max(0.001, request.deadline - self.clock()),
                         max_output_tokens=request.max_output_tokens)
@@ -405,33 +485,46 @@ class CapabilityBroker:
                             'malformed_output')
                     require(reply.provider_response_id is None or nonempty(reply.provider_response_id),
                             'malformed_output')
+                except CapabilityUnavailable as error:
+                    safe_code = error.code if not started and error.code in {
+                        'scope_unconfigured', 'scope_unavailable', 'stale_scope_or_state', 'provider_disabled',
+                        'route_unqualified', 'policy_denied', 'limit_exceeded', 'route_configuration_changed',
+                        'route_denied', 'budget_unconfigured'} else 'transport_error'
+                    reply = TransportReply(error=safe_code)
                 except Exception:
                     reply = TransportReply(error='transport_error')
                 try:
-                    self.ledger.record_transport(request.request_id, reply)
+                    if started:
+                        self.ledger.record_transport(request.request_id, reply)
+                    else:
+                        self.ledger.finish_without_transport(
+                            ValidatedResult(request.request_id, 'unavailable', reply.error), self.clock())
                 finally:
                     replies.put(reply)
 
             threading.Thread(target=run, daemon=True).start()
             while True:
                 if cancelled():
-                    return self.ledger.cancel(request.request_id)
+                    return _present(self.ledger.cancel(request.request_id))
                 current = self.ledger.result(request.request_id)
                 if current.code != 'in_progress_or_in_doubt':
-                    return current
+                    return _present(current)
                 remaining = request.deadline - self.clock()
                 if remaining <= 0:
-                    return self.ledger.finish(ValidatedResult(request.request_id, 'unavailable',
-                                                             'deadline_exceeded'), self.clock())
+                    return _present(self.ledger.finish(ValidatedResult(request.request_id, 'unavailable',
+                                                             'deadline_exceeded'), self.clock()))
                 try:
                     reply = replies.get(timeout=min(0.01, remaining))
+                    current = self.ledger.result(request.request_id)
+                    if current.code != 'in_progress_or_in_doubt':
+                        return _present(current)
                     require(not cancelled(), 'cancelled')
                     require(self.clock() < request.deadline, 'deadline_exceeded')
                     require(self.registry.eligible(request, route_id) == route, 'route_configuration_changed')
                     self._fresh(request)
                     proposal = validate_proposal(request, reply, route)
-                    return self.ledger.finish(ValidatedResult(request.request_id, 'proposal_ready',
-                                                             proposal=proposal), self.clock())
+                    return _present(self.ledger.finish(ValidatedResult(request.request_id, 'proposal_ready',
+                                                             proposal=proposal), self.clock()))
                 except queue.Empty:
                     continue
         except CapabilityUnavailable as error:
@@ -439,6 +532,8 @@ class CapabilityBroker:
         except (ValueError, TypeError, KeyError):
             result = ValidatedResult(request.request_id, 'unavailable', 'malformed_output')
         row = self.ledger.lookup(request.request_id)
-        if row and row['fingerprint'] == request.fingerprint() and row['status'] == 'processing':
-            return self.ledger.finish(result, self.clock())
+        if claimed and row and row['fingerprint'] == request.fingerprint():
+            if row['status'] == 'processing':
+                return _present(self.ledger.finish(result, self.clock()))
+            return _present(self.ledger.result(request.request_id))
         return result

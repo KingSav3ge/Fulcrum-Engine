@@ -2,7 +2,7 @@
 
 Target iteration: **IRGS 3.4.0 — in development**. See the active Solo runtime work order and completion plan. Previously qualified versions and evidence retain their recorded identities.
 
-Updated 2026-10-23. This plan belongs to **KingSav3ge/IRGS-Engine**; Engine increments are published to this repository's `main` branch. The selected executable foundation is Core 3.3. C2 is applied engine text with 121 required acceptance cases; its general action resolver and complete autonomous institution cycle remain unfinished. Existing bounded handlers and synthetic institutional execution retain their actual scope.
+Updated 2026-10-24. This plan belongs to **KingSav3ge/IRGS-Engine**; Engine increments are published to this repository's `main` branch. The selected executable foundation is Core 3.3. C2 is applied engine text with 121 required acceptance cases; its general action resolver and complete autonomous institution cycle remain unfinished. Existing bounded handlers and synthetic institutional execution retain their actual scope.
 
 Use [DEVELOPMENT_LIST.md](DEVELOPMENT_LIST.md) for stable task IDs, dependencies and completion criteria, and [CONTINUATION_STATUS.md](CONTINUATION_STATUS.md) for delivered increments and verification limits. The statuses below describe implemented scope; historical App/HTTP evidence is not fresh qualification of this standalone Engine checkout.
 
@@ -23,6 +23,7 @@ The user prioritizes completion of the runnable Solo systems. `solo-runtime-01` 
 ## Work in progress
 
 - **Solo runtime:** the [provider/action API](engine/SOLO_PROVIDER_API.md) now implements typed actor scope, disabled dispatch, durable attempts and finite reservations, proposal validation and explicit acceptance through existing local/Rise Core handlers. The [opt-in direct adapter](engine/OPENAI_ADAPTER_REVIEW.md) and [ten pinned Catalog R00 cases](engine/SOLO_CATALOG_VALIDATION.json) pass offline checks. Connected App flow, conditional live smoke and wider DEV-06–DEV-11 qualification remain open.
+- **Solo lifecycle:** [registration/admission race fixes](engine/SOLO_LIFECYCLE_VALIDATION.json) preserve early cancellation across restart, keep invalid duplicate routes from terminating valid attempts, and hide expired/cancelled drafts. Legacy uncertain attempts stay held. App host/session integration and wider DEV-11 completion remain open.
 - **DEV-06–DEV-08 — dependency qualification:** collection observation and named rejected-path cases exist. Broader conflict, authorization and cross-engine coverage remain open. See [rejected dependencies](engine/REJECTED_DEPENDENCIES_IMPLEMENTATION.md).
 - **DEV-10, DEV-12–DEV-14 and DEV-18–DEV-20 — processes and campaign continuity:** local actions, bounded settlement work and dated initialization supply partial implementations. General interrupted travel/search, evolving historical authority and full setup regressions remain open.
 - **DEV-24–DEV-26 — evidence and delivery:** the [scoped acceptance ledger](engine/ACCEPTANCE_EXECUTION.md) and component integrity checks exist. Each new Engine capability needs its own behavioral evidence; connected App behavior is qualified in the App workstream.

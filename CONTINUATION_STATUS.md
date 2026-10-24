@@ -1,8 +1,16 @@
 # Current Engine continuation
 
-## Active priority — 23 October 2026
+## Active priority — 24 October 2026
 
 The user prioritizes completion of the systems needed for a continuing Solo campaign. `solo-runtime-01` now has the executable offline boundary, opt-in direct adapter and pinned R00 execution described below; connected App/joined qualification remains active. Historical Details is integrated at Engine `723627e629231b5e90f38b9d52b65c9a3967b92a`, App `d8dc35ed653e516ccd0cacf91ee9693258491032` and Catalog `3e898acb2179f18a41d7967817bedf429df29d3f`; no archive or historical integration input is missing. Follow [the current work order](COORDINATOR_WORK_ORDER.md). Entries below preserve their original dates, source identities and then-pending gates.
+
+## Solo lifecycle races — 2026-10-24
+
+**Completed for IRGS 3.4.0 development:** reproduced and fixed cancellation before registration allowing a later call, expired cached drafts returning ready, and a wrong-route duplicate terminating the valid in-flight request. Durable cancellation records now fence registration/restart. Workers recheck route/configuration and authorized scope before serialized dispatch admission. Admission distinguishes known unstarted work from legacy uncertainty; migration preserves reservations and does not authorize another dispatch. Broker unavailable results omit cancelled drafts while private recovery records and committed Core receipts remain intact.
+
+**Verification:** 13 new deterministic lifecycle checks and 146 focused regressions pass. The full runtime suite runs 583 tests: 582 pass and the existing historical private-save fixture is skipped. All ten pinned Catalog cases pass with zero skips; Engine integrity, Kira canon and active documentation links pass. See [lifecycle validation](engine/SOLO_LIFECYCLE_VALIDATION.json). All saves/ledgers are synthetic and temporary; no live inference or credential was used.
+
+**Remaining:** actual App session/persistence integration, exact reviewed component pins and joined qualification, semantic/model evaluation and separately configured live smoke. These fixes advance named DEV-11/AIP recovery paths and do not complete general scheduling, billing reconciliation or broader DEV milestones.
 
 ## Solo direct adapter and Catalog R00 — 2026-10-23
 
