@@ -93,6 +93,8 @@ private-save case is replaced by the guide's explicit policy skip. All 292
 focused checks, 35 shared-system cases, 20 native process cases and 13 native
 communication cases pass with zero skips. Engine integrity and Kira canon pass.
 Test fixtures are temporary and synthetic, with zero routine provider calls.
-These results qualify the selected API/handlers, not new App phase controls or
-joined qualification. The next bounded task is the existing communication/offer
+These results qualify the selected API/handlers. Subsequent [component interaction
+checks](COMPONENT_INTERACTION.md) verify current App continuation controls with
+the latest Engine/Catalog sources; adopting start discovery and reviewing new
+pins/joined packaging remain separate. The next bounded task is the existing communication/offer
 participant and received-source contract; its execution rules remain unchanged.

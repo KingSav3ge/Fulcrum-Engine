@@ -44,6 +44,13 @@ independent content/schema versions and historical evidence. See
 
 ## Next bounded task
 
+The latest independent App/Catalog heads have been pulled and qualified from
+Engine with explicit source selectors; see [component interaction](engine/COMPONENT_INTERACTION.md).
+App already continues existing processes. Engine's new start discovery still
+needs an App adapter, and App-owned pins/coordinator joined review remain separate.
+No Engine runtime compatibility fix or fixture repinning was needed. The next
+bounded Engine task below is unchanged.
+
 The selected observation/Rise work phase contract is delivered in
 [phase API v1](engine/PHASE_CAPABILITY_API.md), initially published at
 `8ab620099090413ed706aa70894065544347fbf3`. Its

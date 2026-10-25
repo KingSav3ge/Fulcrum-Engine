@@ -71,6 +71,13 @@ is introduced by an adapter. Broader DEV-06–DEV-17/C2 scope remains open.
 
 ## Check the Engine
 
+For current App/Catalog interoperability, use the independently owned checkout
+selectors and [Engine-side checker](engine/COMPONENT_INTERACTION.md):
+`python -B tools/qualify_component_interaction.py --app-root ../IRGS-APP-WEB --catalog-root ../IRGS-Catalog`.
+It needs loopback sockets and records exact sources while preserving App pins and
+Catalog's original consumer identities. This qualification does not add a Core
+dependency on either checkout or replace coordinator joined review.
+
 ```bash
 python -B tools/verify_components.py --component engine
 python -B tools/qualify_shared_systems.py
