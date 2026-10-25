@@ -2,6 +2,8 @@
 
 ## Current continuation pointer
 
+**Phase API implementation in progress:** `phase_contract` exposes selected observation/Rise work capabilities, last received status/commands and sanitized public receipts through native typed execution and mandatory host CAS. The shared actor view includes `continuations`. [API](engine/PHASE_CAPABILITY_API.md) is ready for consumer review; actual decision-read, scarcity and lifecycle qualification continues in this delivery. The previous shared-response set is already integrated; no older integration gate is reopened.
+
 The qualified 3.4.0 shared response update is integrated. Read
 [CHAT_CONTINUATION.md](CHAT_CONTINUATION.md) and [DEVELOPMENT.md](DEVELOPMENT.md)
 for the current baseline and next bounded process/interaction work. Stable DEV

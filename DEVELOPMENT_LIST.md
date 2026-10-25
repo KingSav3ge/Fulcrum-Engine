@@ -2,6 +2,8 @@
 
 ## Current continuation pointer
 
+**In progress:** [phase capability contract v1](engine/PHASE_CAPABILITY_API.md) advances named DEV-06–DEV-17 work with actor-safe options/status/commands and received outcomes over existing non-Rise observation and Rise work. Initial API publication precedes the delivery's dependency, scarcity, pause/resume/cancel and recovery checks. Shared-response integration is complete for its recorded source set; new phase controls/pins need their own App/coordinator qualification. Communication/offer participant/source contracts follow this bounded task.
+
 The qualified 3.4.0 shared response update is integrated. Read
 [CHAT_CONTINUATION.md](CHAT_CONTINUATION.md) and [DEVELOPMENT.md](DEVELOPMENT.md)
 for the current baseline and next bounded process/interaction work. Stable DEV
