@@ -1,5 +1,14 @@
 # IRGS Engine development roadmap
 
+## Current priority — shared IRGS systems
+
+The user's current direction is development across campaigns and themes.
+Read [the shared scope](IRGS_SYSTEMS_SCOPE.md) and
+[the current work order](COORDINATOR_WORK_ORDER.md) before selecting work.
+Rise R00 remains one regression fixture. Shared-system completion requires
+supported non-Rise evidence; campaign-specific mechanics retain their own scope.
+The records below preserve previously delivered work and historical evidence.
+
 Target iteration: **IRGS 3.4.0 — in development**. See the active Solo runtime work order and completion plan. Previously qualified versions and evidence retain their recorded identities.
 
 Updated 2026-10-24. This plan belongs to **KingSav3ge/IRGS-Engine**; Engine increments are published to this repository's `main` branch. The selected executable foundation is Core 3.3. C2 is applied engine text with 121 required acceptance cases; its general action resolver and complete autonomous institution cycle remain unfinished. Existing bounded handlers and synthetic institutional execution retain their actual scope.

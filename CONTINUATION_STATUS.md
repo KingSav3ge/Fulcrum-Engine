@@ -1,5 +1,14 @@
 # Current Engine continuation
 
+## Current priority — shared IRGS systems
+
+The user's current direction is development across campaigns and themes.
+Read [the shared scope](IRGS_SYSTEMS_SCOPE.md) and
+[the current work order](COORDINATOR_WORK_ORDER.md) before selecting work.
+Rise R00 remains one regression fixture. Shared-system completion requires
+supported non-Rise evidence; campaign-specific mechanics retain their own scope.
+The records below preserve previously delivered work and historical evidence.
+
 ## Active priority — 24 October 2026
 
 The latest user request is Engine-owned responses without API tokens. [The Engine implementation](engine/OFFLINE_RESPONSES_API.md) bundles 338 variants and 15 recipes, automatically presents supported committed Core results, and supplies editable local drafts. [Offline qualification](engine/OFFLINE_RESPONSES_VALIDATION.json) verifies actual sources and zero rendering dispatch; App adoption and joined pins remain separate. The broader Engine tasks below are included in this delivery.

@@ -1,5 +1,14 @@
 # IRGS continuation development list
 
+## Current priority — shared IRGS systems
+
+The user's current direction is development across campaigns and themes.
+Read [the shared scope](IRGS_SYSTEMS_SCOPE.md) and
+[the current work order](COORDINATOR_WORK_ORDER.md) before selecting work.
+Rise R00 remains one regression fixture. Shared-system completion requires
+supported non-Rise evidence; campaign-specific mechanics retain their own scope.
+The records below preserve previously delivered work and historical evidence.
+
 Target iteration: **IRGS 3.4.0 — in development**. See the active Solo runtime work order and completion plan. Previously qualified versions and evidence retain their recorded identities.
 
 Maintained in **KingSav3ge/IRGS-Engine**, updated 2026-10-24. The stable DEV IDs originated in **3.3.3 Unified Development D1**. Selected executable Core: **3.3**. Publish Engine increments to this repository's `main` branch. This list defines completion criteria; it does not adopt new mechanics or certify unfinished capabilities.
