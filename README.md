@@ -4,6 +4,8 @@ IRGS develops a persistent world simulation connecting individual action, instit
 
 Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/IRGS-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/IRGS) joins both components.
 
+The [shared Engine API](engine/SHARED_SYSTEMS_API.md) now provides common actor/capability views, exact accepted intentions, atomic execution, received records and committed receipts across selected authored-scene and Rise handlers. It bundles Catalog's exact neutral **750 system / 250 draft** depot with 32 recipes and requires no provider or App/Catalog checkout. [Independent qualification](engine/SHARED_SYSTEMS_VALIDATION.json) separates actual non-Rise/Rise effects from four-theme text portability. Unsupported intentions stay unresolved; broader mechanics retain their existing scope.
+
 Publish Engine updates to **KingSav3ge/IRGS-Engine**, on its `main` branch. The [development roadmap](ROADMAP.md) separates completed work, work in progress and remaining work; the [DEV checklist](DEVELOPMENT_LIST.md) supplies task IDs and completion criteria, and the [continuation log](CONTINUATION_STATUS.md) records delivered increments and verification limits. Update these records as Engine work progresses.
 
 ```bash

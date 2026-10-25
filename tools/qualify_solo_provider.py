@@ -172,7 +172,7 @@ def qualify(catalog_root):
                 for name in ('core_world.py', 'settlement_runtime.py', 'scene_actions.py',
                              'solo_provider.py', 'solo_actions.py', 'r9_runtime.py', 'r8_dependencies.py',
                              'offline_responses.py', 'routine_format.py', 'process_runtime.py',
-                             'communication_runtime.py')},
+                             'communication_runtime.py', 'runtime_contracts.py')},
             'engine_response_data_sha256': {name: hashlib.sha256((ROOT/'IRGS_3_3/data/responses'/name).read_bytes()).hexdigest()
                 for name in ('engine_routine_v1.json', 'PROVENANCE.json')},
             'manifest_sha256': MANIFEST_SHA256, 'loader_sha256': LOADER_SHA256,
