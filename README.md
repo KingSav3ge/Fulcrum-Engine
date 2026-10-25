@@ -1,5 +1,7 @@
 # IRGS Engine — 3.4.0 development
 
+Current development: [guide](DEVELOPMENT.md) · [chat continuation](CHAT_CONTINUATION.md).
+
 IRGS develops a persistent world simulation connecting individual action, institutions, resources and history. Its design centers on one shared world, actions constrained by actual authority and resources, and information received by the acting character or institution. See the [Engine model](engine/ENGINE_MODEL.md) for these principles and their current implementation limits.
 
 Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/IRGS-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/IRGS) joins both components.
@@ -10,7 +12,7 @@ Publish Engine updates to **KingSav3ge/IRGS-Engine**, on its `main` branch. The 
 
 ```bash
 python -B tools/verify_components.py --component engine
-python -B -m unittest discover -s IRGS_3_3/runtime -v
+python -B tools/qualify_shared_systems.py
 python -B tools/refresh_component_releases.py --component engine
 ```
 
@@ -31,3 +33,5 @@ The [Solo lifecycle continuation](engine/SOLO_LIFECYCLE_VALIDATION.json) fixes e
 [Engine offline responses](engine/OFFLINE_RESPONSES_API.md) now render committed local/Rise actions, phases and received dialogue without an API key or network call. The Engine owns a bundled 338-variant library with 15 mixing recipes, editable player drafts and exact receipt fallback. Supported result APIs include local `presentation` automatically; [Engine-specific qualification](engine/OFFLINE_RESPONSES_VALIDATION.json) records actual execution and remaining App integration.
 
 [Engine continuation/communication APIs](engine/CONTINUATION_COMMUNICATION_API.md) now implement selected phased work/travel/observation, attributed local speech and explicitly fulfilled stock offers, plus reviewed technical charge reconciliation. [Executed task evidence](engine/ENGINE_TASKS_VALIDATION.json) separates Core qualification from new App controls, general C2 mechanics and live/model-quality gates.
+
+For the full runtime suite, use the private-fixture policy runner in DEVELOPMENT.md. The external historical-save fixture is excluded even when present.
