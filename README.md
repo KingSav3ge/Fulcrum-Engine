@@ -1,5 +1,9 @@
 # IRGS Engine — 3.4.0 development
 
+Current coordinated edition: **3.4.1**; previous release: **3.3.3**.
+See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution
+records below retain their original tested development identities.
+
 Current development: [guide](DEVELOPMENT.md) · [chat continuation](CHAT_CONTINUATION.md).
 
 IRGS develops a persistent world simulation connecting individual action, institutions, resources and history. Its design centers on one shared world, actions constrained by actual authority and resources, and information received by the acting character or institution. See the [Engine model](engine/ENGINE_MODEL.md) for these principles and their current implementation limits.

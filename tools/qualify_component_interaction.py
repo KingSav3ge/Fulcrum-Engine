@@ -263,14 +263,16 @@ class ComponentInteractionTests(unittest.TestCase):
                 'pause_resume': True, 'replay_once': True, 'new_engine_start_existing_app_continuation': True})
         EVIDENCE['phase_interaction'] = contexts
 
-    def test_start_discovery_is_available_to_app_adapter_but_not_invented_as_an_http_feature(self):
+    def test_app_start_discovery_matches_actual_engine_capabilities_without_mutation(self):
         context = 'quay'; record = self.store.read(self.keys[context])
         world = MODULES['core_world'].CoreWorld(state=record['state']); before = world.save()
         discovered = MODULES['phase_contract'].actor_view(world, self.actors[context], branch_id=record['id'], restore_id='fixture-review')
         self.assertTrue(discovered['start_options'])
-        self.assertFalse(self.view(context)['process_control']['start_available'])
+        public = self.view(context)['process_control']
+        self.assertEqual(public['start_options'], discovered['start_options'])
+        self.assertEqual(public['start_available'], bool(discovered['start_options']))
         self.assertEqual(world.save(), before)
-        EVIDENCE['app_start_adapter_pending'] = True
+        EVIDENCE['app_start_adapter_available'] = True
 
     def test_missing_text_keeps_real_http_outcome_without_paid_fallback(self):
         with patch('offline_responses._library', side_effect=OSError('PRIVATE_COMPONENT_FAILURE')), \
@@ -290,7 +292,7 @@ def qualify(app, catalog):
     if not result.wasSuccessful() or result.skipped:
         raise RuntimeError(output.getvalue())
     return {'schema_version': 1, 'status': 'PASS_EXPLICIT_COMPONENT_SOURCES_WITH_LIMITS',
-        'target_iteration': 'IRGS 3.4.0 development', 'sources': SELECTED,
+        'target_iteration': 'IRGS 3.4.1 development', 'sources': SELECTED,
         'selection': 'Explicit latest-head overrides; committed App pins and original Catalog consumer identities preserved',
         'tests_run': result.testsRun, 'passed': result.testsRun, 'skipped': len(result.skipped), 'test_ids': names,
         'evidence': EVIDENCE, 'provider_calls': 0, 'model_tokens': 0, 'user_saves_used': False,
@@ -298,8 +300,7 @@ def qualify(app, catalog):
             hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest()
             for owner in ('engine', 'app', 'catalog') for module in MODULES.values()
             if Path(module.__file__).resolve().is_relative_to(Path(SELECTED[owner]['root']))},
-        'remaining': ['App adoption of Engine start discovery; current HTTP starts remain unavailable',
-            'App-owned compatible dependency pins and coordinator joined/package qualification',
+        'remaining': ['Coordinator exact-set joined/package qualification',
             'Communication/offer participant and received-source contract remains the next Engine bounded task']}
 
 
