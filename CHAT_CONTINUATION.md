@@ -20,7 +20,7 @@ Read `AGENTS.md`, [DEVELOPMENT.md](DEVELOPMENT.md),
 [COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md), then engine/SHARED_SYSTEMS_API.md, engine/CONTINUATION_COMMUNICATION_API.md and the stable DEVELOPMENT_LIST.md.
 Inspect the current diff/remote and exact dependencies before editing.
 
-## Qualified baseline and scope
+## Prior qualified baseline and scope
 
 IRGS **3.4.0 development**, Core compatibility **3.3**. Develop shared systems
 across campaigns and themes. Rise R00 and the existing non-Rise authored opening
