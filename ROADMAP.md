@@ -2,7 +2,7 @@
 
 ## Current continuation pointer
 
-**Current bounded increment:** the version-1 [phase capability API](engine/PHASE_CAPABILITY_API.md) now exposes selected observation/Rise work starts, received phase status/commands and sanitized outcomes, including shared actor views. It reuses native execution and mandatory save/result CAS. Initial contract checks are in progress; dependency/competing-resource and lifecycle qualification follow before this delivery is complete. Communication/offer participant/source contracts remain next. The prior shared-response integration stays qualified.
+**Completed bounded increment:** the version-1 [phase capability API](engine/PHASE_CAPABILITY_API.md) exposes selected observation/Rise work starts, received status/commands and sanitized outcomes, including shared actor views. It reuses native execution, reservations and mandatory save/result CAS. [Qualification](engine/PHASE_CAPABILITY_VALIDATION.json) covers 28 new cases, actual reads/rejection, competing resources and lifecycle/recovery; 708 runtime cases run with one explicit private-fixture policy skip. **Next:** communication/offer participant/source contracts. New phase UI/pins/joined review remain with App/coordinator; the prior shared-response integration stays qualified.
 
 The qualified 3.4.0 shared response update is integrated. Read
 [CHAT_CONTINUATION.md](CHAT_CONTINUATION.md) and [DEVELOPMENT.md](DEVELOPMENT.md)

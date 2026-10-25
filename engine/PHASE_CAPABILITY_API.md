@@ -78,11 +78,21 @@ invent a search/travel rule or complete general DEV-06–DEV-17/C2 requirements.
 
 ## Qualification
 
-The first bounded implementation preserves the previous typed process tests and
-adds eight direct contract tests in `test_phase_contract.py`. All 53 initial
-contract/process/shared regressions and Engine integrity checks pass. Further named dependency,
-competing-resource, pause/resume/cancel and restart/restore qualification is in
-progress for this delivery. Test fixtures are temporary and synthetic. New App
-controls and joined qualification belong to the owning workstreams. The following
-bounded task is the existing communication/offer participant and received-source
-contract; its execution rules remain unchanged here.
+The minimal API was published early at `8ab620099090413ed706aa70894065544347fbf3`
+after 53 initial contract/process/shared checks and Engine integrity passed.
+The completed [execution record](PHASE_CAPABILITY_VALIDATION.json) now names
+28 contract cases: actual handler reads and atomic rejection, competing stock
+and actor frontiers, pause/resume/cancel and physical progress, private-data
+filtering, failed saves, concurrent delivery, native pending JSON, terminal replay
+and restore fences. Source hashes identify the tested runtime and preserved
+response content. Run `python -B tools/qualify_phase_capabilities.py` to repeat
+the dedicated checks; `DEVELOPMENT.md` supplies full-suite private-fixture policy.
+
+The final standalone runtime run executes 708 cases: 707 pass and the external
+private-save case is replaced by the guide's explicit policy skip. All 292
+focused checks, 35 shared-system cases, 20 native process cases and 13 native
+communication cases pass with zero skips. Engine integrity and Kira canon pass.
+Test fixtures are temporary and synthetic, with zero routine provider calls.
+These results qualify the selected API/handlers, not new App phase controls or
+joined qualification. The next bounded task is the existing communication/offer
+participant and received-source contract; its execution rules remain unchanged.

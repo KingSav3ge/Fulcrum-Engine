@@ -2,7 +2,7 @@
 
 ## Current continuation pointer
 
-**Phase API implementation in progress:** `phase_contract` exposes selected observation/Rise work capabilities, last received status/commands and sanitized public receipts through native typed execution and mandatory host CAS. The shared actor view includes `continuations`. [API](engine/PHASE_CAPABILITY_API.md) is ready for consumer review; actual decision-read, scarcity and lifecycle qualification continues in this delivery. The previous shared-response set is already integrated; no older integration gate is reopened.
+**Completed selected phase API — 25 October 2026:** `phase_contract` exposes observation/Rise work capabilities, last received status/commands and sanitized outcomes through native typed execution and mandatory host CAS. Shared actor views include `continuations`. The minimal [API](engine/PHASE_CAPABILITY_API.md) was published at `8ab620099090413ed706aa70894065544347fbf3`; [28 named cases](engine/PHASE_CAPABILITY_VALIDATION.json) now qualify actual reads and rejection, competing stock/actor frontiers, pause/resume/cancel, receipt privacy, failed saves, concurrent delivery, restart and restore. Runtime qualification: 708 run, 707 pass, one private-save case explicitly replaced by policy. All 292 focused, 35 shared, 20 native process and 13 native communication checks pass; Engine integrity and Kira canon pass. No user save or provider call is used. The original shared-response integration stays qualified. Next bounded task: communication/offer participant/source contracts; new phase App controls/pins/joined review remain separate.
 
 The qualified 3.4.0 shared response update is integrated. Read
 [CHAT_CONTINUATION.md](CHAT_CONTINUATION.md) and [DEVELOPMENT.md](DEVELOPMENT.md)

@@ -44,16 +44,26 @@ independent content/schema versions and historical evidence. See
 
 ## Next bounded task
 
-Expose a small, host-safe capability/phase contract for the existing typed
-continuation API, starting with already selected non-Rise observation and Rise
-work. Reuse durable parent/phase identities, actual reservations, source rules
-and CAS persistence. The App needs actor-safe availability, status, supported
-commands and received phase outcomes without private dependency certificates.
-Publish the minimal stable API early, then qualify actual decision reads,
-rejection, competing resources, pause/resume/cancel, restart and restore. Follow
-with the existing communication/offer participant and received-source contracts.
-This advances DEV-06–DEV-17 within named scope; their broader completion stays open.
-Do not export Rise travel/stock rules as universal campaign mechanics.
+The selected observation/Rise work phase contract is delivered in
+[phase API v1](engine/PHASE_CAPABILITY_API.md), initially published at
+`8ab620099090413ed706aa70894065544347fbf3`. Its
+[execution record](engine/PHASE_CAPABILITY_VALIDATION.json) qualifies actor-safe
+options/status/commands, actual dependency reads and rejection, competing
+stock/actor claims, pause/resume/cancel, mandatory CAS and restart/restore.
+It is additive to the already integrated shared-response baseline. New App phase
+controls/pins and coordinator joined qualification remain a separate handoff.
+
+**Next bounded task:** expose the existing typed communication/offer participant
+and received-source contract for supported selected channels. Build actor-safe
+participant/offer views from actual legitimate received records; retain exact
+utterances as testimony and original offer statuses/terms. Expose only actual
+supported commands and keep private dependency evidence, hidden whereabouts,
+stock feasibility and unreceived participant/source facts out of views. Reuse
+explicit acceptance, current Core authority, selected custody/channel rules and
+atomic host CAS; qualify rejected/withdrawn/superseded/fulfilled meanings,
+competing claims and restart/restore. Preserve the delivered phase API. No NPC
+choice, universal speech duration, travel/stock rule or generic dialogue resolver
+is introduced by an adapter. Broader DEV-06–DEV-17/C2 scope remains open.
 
 ## Preserve and finish
 
