@@ -1,17 +1,8 @@
 # Continuation instructions — IRGS Engine
 
 Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
-See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution
-records below retain their original tested development identities.
-
-Prepared 26 October 2026 for `KingSav3ge/IRGS-Engine/main`. Preserve local changes
-before pulling. Resume this existing chat's component work; publish only its
-own repository. Read this file after pull; fresh user directions take precedence.
-
-## Coordinated 3.4.2 preparation
-
-Read [the coordinator selection](COORDINATED_3_4_2.md). Current edition headings
-supersede dated delivery identities below; preserve their original source and tests.
+Updated 26 October 2026 following the coordinator's actual playability evaluation.
+Preserve local work before pulling; fresh user instructions take precedence.
 
 ## Start here
 
@@ -20,101 +11,79 @@ git status --short
 git pull --ff-only origin main
 ```
 
-Read `AGENTS.md`, [DEVELOPMENT.md](DEVELOPMENT.md),
-[IRGS_SYSTEMS_SCOPE.md](IRGS_SYSTEMS_SCOPE.md) and
-[COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md), then engine/SHARED_SYSTEMS_API.md, engine/CONTINUATION_COMMUNICATION_API.md and the stable DEVELOPMENT_LIST.md.
-Inspect the current diff/remote and exact dependencies before editing.
+Read `AGENTS.md`, [the work order](COORDINATOR_WORK_ORDER.md),
+[the assessment](PLAYABILITY_REVIEW_3_4_2.md),
+[evidence](PLAYABILITY_EVIDENCE_3_4_2.json), `DEVELOPMENT.md` and
+`IRGS_SYSTEMS_SCOPE.md`. Develop only IRGS-Engine; coordinator owns joined imports.
 
-## Prior qualified baseline and scope
+## Qualified product baseline
 
-IRGS **3.4.0 development**, Core compatibility **3.3**. Develop shared systems
-across campaigns and themes. Rise R00 and the existing non-Rise authored opening
-are actual supported regression contexts. Synthetic theme/profile checks prove
-their recorded formatting/declaration behavior, not new campaign mechanics.
+Unified 3.4.2: `ba551af285a6e1eb0766a9d06f83cbc0e5335b35`.
+Engine: `91b20056e7db651966c9e92925313494917f47b1`.
+App: `00634b15f2d8d4a8626d3eb3cb0a139559ac1fcc`.
+Catalog: `3f921252e50a0976cb88321b6ff8249a5f12466d`.
+These exact product revisions were evaluated. Later instruction commits change
+no runtime source or release pins. Earlier validation remains at its real source.
 
-The [coordinator integration](https://github.com/KingSav3ge/IRGS/blob/65351ebcfe2538d880f576a3ce4aa2230537e08d/provenance/qa/shared_response_integration_3_4_0_review.json) qualified joined `65351ebcfe2538d880f576a3ce4aa2230537e08d`:
+## First bounded increment — start readiness and legitimate context
 
-| Component source | Qualified commit |
-| --- | --- |
-| Engine | `2f9476c6090878257d17cab3ad3a83a7ce18a5dc` |
-| App/Web | `aae8a25656c890181e0aa569df2c716968ec3642` |
-| Catalog | `27fff8385d1c01fdfe9ad7254b7647e6bc12a01e` |
+Read `PLAYABILITY_REVIEW_3_4_2.md` and address IRGS-PLAY-001/002/004 first.
+Publish a versioned actor/start-mode readiness contract usable before creation and
+in the first known view. Distinguish verified dated reference, character eligibility,
+presentation-only opening, declaration-only mode and a supported playable slice.
+Expose modeled capability availability and reasons without inspecting hidden stock,
+authority, locations or outcomes to choose a winning menu.
 
-Recorded integration results: 680 Core tests run (679 passed, one private-fixture
-policy skip); 201 Web run (194 passed, seven Windows skips); 105 interface checks;
-104 Catalog checks; eight independent HTTP checks. Two-context Chromium and
-clean-package qualification passed with zero live inference. These are attributed
-prior results, not tests newly executed by this guide update.
+Implement a bounded, source-backed existing-character opening using the shared
+Core. John of Lancaster 1415 is the reproduced gap: support him only if legitimate
+starting context can be established. Otherwise keep his mode explicitly held or
+declaration/reference-only and qualify another sourced existing historical person.
+Do not reuse the new-character courier fiction as his biography or invent an hour,
+health values, possessions, introductions, orders or command authority.
 
-Later guide-only commits do not alter this qualified source set. Preserve
-independent content/schema versions and historical evidence. See
-[shared scope](IRGS_SYSTEMS_SCOPE.md), [continuation](CHAT_CONTINUATION.md) and
-[the work order](COORDINATOR_WORK_ORDER.md).
+The initialized known view must carry legitimately received starting context,
+actual selected capabilities and a sourced civil-date/precision treatment where
+established, independent of causal order and local elapsed seconds. Preserve all
+unknowns as unknown and separate out-of-character references from actor knowledge.
+Do this for new worlds only. Continuing worlds and historical templates must not
+be reset or automatically reseeded when read or restored.
 
-## Next bounded task
+Acceptance: one existing-person path has a reviewed first executable attempt and
+received Core result with actual effects; new-character authored and declaration-
+only paths remain distinct. Show actor privacy, actual authority/conservation,
+atomic rejection, exact retry, restore fencing and save/reload without reapplying
+setup. Publish the interface early for App/Catalog; the final delivery needs real
+implementation and executed evidence. Broader intent resolution is later, bounded
+by actual handlers. Existing communication is delivered; preserve it. Selected
+travel expansion follows this playability increment rather than delaying it.
 
-The latest independent App/Catalog heads have been pulled and qualified from
-Engine with explicit source selectors; see [component interaction](engine/COMPONENT_INTERACTION.md).
-The original record retains its actual 25 October sources. The
-[26 October candidate check](engine/COMMUNICATION_COMPONENT_INTERACTION_VALIDATION.json)
-also passes current App start discovery/continuation, with App
-`919427cf16cf72574a581d7e6f712e638740a1df` and Catalog
-`526404128830a99fe8ea5c2bce43b6ea7d45fe6f`. App pins were preserved; adopting the
-new communication contract and coordinator exact-set review remain separate.
+## Delivery rules
 
-The selected observation/Rise work phase contract is delivered in
-[phase API v1](engine/PHASE_CAPABILITY_API.md), initially published at
-`8ab620099090413ed706aa70894065544347fbf3`. Its
-[execution record](engine/PHASE_CAPABILITY_VALIDATION.json) qualifies actor-safe
-options/status/commands, actual dependency reads and rejection, competing
-stock/actor claims, pause/resume/cancel, mandatory CAS and restart/restore.
-It is additive to the already integrated shared-response baseline. App now
-supports selected phase starts/continuation. New communication controls/pins and
-coordinator exact-set qualification remain a separate handoff.
+Develop shared IRGS systems; Rise is one regression context. Preserve one
+authoritative Core and its nine K-owners, the existing six Director categories,
+actor/source filtering, reviewed creation, explicit acceptance, resource/authority
+checks and exact original-result recovery. Names, themes, narration and drafts
+create no capability or facts. Keep causal, storage, civil and elapsed time apart.
+Do not invent universal timing, dice or an NPC decision to satisfy an example.
 
-**Completed 26 October:** [communication capabilities v1](engine/COMMUNICATION_CAPABILITY_API.md)
-now exposes received participant/source and offer contracts, exact testimony and
-terms, role-dependent command attempts and sanitized atomic host results. Shared
-actor views include `communications`. [32 new cases](engine/COMMUNICATION_CAPABILITY_VALIDATION.json)
-qualify non-Rise speech, Rise conserved fulfillment, rejection, distinct closure
-statuses, competing frontiers and restart/restore. A reproduced legacy receipt
-leak is closed: forwarding words conveys no private offer terms or audience.
-The full runtime suite runs 740 cases: 739 pass and the prescribed private-save
-case is replaced by an explicit policy skip. No provider call or user save is used.
-App communication controls/host wiring, compatible pins and coordinator exact-set
-qualification remain separate; prior phase/response deliveries are preserved.
+Use temporary synthetic stores only. Preserve user saves, credentials, local
+configuration, original source/archive bytes, adopted canon and dated evidence.
+Do not migrate an actual user campaign as a test. Record actual source commits,
+APIs, test commands/results/skips and remaining dependencies. Retain old fixtures
+at their selected identities. No live inference or full C2 claim is implied.
 
-**Next bounded task:** expose host-safe selected Rise travel capabilities over
-existing native `process_runtime` travel. Preserve actual route locations,
-selected duration, goods/actor commitments, received arrival information,
-pause/resume, native JSON recovery and mandatory host CAS. Qualify partial travel,
-competing claims, interruption, restart/replay/restore and filtered views. No
-return/cancellation rule, universal geography or timing is selected by the
-adapter. Broader DEV-06–DEV-17/C2 scope remains open.
+After actual product edits, refresh only the owning component's release hashes
+and run meaningful existing and new checks for changed behavior. Update the
+development plan and push only this assigned component repository. Return the
+full commit and exact compatible dependency selections to the coordinator.
+Current edition stays 3.4.2 until a coordinated versioned publication. Guide-only
+commits are not new product increments. Repository publication proves no dispatch
+or chat resumption; preserve the coordinator's unified integration gate.
 
-## Preserve and finish
+## Restart message
 
-Keep the completed response depot, current source intake patch and shared
-non-Rise/Rise round trip. Do not repeat archive acquisition, rebuild the 1,000
-variants, redo themes or describe integrated response work as awaiting its
-original integration. Preserve old manifest consumer IDs; current consumer
-evidence is separate. Generic drafts create no mechanics or NPC choices.
-
-Execute the relevant commands in the current guide. Keep temporary synthetic
-state, zero routine provider calls, actual Core effects, source/actor filtering,
-explicit acceptance, failed-save atomicity, retry/restart/restore and truthful
-unsupported behavior. Report named scope and actual skips. No user save or
-private external fixture participates. Live inference remains separately gated.
-
-Update completed/active/remaining records and return the full pushed SHA,
-changed behavior, API/dependency selections, commands/results/skips and remaining
-blockers. Never claim a documentation edit or old log as a new implemented
-system. The coordinator reviews the exact all-three set and owns joined import.
-
-## Paste-ready restart message
-
-> Pull your repository and read CHAT_CONTINUATION.md, DEVELOPMENT.md and the
-> current work order. Implement the next bounded task for IRGS Engine,
-> preserving shared IRGS scope and existing qualified behavior. Test the actual
-> change, update the plans, push only your own repository and report the exact
-> commit, checks, dependencies and remaining work.
+> Pull IRGS-Engine/main and read CHAT_CONTINUATION.md,
+> COORDINATOR_WORK_ORDER.md and PLAYABILITY_REVIEW_3_4_2.md. Implement the assigned
+> first increment for supported player starts across IRGS. Preserve existing
+> gameplay/recovery and source boundaries, run actual checks, update the plan,
+> push only this component and report the full commit, dependencies and limits.

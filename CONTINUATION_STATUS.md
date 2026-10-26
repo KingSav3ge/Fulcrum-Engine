@@ -1,5 +1,12 @@
 # Current Engine continuation
 
+Current priority after the 26 October runtime assessment: implement the shared
+start readiness/context contract and one sourced existing-character playable
+path under [the work order](COORDINATOR_WORK_ORDER.md). Selected travel and other
+expansion follow this first increment. Existing DEV/C2 IDs and completed evidence
+below retain their scope; these new requirements are not marked implemented.
+
+
 ## Current continuation pointer
 
 **Communication contract delivered — 26 October 2026 (3.4.1 development):**
