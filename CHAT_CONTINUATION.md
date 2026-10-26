@@ -1,14 +1,34 @@
 # Continuation instructions — IRGS Engine
 
-## Start contract published early — 26 October 2026
+## Delivered start contract — 26 October 2026
 
-[Start readiness API 1](engine/START_READINESS_API.md) implements the review and
-actor-known contract, an optional sourced Henry V observation start and received
-initial civil-date precision. John/default starts remain explicitly declaration-
-only with a held playable context. Ten initial cases pass, including an actual
-Core observation and failed-save rollback. Full rejection/dependency/recovery,
-App/Catalog consumption and final work-order qualification remain in progress.
-This early API publication is not a new joined release or full DEV/C2 completion.
+[Start readiness API 1](engine/START_READINESS_API.md) now separates dated reference,
+character eligibility, presentation, declaration mode and selected playable slices.
+The explicitly selected sourced Henry V embarkation context resolves a real Core
+observation; John and other unestablished existing starts remain declaration-only
+with held playable context. New historical worlds receive a sourced initial Julian
+calendar checkpoint without an hour or automatic calendar advancement. Views and
+restores do not reseed templates, and exact player testimony remains intact.
+
+[Engine evidence](engine/START_READINESS_VALIDATION.json): 33 dedicated cases pass;
+full runtime 773 run, 772 pass, one prescribed private-save skip. Shared (35), phase
+(28), communication (32), original pinned R00 (10), Engine integrity and Kira canon
+pass. [Three actual HTTP checks](engine/START_INTERACTION_VALIDATION.json) pass
+against App `00634b15f2d8d4a8626d3eb3cb0a139559ac1fcc` and Catalog
+`3f921252e50a0976cb88321b6ff8249a5f12466d`, with their committed pins unchanged.
+
+[Handoff limits](engine/START_DELIVERY_VALIDATION.json): the existing App suite runs
+229 cases, with 219 passes, three old empty-knowledge expectation failures and seven
+Windows skips. App must adopt the new mode/context/calendar contract and update
+those assertions; corresponding cases pass on its original Engine pin. Catalog
+new-schema consumer cases and exact-set coordinator review remain pending. This
+Engine delivery advances bounded DEV-02/06–08/11/13–14/18/20 properties without
+closing general DEV/C2 or claiming a new joined release.
+
+Next Engine work returns to the previously queued host-safe selected Rise travel
+contract, preserving this start API and addressing consumer feedback first if it
+affects the contract. General supported-intent mapping (IRGS-PLAY-003), broader
+historical-person contexts and NPC/general resolution remain open.
 
 Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
 Updated 26 October 2026 following the coordinator's actual playability evaluation.
@@ -35,7 +55,11 @@ Catalog: `3f921252e50a0976cb88321b6ff8249a5f12466d`.
 These exact product revisions were evaluated. Later instruction commits change
 no runtime source or release pins. Earlier validation remains at its real source.
 
-## First bounded increment — start readiness and legitimate context
+## Delivered increment — original acceptance criteria
+
+The bounded Engine implementation and consumer limits are recorded above. The
+following assignment retains its original acceptance criteria; do not repeat the
+completed API or treat John as a supported operational start.
 
 Read `PLAYABILITY_REVIEW_3_4_2.md` and address IRGS-PLAY-001/002/004 first.
 Publish a versioned actor/start-mode readiness contract usable before creation and
@@ -92,8 +116,9 @@ or chat resumption; preserve the coordinator's unified integration gate.
 
 ## Restart message
 
-> Pull IRGS-Engine/main and read CHAT_CONTINUATION.md,
-> COORDINATOR_WORK_ORDER.md and PLAYABILITY_REVIEW_3_4_2.md. Implement the assigned
-> first increment for supported player starts across IRGS. Preserve existing
-> gameplay/recovery and source boundaries, run actual checks, update the plan,
-> push only this component and report the full commit, dependencies and limits.
+> Pull IRGS-Engine/main and read CHAT_CONTINUATION.md and the current work order.
+> Preserve the delivered start-readiness API and review App/Catalog adoption
+> feedback first. The next queued Engine increment is host-safe selected Rise
+> travel capabilities over existing native travel, unless a newer coordinator
+> assignment changes that order. Keep actual source/authority/timing and recovery
+> limits, update the plans, push only Engine and report exact evidence and pins.

@@ -1,6 +1,6 @@
 # IRGS Engine — 3.4.2 development
 
-Current start increment: [readiness and sourced existing-person API](engine/START_READINESS_API.md), published early with ten initial tests. Final qualification and App/Catalog consumption remain in progress.
+Current start increment: [readiness and sourced existing-person API](engine/START_READINESS_API.md), with 33 dedicated cases and 772 full-runtime passes plus one prescribed skip. Henry has one optional sourced observation; other unsupported modes remain held. [App/Catalog adoption and exact-set review](engine/START_DELIVERY_VALIDATION.json) remain pending, including three old App assertions requiring empty historical starting knowledge.
 
 Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
 See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution

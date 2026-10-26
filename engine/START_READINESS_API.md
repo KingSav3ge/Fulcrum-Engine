@@ -93,6 +93,8 @@ For newly initialized historical worlds `campaign_time.civil` records the exact
 selected Julian date, day precision, ordinal and snapshot source, with no hour.
 Creation explicitly receives a separate calendar reference for the selected
 actor. Generic/legacy profiles without established civil dates retain unknowns.
+The calendar receipt precedes later exact player background testimony, so it
+does not replace that testimony in existing latest-received opening views.
 The actor contract reads this received record, never the historical template.
 It labels the date `received_initial_checkpoint` and
 `current_calendar_binding: false`. Campaign day, causal sequence, storage
@@ -104,14 +106,38 @@ diverged actors and historical reference reads are never reset or reseeded.
 Existing snapshots, archives, canonical history and old manifests remain intact.
 Views contain no full templates, raw saves, hidden resources or dependency hashes.
 
-## Initial publication and remaining qualification
+## Qualification and component handoff
 
-This API is published early for App/Catalog implementation. Ten initial
-`test_start_readiness` cases pass, including the real Henry observation, John and
-default/new mode distinctions, received dates, privacy and failed-save rollback.
-Full dependency/conflict/recovery and component qualification are in progress;
-this early publication does not claim the final work-order acceptance or a new
-joined release. The release edition remains 3.4.2.
+The initial API was published early at
+`ea3b9a24f3254b4e230469b31843abad6c25fdf2`, with ten new cases and 57 focused
+regressions passing. [Final Engine qualification](START_READINESS_VALIDATION.json)
+now records **33 dedicated cases**; the full runtime runs **773**, with **772
+passes and one prescribed private-save exclusion**. Shared (35), phase (28),
+communication (32), original pinned R00 (10), Engine integrity (367 source files)
+and Kira canon checks pass. The 33 cases are included in the full suite.
+
+Real [App HTTP qualification](START_INTERACTION_VALIDATION.json) passes three
+checks for starting metadata, default/new/existing-mode separation, Henry
+creation and two actual observations (20 seconds each), durable result lookup,
+changed replay rejection and reload/continuation. It selects App
+`00634b15f2d8d4a8626d3eb3cb0a139559ac1fcc` and Catalog
+`3f921252e50a0976cb88321b6ff8249a5f12466d` explicitly. Their source and pins are
+unchanged; this is candidate compatibility, not joined/UI release qualification.
+
+The [complete delivery record](START_DELIVERY_VALIDATION.json) records the
+existing App suite against this candidate: **229 run, 219 pass, three failures,
+seven Windows skips**. The three assertions require empty knowledge at historical
+creation, conflicting with the new sourced calendar receipt. All three pass
+against App's original Engine pin `91b20056e7db651966c9e92925313494917f47b1`.
+App must adopt structured context/date presentation and update those expectations
+while preserving the exclusion of unsourced operational news. No App source/test
+or dependency pointer is changed by this Engine delivery. This increment remains
+blocked from exact-set joined qualification until its consumers are updated.
+
+All 37 original historical snapshot files and both response banks are unchanged.
+No user save, provider call, new browser/package qualification or version increase
+participates. John and other unsupported starts remain explicitly held; one
+optional Henry observation is not general historical campaign playability.
 
 App owns review/creation controls, first-known-view presentation, civil-date
 display and supported-intent mapping. Catalog owns independent source requirements

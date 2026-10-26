@@ -10,6 +10,14 @@ Read [the assessment](PLAYABILITY_REVIEW_3_4_2.md),
 [executed evidence](PLAYABILITY_EVIDENCE_3_4_2.json), `AGENTS.md`,
 `IRGS_SYSTEMS_SCOPE.md` and `CHAT_CONTINUATION.md` before selecting implementation.
 
+## Engine delivery status
+
+The bounded [start contract](engine/START_READINESS_API.md) is implemented and
+qualified in [the owner record](engine/START_DELIVERY_VALIDATION.json). App/Catalog
+adoption, its three changed calendar/knowledge expectations and current exact-set
+coordinator qualification remain separate. The original assignment below retains
+its acceptance scope and does not claim general historical-character playability.
+
 ## First bounded increment — start readiness and legitimate context
 
 Read `PLAYABILITY_REVIEW_3_4_2.md` and address IRGS-PLAY-001/002/004 first.

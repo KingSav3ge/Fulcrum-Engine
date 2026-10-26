@@ -409,12 +409,12 @@
     "runtime/selective_coordinator.py": "d0fc143d863ea5ed1fc0ed025c8aa355ab3ee0551fab4628838f57f4a266787f",
     "runtime/settlement_runtime.py": "77703de381e8b4e8724d9fdde4b502b50da9bb3f8948f03cf4da3f0e87c9915b",
     "runtime/settlement_setup.py": "d942b135ba8eac8f0a6d3b160f36a146219f399da8a7035e095f12c599566f27",
-    "runtime/starting_selection.py": "956e554b9a0ba2ec4a619f88b3c7fba0e5e5160b011af43fdc8131c269182ec6",
+    "runtime/starting_selection.py": "d9f57d60bef37cd68a1610fab80b19ebb1afbb746ed650be60ed118bc77794e6",
     "runtime/strategic_execution.py": "74cbcb9e3de9ca9354b912a418da6d9c9c401b08797b7c41150d940d9ed029e7",
     "runtime/temporal_registry.py": "fcb7289c1bc57c867a66a8c837085711241e7d75c0589b35563161fa5fe33ba1",
     "runtime/test_ast33.py": "bf12eb18c89044fccac44a243f838d1ed6cc05ca735b8c284a0734541b5e65c6",
     "runtime/test_century_starts.py": "e92c07a5751d05cc866d1cf5fffb337de251e81e60df96929b8b166ac0e2c011",
-    "runtime/test_character_background.py": "2f678312cd3bb43fc2d3a1e6d08290e6f6314c2be4bf89771c0985e35f2ca61a",
+    "runtime/test_character_background.py": "db2f7e34e790423a016b49a678fdde7c33ce89c276c5d7b3174ae3974ac00068",
     "runtime/test_core_domains.py": "a5745af305821e5ca625b966dc9fe0236ae71d6475baeb38ad1c62111252e73c",
     "runtime/test_economic_integration.py": "09fe797e425f64d44f19203db7eaa15277be24ddc1a517aaf710394b92be6b11",
     "runtime/test_historical_archive.py": "6239a019743da8eaeb403b1b8ab2c8cd5a18fc33c9be594c076753bd63e67799",
@@ -470,8 +470,8 @@
     "runtime/communication_contract.py": "733ee353083706d2f7830195a5521f83876c737ac70d5386869c4bffb4ba5fe9",
     "runtime/test_communication_contract.py": "3791d7cd0cdaf14e092a7c5b37f617bb2b0140801a83ea84ec588753d180a55c",
     "data/henry_1415_observation.json": "445d4a5bb16cec51fc4ccfa9d857df40bb82fe3fd7b8d5960702ef41a1425662",
-    "runtime/start_readiness.py": "680d0d6af11c5167eff8098d8db65dae5c15db678b41167959fd2320fcf514e5",
-    "runtime/test_start_readiness.py": "7f467af8e60f85c1d08efd120c6427b8dc73465b1c498bf5a660d9016961ec51"
+    "runtime/start_readiness.py": "027aa3708d458b11869497cf400273aad66acc8288fd848afd2fd95c863c37f4",
+    "runtime/test_start_readiness.py": "a108e7dce16317ca3dd08f9947da3e5fa168f139c3259b31e233e519e0605fe4"
   },
   "existing_save_migration": false,
   "development_designations": {

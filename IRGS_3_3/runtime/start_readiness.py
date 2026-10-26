@@ -110,6 +110,24 @@ def review_start(world, character, *, starting_scenario_id='individual'):
     return _review(options_for_world(world, starting_scenario_id), character)
 
 
+def _receive_civil_date(world, actor, reference):
+    """New-world calendar receipt before any later player background testimony."""
+    from core_world import CoreWorld
+    if any(not e['id'].startswith('setup:') for e in world.s['journal']):
+        raise ValueError('Initial calendar reception is unavailable during continuing play')
+    result = CoreWorld.load(world.save())
+    civil = result.s['campaign_time'].get('civil')
+    if civil:
+        record = {'kind':'initial_civil_date','schema_version':1, **copy.deepcopy(civil)}
+        at = result.s['clock']+1
+        result.apply('setup:civil-date', at, 'record_evidence', campaign_id=result.s['campaign_id'],
+            source_ref=civil['source_ref'], evidence_id='setup:civil-date', subject=actor,
+            assertion=json.dumps(record,ensure_ascii=False,sort_keys=True), status='established')
+        result.apply('setup:civil-date-received', at+1, 'receive_evidence', campaign_id=result.s['campaign_id'],
+            source_ref=reference, evidence_id='setup:civil-date', recipient=actor)
+    return result
+
+
 def initialize_context(world, character, options, reference):
     """New-world setup only, called by initialize_player before first host save."""
     from core_world import CoreWorld
@@ -122,15 +140,8 @@ def initialize_context(world, character, options, reference):
     selected = _review(options, character)
     selected['actor_id'] = actor
     result.s['gameplay_started']['start_readiness'] = selected
-    civil = result.s['campaign_time'].get('civil')
-    if civil:
-        record = {'kind':'initial_civil_date','schema_version':1, **copy.deepcopy(civil)}
-        at = result.s['clock']+1
-        result.apply('setup:civil-date', at, 'record_evidence', campaign_id=result.s['campaign_id'],
-            source_ref=civil['source_ref'], evidence_id='setup:civil-date', subject=actor,
-            assertion=json.dumps(record,ensure_ascii=False,sort_keys=True), status='established')
-        result.apply('setup:civil-date-received', at+1, 'receive_evidence', campaign_id=result.s['campaign_id'],
-            source_ref=reference, evidence_id='setup:civil-date', recipient=actor)
+    if 'setup:civil-date' not in result.s['knowledge'].get(actor,{}):
+        result = _receive_civil_date(result,actor,reference)
     return CoreWorld(state=result.s)
 
 
@@ -164,7 +175,11 @@ def actor_view(world, actor, *, branch_id, restore_id):
         except (ValueError, KeyError, TypeError, AttributeError):
             civil = None
     started = world.s.get('gameplay_started',{})
-    selected = copy.deepcopy(started.get('start_readiness')) if started.get('actor_id') == actor else None
+    saved = started.get('start_readiness',{}) if started.get('actor_id') == actor else {}
+    # Creation review includes out-of-character date/reference information. It
+    # cannot substitute for this actor's actual received context on later reads.
+    selected = {key:copy.deepcopy(saved[key]) for key in
+        ('schema_version','character_kind','actor_id','selected_mode','presentation_opening') if key in saved} or None
     caps = [cap.public() for cap in capabilities(world,actor)]
     supported = any(c['operation_id'] != 'record_player_action' for c in caps)
     result = {'schema_version':SCHEMA_VERSION,'actor_id':actor,'selected_start':selected,

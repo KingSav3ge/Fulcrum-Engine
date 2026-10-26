@@ -171,6 +171,9 @@ def initialize_player(world, character=None, starting_scenario_id=SCENARIO_ID,
               scenario_id=starting_scenario_id, effective_at=effective, eligible=True,
               reason='The player explicitly created this Solo character.',
               control={'mode': 'individual', 'actor_ids': [actor_id], 'powers': ['declare_own_intent']})
+        from start_readiness import _receive_civil_date
+        result = _receive_civil_date(result, actor_id, reference)
+        sequence = result.s['clock']
         if background.strip():
             apply('background', 'record_evidence', evidence_id='setup:background', subject=actor_id,
                   assertion=background, status='testimony', originator=actor_id)
