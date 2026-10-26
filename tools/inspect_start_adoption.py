@@ -40,6 +40,11 @@ def inspect(app, catalog):
               ('henry-selected',{'kind':'existing','actor_id':'HYW-HENRY-V','opening_id':'henry-1415-embarkation-v1'})]
     checks=[]; contexts=[]; examples={}; app_result_example={}; request_count=0
     def check(case, finding, label, expected, actual):
+        # Compare the public JSON contract: native capability source references
+        # may be tuples, while the HTTP representation necessarily uses arrays.
+        # Keep real field/value differences visible after wire normalization.
+        expected=json.loads(json.dumps(expected,ensure_ascii=False))
+        actual=json.loads(json.dumps(actual,ensure_ascii=False))
         checks.append({'case':case,'finding':finding,'check':label,
                        'expected':expected,'actual':actual,'passed':actual==expected})
     with tempfile.TemporaryDirectory(prefix='irgs-start-adoption-') as temporary, ExitStack() as stack:
