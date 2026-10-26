@@ -2,6 +2,13 @@
 
 Current start increment: [readiness and sourced existing-person API](engine/START_READINESS_API.md), with 33 dedicated cases and 772 full-runtime passes plus one prescribed skip. Henry has one optional sourced observation; other unsupported modes remain held. [App/Catalog adoption and exact-set review](engine/START_DELIVERY_VALIDATION.json) remain pending, including three old App assertions requiring empty historical starting knowledge.
 
+[Current adoption handoff](engine/START_ADOPTION_HANDOFF.md) supplies a repeatable
+six-context HTTP diagnostic and exact Engine examples. It reproduces blocked App
+adoption, including a wrong result-axis label, with unchanged Engine runtime/data.
+App/Catalog owners and exact-set coordinator qualification remain dependencies;
+selected native travel follows adoption. [Fresh results](engine/START_ADOPTION_VALIDATION.json)
+keep passing backend checks separate from three failing App expectations.
+
 Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
 See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution
 records below retain their original tested development identities.

@@ -29,6 +29,29 @@ handoff. After adoption, resume the selected travel capability increment over
 existing Core processes, with native location, commitments, time, received
 arrival and restart/restore checks; preserve the delivered communication API.
 
+## Engine handoff support delivered — 26 October 2026
+
+Read [the adoption recipe](engine/START_ADOPTION_HANDOFF.md),
+[repeatable probe](tools/inspect_start_adoption.py) and
+[fresh execution summary](engine/START_ADOPTION_VALIDATION.json).
+Engine runtime/data remain identical to accepted product `cc450a6`; no API,
+release hash or version changes. Current App `d8e6884` and Catalog `43b3e34`
+are explicitly selected without editing their code, pins or baseline consumers.
+
+The six-context probe makes 33 HTTP requests and reports blocked App adoption:
+Henry preflight rejects the option; context/civil/elapsed projection and prompt
+need adoption. It additionally reproduces the immutable App result's incorrectly
+hardcoded courier elapsed axis. Actual Core observation/retry/reload and R00 work.
+Read the handoff for the exact correction boundary and actual Engine examples.
+33 readiness, 32 communication, nine Catalog baseline and five legacy App
+preflight cases pass; the three old App expectations still fail, zero skips in
+these selections. This support increment closes no general DEV or joined gate.
+
+Next: support concrete App/Catalog contract feedback and rerun the probe after
+their adoption. App owns START-INT-002/003/004/005; Catalog owns START-INT-006.
+Only then resume selected native travel. Do not start a new opening or timing
+rule to work around missing consumer adoption.
+
 ## Source and publication rules
 
 Published unified 3.4.2 remains `ba551af285a6e1eb0766a9d06f83cbc0e5335b35`.

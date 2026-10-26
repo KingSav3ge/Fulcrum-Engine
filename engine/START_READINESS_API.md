@@ -144,3 +144,16 @@ display and supported-intent mapping. Catalog owns independent source requiremen
 and consumer cases. Exact compatible pins and coordinator joined/package review
 follow the final Engine evidence. Communication remains delivered; selected
 travel expansion follows this bounded start increment.
+
+## Current adoption support — 26 October 2026
+
+[The current handoff](START_ADOPTION_HANDOFF.md) provides concrete pre-creation
+and continuing-view call recipes, actual Engine JSON examples and a repeatable
+six-context App probe. [Fresh evidence](START_ADOPTION_VALIDATION.json) selects
+App `d8e6884` and Catalog `43b3e34` without changing their code, pins or historical
+consumer identities. It reproduces the coordinator's App adoption gaps and an
+additional hardcoded elapsed-axis label in the App's saved result. Engine
+runtime/data, this schema and release hashes remain identical to accepted
+`cc450a6`. The preceding delivery counts remain dated evidence at their stated
+sources. App/Catalog adoption and coordinator exact-set review still precede
+selected native travel and joined publication.

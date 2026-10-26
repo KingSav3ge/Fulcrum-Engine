@@ -9,6 +9,18 @@ and [the current review](COORDINATOR_START_REVIEW_2026_10_26.md) before
 selecting work. Earlier records below retain their dated scope. Unified
 3.4.2 remains published; next joined release is 3.4.3 after qualification.
 
+## Bounded owner task status — 26 October 2026
+
+- Completed Engine support: [inspection tooling and call recipe](engine/START_ADOPTION_HANDOFF.md),
+  exact Engine response examples, source/pin evidence and fresh selected checks.
+  Runtime/data and schema are unchanged; this is adoption support, not another
+  mechanic or closure of the stable DEV requirements.
+- In progress with App: START-INT-002/003/004/005, including the reproduced wrong
+  elapsed-axis label in its immutable Henry result. Catalog owns START-INT-006.
+- Pending Engine: respond to concrete API feedback, rerun the inspection after
+  adoption, then resume selected native travel. [Current evidence](engine/START_ADOPTION_VALIDATION.json)
+  records blocked consumer adoption and three still-failing App expectations.
+
 ## Delivered start contract — 26 October 2026
 
 [Start readiness API 1](engine/START_READINESS_API.md) now separates dated reference,
@@ -34,19 +46,20 @@ new-schema consumer cases and exact-set coordinator review remain pending. This
 Engine delivery advances bounded DEV-02/06–08/11/13–14/18/20 properties without
 closing general DEV/C2 or claiming a new joined release.
 
-Next Engine work returns to the previously queued host-safe selected Rise travel
-contract, preserving this start API and addressing consumer feedback first if it
-affects the contract. General supported-intent mapping (IRGS-PLAY-003), broader
+Next Engine work supports concrete App/Catalog adoption feedback and reruns the
+current inspection after consumer updates. Resume the queued host-safe selected
+native travel contract only after adoption, preserving the published start and
+communication APIs. General supported-intent mapping (IRGS-PLAY-003), broader
 historical-person contexts and NPC/general resolution remain open.
 
-Current priority after the 26 October runtime assessment: implement the shared
-start readiness/context contract and one sourced existing-character playable
-path under [the work order](COORDINATOR_WORK_ORDER.md). Selected travel and other
-expansion follow this first increment. Existing DEV/C2 IDs and completed evidence
-below retain their scope; the delivered bounded start evidence is above; broader requirements remain open.
+Current priority under [the work order](COORDINATOR_WORK_ORDER.md): support
+adoption of the delivered shared start contract. Engine's bounded implementation
+and handoff evidence are delivered; App/Catalog adoption and coordinator review
+remain open. Selected travel follows adoption. Stable DEV/C2 completion criteria
+and historical execution records below retain their original scope.
 
 
-## Current continuation pointer
+## Dated communication delivery record
 
 **Communication contract delivered — 26 October 2026 (3.4.1 development):**
 [actor-safe participant/source/offer API](engine/COMMUNICATION_CAPABILITY_API.md)

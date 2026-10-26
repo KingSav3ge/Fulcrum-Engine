@@ -18,6 +18,18 @@ Current guide: 26 October 2026. Owner: `KingSav3ge/IRGS-Engine/main`.
 Start with [CHAT_CONTINUATION.md](CHAT_CONTINUATION.md), then the stable DEV list.
 
 
+## Current adoption support delivery — 26 October 2026
+
+[The executable adoption probe](tools/inspect_start_adoption.py) and
+[Engine call recipe](engine/START_ADOPTION_HANDOFF.md) now reproduce the current
+App boundaries against explicitly selected Engine/Catalog sources. No Engine
+runtime correction is indicated; runtime/data, schema and release hashes are
+unchanged from accepted `cc450a6`. [Fresh evidence](engine/START_ADOPTION_VALIDATION.json)
+records 33 real HTTP requests across six contexts, safe Henry observation/retry/
+reload and R00 execution, alongside blocked preview/context adoption and the
+newly isolated App result-axis label bug. App's three old expectations still
+fail. No consumer pin, Catalog baseline identity or version is changed.
+
 ## Current delivered start contract — 26 October 2026
 
 [Start readiness API 1](engine/START_READINESS_API.md) now separates dated reference,
@@ -43,9 +55,10 @@ new-schema consumer cases and exact-set coordinator review remain pending. This
 Engine delivery advances bounded DEV-02/06–08/11/13–14/18/20 properties without
 closing general DEV/C2 or claiming a new joined release.
 
-Next Engine work returns to the previously queued host-safe selected Rise travel
-contract, preserving this start API and addressing consumer feedback first if it
-affects the contract. General supported-intent mapping (IRGS-PLAY-003), broader
+Next Engine work supports concrete App/Catalog adoption feedback and reruns the
+current inspection after consumer updates. Resume the queued host-safe selected
+native travel contract only after adoption, preserving the published start and
+communication APIs. General supported-intent mapping (IRGS-PLAY-003), broader
 historical-person contexts and NPC/general resolution remain open.
 
 ## Current priority — assessed player-start gaps
