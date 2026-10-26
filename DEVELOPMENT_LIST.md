@@ -1,5 +1,14 @@
 # IRGS continuation development list
 
+## Current coordinator review — 26 October 2026
+
+The first readiness/context deliveries have been reviewed. Engine API 1 is
+published; App and Catalog adoption remain open. The coordinator fixed App
+module/test name collisions. Follow [COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md)
+and [the current review](COORDINATOR_START_REVIEW_2026_10_26.md) before
+selecting work. Earlier records below retain their dated scope. Unified
+3.4.2 remains published; next joined release is 3.4.3 after qualification.
+
 ## Delivered start contract — 26 October 2026
 
 [Start readiness API 1](engine/START_READINESS_API.md) now separates dated reference,

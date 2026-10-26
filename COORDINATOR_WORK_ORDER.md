@@ -1,74 +1,34 @@
-# Engine work order — supported player starts
+# Coordinator work order — IRGS Engine
 
-Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
-Assigned 26 October 2026 after the coordinator ran the actual unified build.
-Owner: `KingSav3ge/IRGS-Engine/main`. This order supersedes older next-task ordering.
-The existing implemented APIs, refined interface and qualified fixtures remain
-completed work. This is a new assignment, not a claim that its fixes exist.
+Active cycle: shared start-context adoption, candidate next unified **3.4.3**.
+Current published unified edition remains **3.4.2**. Previous release: **3.3.3**.
 
-Read [the assessment](PLAYABILITY_REVIEW_3_4_2.md),
-[executed evidence](PLAYABILITY_EVIDENCE_3_4_2.json), `AGENTS.md`,
-`IRGS_SYSTEMS_SCOPE.md` and `CHAT_CONTINUATION.md` before selecting implementation.
+Read [the coordinator review](COORDINATOR_START_REVIEW_2026_10_26.md) and
+[the exact evidence](COORDINATOR_START_REVIEW_2026_10_26.json). These instructions replace older
+next-task ordering; historical delivery records retain their tested scope.
 
-## Engine delivery status
+Engine's `cc450a6` readiness/context increment passed the coordinator's fresh
+773-case suite (772 passes, one absent historical-save skip). The versioned API is
+published and can be consumed now. Keep its source/uncertainty, explicit-mode,
+actor receipt, conservation, authority and recovery boundaries intact.
 
-The bounded [start contract](engine/START_READINESS_API.md) is implemented and
-qualified in [the owner record](engine/START_DELIVERY_VALIDATION.json). App/Catalog
-adoption, its three changed calendar/knowledge expectations and current exact-set
-coordinator qualification remain separate. The original assignment below retains
-its acceptance scope and does not claim general historical-character playability.
+First support App/Catalog adoption of `irgs-start-readiness-1`. Keep John and
+unsupported personal contexts held; Henry's optional broad setting and selected
+20-second observation grant no dispatch, institutional power or running civil
+clock. Do not silently attach it to a default or continuing campaign. Publish any
+necessary API correction with exact source and focused interaction evidence.
+App owns the wizard, received civil/elapsed projection, prompt correction and
+three failed consumer expectations; Catalog owns the separate new-contract
+selection. Do not substitute more scenario packs or renamed templates for this
+handoff. After adoption, resume the selected travel capability increment over
+existing Core processes, with native location, commitments, time, received
+arrival and restart/restore checks; preserve the delivered communication API.
 
-## First bounded increment — start readiness and legitimate context
+## Completion and ownership
 
-Read `PLAYABILITY_REVIEW_3_4_2.md` and address IRGS-PLAY-001/002/004 first.
-Publish a versioned actor/start-mode readiness contract usable before creation and
-in the first known view. Distinguish verified dated reference, character eligibility,
-presentation-only opening, declaration-only mode and a supported playable slice.
-Expose modeled capability availability and reasons without inspecting hidden stock,
-authority, locations or outcomes to choose a winning menu.
-
-Implement a bounded, source-backed existing-character opening using the shared
-Core. John of Lancaster 1415 is the reproduced gap: support him only if legitimate
-starting context can be established. Otherwise keep his mode explicitly held or
-declaration/reference-only and qualify another sourced existing historical person.
-Do not reuse the new-character courier fiction as his biography or invent an hour,
-health values, possessions, introductions, orders or command authority.
-
-The initialized known view must carry legitimately received starting context,
-actual selected capabilities and a sourced civil-date/precision treatment where
-established, independent of causal order and local elapsed seconds. Preserve all
-unknowns as unknown and separate out-of-character references from actor knowledge.
-Do this for new worlds only. Continuing worlds and historical templates must not
-be reset or automatically reseeded when read or restored.
-
-Acceptance: one existing-person path has a reviewed first executable attempt and
-received Core result with actual effects; new-character authored and declaration-
-only paths remain distinct. Show actor privacy, actual authority/conservation,
-atomic rejection, exact retry, restore fencing and save/reload without reapplying
-setup. Publish the interface early for App/Catalog; the final delivery needs real
-implementation and executed evidence. Broader intent resolution is later, bounded
-by actual handlers. Existing communication is delivered; preserve it. Selected
-travel expansion follows this playability increment rather than delaying it.
-
-## Delivery rules
-
-Develop shared IRGS systems; Rise is one regression context. Preserve one
-authoritative Core and its nine K-owners, the existing six Director categories,
-actor/source filtering, reviewed creation, explicit acceptance, resource/authority
-checks and exact original-result recovery. Names, themes, narration and drafts
-create no capability or facts. Keep causal, storage, civil and elapsed time apart.
-Do not invent universal timing, dice or an NPC decision to satisfy an example.
-
-Use temporary synthetic stores only. Preserve user saves, credentials, local
-configuration, original source/archive bytes, adopted canon and dated evidence.
-Do not migrate an actual user campaign as a test. Record actual source commits,
-APIs, test commands/results/skips and remaining dependencies. Retain old fixtures
-at their selected identities. No live inference or full C2 claim is implied.
-
-After actual product edits, refresh only the owning component's release hashes
-and run meaningful existing and new checks for changed behavior. Update the
-development plan and push only this assigned component repository. Return the
-full commit and exact compatible dependency selections to the coordinator.
-Current edition stays 3.4.2 until a coordinated versioned publication. Guide-only
-commits are not new product increments. Repository publication proves no dispatch
-or chat resumption; preserve the coordinator's unified integration gate.
+Read `CHAT_CONTINUATION.md` for source selections, rules and checks. Publish only
+this component. A work-order/plan change does not complete implementation or
+qualify the new contract. Report exact published code and compatible dependencies,
+actual passes/failures/skips and remaining work. Coordinator owns joined import,
+fresh execution capture, joined/browser/package qualification and versioned
+publication after all three viable updates are approved. No dispatch is implied.
