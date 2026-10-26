@@ -4,7 +4,7 @@ Current coordinated edition: **3.4.1**; previous release: **3.3.3**.
 See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution
 records below retain their original tested development identities.
 
-Prepared 25 October 2026 for `KingSav3ge/IRGS-Engine/main`. Preserve local changes
+Prepared 26 October 2026 for `KingSav3ge/IRGS-Engine/main`. Preserve local changes
 before pulling. Resume this existing chat's component work; publish only its
 own repository. Read this file after pull; fresh user directions take precedence.
 
@@ -50,10 +50,12 @@ independent content/schema versions and historical evidence. See
 
 The latest independent App/Catalog heads have been pulled and qualified from
 Engine with explicit source selectors; see [component interaction](engine/COMPONENT_INTERACTION.md).
-App already continues existing processes. Engine's new start discovery still
-needs an App adapter, and App-owned pins/coordinator joined review remain separate.
-No Engine runtime compatibility fix or fixture repinning was needed. The next
-bounded Engine task below is unchanged.
+The original record retains its actual 25 October sources. The
+[26 October candidate check](engine/COMMUNICATION_COMPONENT_INTERACTION_VALIDATION.json)
+also passes current App start discovery/continuation, with App
+`919427cf16cf72574a581d7e6f712e638740a1df` and Catalog
+`526404128830a99fe8ea5c2bce43b6ea7d45fe6f`. App pins were preserved; adopting the
+new communication contract and coordinator exact-set review remain separate.
 
 The selected observation/Rise work phase contract is delivered in
 [phase API v1](engine/PHASE_CAPABILITY_API.md), initially published at
@@ -61,20 +63,29 @@ The selected observation/Rise work phase contract is delivered in
 [execution record](engine/PHASE_CAPABILITY_VALIDATION.json) qualifies actor-safe
 options/status/commands, actual dependency reads and rejection, competing
 stock/actor claims, pause/resume/cancel, mandatory CAS and restart/restore.
-It is additive to the already integrated shared-response baseline. New App phase
-controls/pins and coordinator joined qualification remain a separate handoff.
+It is additive to the already integrated shared-response baseline. App now
+supports selected phase starts/continuation. New communication controls/pins and
+coordinator exact-set qualification remain a separate handoff.
 
-**Next bounded task:** expose the existing typed communication/offer participant
-and received-source contract for supported selected channels. Build actor-safe
-participant/offer views from actual legitimate received records; retain exact
-utterances as testimony and original offer statuses/terms. Expose only actual
-supported commands and keep private dependency evidence, hidden whereabouts,
-stock feasibility and unreceived participant/source facts out of views. Reuse
-explicit acceptance, current Core authority, selected custody/channel rules and
-atomic host CAS; qualify rejected/withdrawn/superseded/fulfilled meanings,
-competing claims and restart/restore. Preserve the delivered phase API. No NPC
-choice, universal speech duration, travel/stock rule or generic dialogue resolver
-is introduced by an adapter. Broader DEV-06–DEV-17/C2 scope remains open.
+**Completed 26 October:** [communication capabilities v1](engine/COMMUNICATION_CAPABILITY_API.md)
+now exposes received participant/source and offer contracts, exact testimony and
+terms, role-dependent command attempts and sanitized atomic host results. Shared
+actor views include `communications`. [32 new cases](engine/COMMUNICATION_CAPABILITY_VALIDATION.json)
+qualify non-Rise speech, Rise conserved fulfillment, rejection, distinct closure
+statuses, competing frontiers and restart/restore. A reproduced legacy receipt
+leak is closed: forwarding words conveys no private offer terms or audience.
+The full runtime suite runs 740 cases: 739 pass and the prescribed private-save
+case is replaced by an explicit policy skip. No provider call or user save is used.
+App communication controls/host wiring, compatible pins and coordinator exact-set
+qualification remain separate; prior phase/response deliveries are preserved.
+
+**Next bounded task:** expose host-safe selected Rise travel capabilities over
+existing native `process_runtime` travel. Preserve actual route locations,
+selected duration, goods/actor commitments, received arrival information,
+pause/resume, native JSON recovery and mandatory host CAS. Qualify partial travel,
+competing claims, interruption, restart/replay/restore and filtered views. No
+return/cancellation rule, universal geography or timing is selected by the
+adapter. Broader DEV-06–DEV-17/C2 scope remains open.
 
 ## Preserve and finish
 

@@ -38,15 +38,18 @@ def initialize(app, catalog):
     for name, root in roots.items():
         if not (root/'.git').exists():
             raise ValueError('Select a Git checkout for ' + name)
-        SELECTED[name] = {'root': str(root), 'commit': git(root, 'rev-parse', 'HEAD')}
-        if name != 'engine' and git(root, 'status', '--porcelain'):
+        clean = not git(root, 'status', '--porcelain')
+        SELECTED[name] = {'root': str(root), 'commit': git(root, 'rev-parse', 'HEAD'),
+                          'worktree_clean': clean}
+        if name != 'engine' and not clean:
             raise ValueError('Select clean App/Catalog checkouts; preserve their independent work')
     SELECTED['app']['committed_pins'] = {name: git(app, 'rev-parse', 'HEAD:'+name)
                                        for name in ('Engine', 'Catalog')}
     os.environ['IRGS_ENGINE_ROOT'] = str(ENGINE/'IRGS_3_3')
     os.environ['IRGS_CATALOG_ROOT'] = str(catalog/'IRGS_Catalog')
     sys.path[:0] = [str(app/'IRGS_Web'), str(ENGINE/'IRGS_3_3/runtime'), str(catalog/'IRGS_Catalog')]
-    imports = {'engine': ('core_world', 'phase_contract', 'shared_runtime', 'response_depot',
+    imports = {'engine': ('core_world', 'phase_contract', 'communication_contract', 'communication_runtime',
+                          'shared_runtime', 'response_depot',
                           'offline_responses', 'runtime_contracts', 'starting_selection',
                           'historical_campaigns', 'settlement_setup', 'solo_provider', 'openai_proposals',
                           'process_runtime', 'scene_actions', 'settlement_runtime', 'r9_runtime'),
@@ -301,7 +304,8 @@ def qualify(app, catalog):
             for owner in ('engine', 'app', 'catalog') for module in MODULES.values()
             if Path(module.__file__).resolve().is_relative_to(Path(SELECTED[owner]['root']))},
         'remaining': ['Coordinator exact-set joined/package qualification',
-            'Communication/offer participant and received-source contract remains the next Engine bounded task']}
+            'App-owned communication controls and host adapter for the delivered Engine contract',
+            'Selected Rise travel capability adapter remains the next Engine bounded task']}
 
 
 if __name__ == '__main__':
