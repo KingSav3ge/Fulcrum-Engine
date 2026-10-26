@@ -1,5 +1,7 @@
 # IRGS Engine — 3.4.2 development
 
+Current start increment: [readiness and sourced existing-person API](engine/START_READINESS_API.md), published early with ten initial tests. Final qualification and App/Catalog consumption remain in progress.
+
 Current coordinated edition: **3.4.2**; previous release: **3.3.3**.
 See [version policy](VERSION_POLICY.md). Earlier baseline tables and execution
 records below retain their original tested development identities.

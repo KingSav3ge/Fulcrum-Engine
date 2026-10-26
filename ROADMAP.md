@@ -1,5 +1,15 @@
 # IRGS Engine development roadmap
 
+## Start contract published early — 26 October 2026
+
+[Start readiness API 1](engine/START_READINESS_API.md) implements the review and
+actor-known contract, an optional sourced Henry V observation start and received
+initial civil-date precision. John/default starts remain explicitly declaration-
+only with a held playable context. Ten initial cases pass, including an actual
+Core observation and failed-save rollback. Full rejection/dependency/recovery,
+App/Catalog consumption and final work-order qualification remain in progress.
+This early API publication is not a new joined release or full DEV/C2 completion.
+
 Current priority after the 26 October runtime assessment: implement the shared
 start readiness/context contract and one sourced existing-character playable
 path under [the work order](COORDINATOR_WORK_ORDER.md). Selected travel and other
