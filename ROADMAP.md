@@ -12,13 +12,22 @@ intents and continuing resource/social/NPC/conflict play; grounded provider path
 then cross-context durability and exact-set Alpha qualification. App setup and
 Catalog independent assessment proceed in parallel workstreams.
 
-**A4-ENG-01 in progress — 27 October 2026:** the explicitly reviewed fictional
+**A4-ENG-01 update — 27 October 2026:** reviewed ordinary R00 now initializes
+fictional received introductions and a local `speak` channel. [Rise contract and
+results](engine/RISE_ORDINARY_COMMUNICATION.md) cover real App creation/speech,
+privacy, stale review, movement rejection and recovery; the prior non-Rise
+quay context remains supported. Offers/authority and independent Catalog
+qualification remain open. Continue A4-ENG-01; selected travel and early
+A4-ENG-03 intent DTOs remain next. No Alpha gate is closed.
+
+
+**Prior A4-ENG-01 quay increment — 27 October 2026:** the explicitly reviewed fictional
 `quay-contact-v1` start now initializes a received contact and local speech
 channel through existing Core communication. [Engine/API and App HTTP evidence](engine/ORDINARY_START_COMMUNICATION.md)
 covers actual accepted testimony, retry/reload and co-location rejection. This is
-one non-Rise context, not Alpha qualification; second-context participants and
-independent Catalog/App qualification remain open. Next: complete ordinary
-communication coverage, then A4-ENG-02 travel and early A4-ENG-03 intent DTOs.
+one non-Rise context, not Alpha qualification. At that time, a second context
+remained open; the R00 increment above now covers its initial speech. Offers,
+independent qualification and broader continuing play remain open.
 
 
 ## Earlier development records and criteria

@@ -408,7 +408,7 @@
     "runtime/scene_setup.py": "1620ff9f63bb6c65c665f21d90563236fc06abb7effcd84291c0d10c289d563c",
     "runtime/selective_coordinator.py": "d0fc143d863ea5ed1fc0ed025c8aa355ab3ee0551fab4628838f57f4a266787f",
     "runtime/settlement_runtime.py": "77703de381e8b4e8724d9fdde4b502b50da9bb3f8948f03cf4da3f0e87c9915b",
-    "runtime/settlement_setup.py": "d942b135ba8eac8f0a6d3b160f36a146219f399da8a7035e095f12c599566f27",
+    "runtime/settlement_setup.py": "95e199fc0af0cd97eb57a6c1e435296a017cd4a82f1f209d2e6445e544a0770c",
     "runtime/starting_selection.py": "d9f57d60bef37cd68a1610fab80b19ebb1afbb746ed650be60ed118bc77794e6",
     "runtime/strategic_execution.py": "74cbcb9e3de9ca9354b912a418da6d9c9c401b08797b7c41150d940d9ed029e7",
     "runtime/temporal_registry.py": "fcb7289c1bc57c867a66a8c837085711241e7d75c0589b35563161fa5fe33ba1",
@@ -468,11 +468,12 @@
     "runtime/phase_contract.py": "69710d90158febbf1c0cb6883e48923a7ecaf859a7748e0d11690a673e4891be",
     "runtime/test_phase_contract.py": "f015fdaf8d2129a1bb96c68ec2678668ba6e543c9053f35efa657e19ec9e45fd",
     "runtime/communication_contract.py": "733ee353083706d2f7830195a5521f83876c737ac70d5386869c4bffb4ba5fe9",
-    "runtime/test_communication_contract.py": "3791d7cd0cdaf14e092a7c5b37f617bb2b0140801a83ea84ec588753d180a55c",
+    "runtime/test_communication_contract.py": "8a4dc68a9cf7198639c1e49b9d752903072f8c2397b6ffd2ef9fefcf2c2ffe6f",
     "data/henry_1415_observation.json": "445d4a5bb16cec51fc4ccfa9d857df40bb82fe3fd7b8d5960702ef41a1425662",
     "runtime/start_readiness.py": "027aa3708d458b11869497cf400273aad66acc8288fd848afd2fd95c863c37f4",
     "runtime/test_start_readiness.py": "a108e7dce16317ca3dd08f9947da3e5fa168f139c3259b31e233e519e0605fe4",
-    "runtime/test_ordinary_communication.py": "45765a3cfef78df3563ed8902e5bfff7f2c568b6fd03b881e534a1942727f1b3"
+    "runtime/test_ordinary_communication.py": "45765a3cfef78df3563ed8902e5bfff7f2c568b6fd03b881e534a1942727f1b3",
+    "runtime/test_rise_start_communication.py": "1e69605536dca1ac8a0e731a0749a732e2fc9af1316f4044fee4801ad6bcfb53"
   },
   "existing_save_migration": false,
   "development_designations": {
