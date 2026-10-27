@@ -1,5 +1,24 @@
 # IRGS continuation development list
 
+## Active Alpha direction — 27 October 2026
+
+Current product is **3.4.3 Pre-Alpha**. Follow
+[ALPHA_4_0_PLAN.md](ALPHA_4_0_PLAN.md) and
+[COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md) toward functional
+**4.0.0 Alpha**. No Alpha gate is qualified by these instructions.
+
+The A4-ENG task table maps the Alpha queue to stable DEV IDs. Keep DEV-01–05's
+bounded evidence and all wider open DEV/C2 criteria intact. Before final Alpha
+review, map the relevant C2 cases per exposed operation; do not declare all 121
+implemented or passed. Alpha release acceptance and complete C2 coverage are
+different claims.
+
+## Earlier development records and criteria
+
+Dated delivery/next-task records below preserve their original source selections
+and execution scope. Their old pending-3.4.3 ordering is superseded above.
+Stable DEV/C2 completion criteria remain applicable to their stated scope.
+
 ## Current coordinator review — 26 October 2026
 
 The first readiness/context deliveries have been reviewed. Engine API 1 is

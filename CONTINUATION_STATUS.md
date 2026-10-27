@@ -1,5 +1,23 @@
 # Current Engine continuation
 
+## Active Alpha direction — 27 October 2026
+
+Current product is **3.4.3 Pre-Alpha**. Follow
+[ALPHA_4_0_PLAN.md](ALPHA_4_0_PLAN.md) and
+[COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md) toward functional
+**4.0.0 Alpha**. No Alpha gate is qualified by these instructions.
+
+Current reviewed product set is the 3.4.3 baseline in the shared plan.
+Current Engine queue starts A4-ENG-01 then A4-ENG-02, with A4-ENG-03 DTOs early.
+The earlier App adoption blockers below were fixed and integrated; they are not
+current failures. Wider freeform/NPC/AI-quality work remains unfinished.
+
+## Earlier development records and criteria
+
+Dated delivery/next-task records below preserve their original source selections
+and execution scope. Their old pending-3.4.3 ordering is superseded above.
+Stable DEV/C2 completion criteria remain applicable to their stated scope.
+
 ## Current coordinator review — 26 October 2026
 
 The first readiness/context deliveries have been reviewed. Engine API 1 is

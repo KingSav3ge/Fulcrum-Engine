@@ -1,5 +1,13 @@
 # IRGS Engine — 3.4.3 development
 
+Current stage: **3.4.3 Pre-Alpha**. Development target: **functional 4.0.0 Alpha**.
+Start with [the Alpha plan](ALPHA_4_0_PLAN.md),
+[owner work order](COORDINATOR_WORK_ORDER.md) and
+[continuation](CHAT_CONTINUATION.md). All 3.x editions are Pre-Alpha.
+The reviewed start/communication set is already integrated in unified 3.4.3;
+older pending-adoption claims below are dated history, not the current task.
+The new plan does not claim Alpha is implemented or qualified.
+
 Current start increment: [readiness and sourced existing-person API](engine/START_READINESS_API.md), with 33 dedicated cases and 772 full-runtime passes plus one prescribed skip. Henry has one optional sourced observation; other unsupported modes remain held. [App/Catalog adoption and exact-set review](engine/START_DELIVERY_VALIDATION.json) remain pending, including three old App assertions requiring empty historical starting knowledge.
 
 [Current adoption handoff](engine/START_ADOPTION_HANDOFF.md) supplies a repeatable

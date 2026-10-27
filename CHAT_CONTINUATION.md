@@ -1,90 +1,58 @@
-# Continuation instructions — IRGS Engine
+# Continue IRGS Engine toward functional Alpha 4.0
 
-Current coordinated edition: **3.4.3**; previous release: **3.3.3**.
-Updated 26 October 2026 following coordinator review of all three deliveries.
-Preserve local work before pulling. New user directions take precedence.
+Current edition **3.4.3 Pre-Alpha**; target **4.0.0 Alpha**; previous release field
+**3.3.3**. Updated 27 October 2026. User directions take precedence.
 
-## Current review and assignment
+## On resume
 
-Pull this repository's `main`, then read `AGENTS.md`,
-[the work order](COORDINATOR_WORK_ORDER.md),
-[the current review](COORDINATOR_START_REVIEW_2026_10_26.md) and
-[its exact evidence](COORDINATOR_START_REVIEW_2026_10_26.json).
-The original `PLAYABILITY_REVIEW_3_4_2.md` remains the dated initial assessment.
+1. Preserve local edits, verify origin is KingSav3ge/IRGS-Engine, fetch main and
+   fast-forward only when safe. Do not discard work, force-push or use an
+   unrelated checkout. Read AGENTS.md.
+2. Read [the shared Alpha plan](ALPHA_4_0_PLAN.md),
+   [acceptance register](ALPHA_4_0_ACCEPTANCE.json) and
+   [your work order](COORDINATOR_WORK_ORDER.md). They supersede old next-task
+   ordering. The start-context adoption set is already integrated in 3.4.3;
+   dated pending-adoption reports are history, not a current blocker.
+3. Start: **A4-ENG-01 ordinary-start participants/channels, then A4-ENG-02 selected native travel. Publish A4-ENG-03 supported-intent DTOs early.**
+4. Publish versioned interface/evaluation handoffs early. Continue independent
+   tasks while another owner's implementation is pending. Test real ordinary
+   creation/interaction, not only a privileged fixture.
+5. Update your task status and evidence; push only this component. Report the
+   full SHA, exact compatible sources/pins, executed checks, failures/skips,
+   remaining gaps and next task to the coordinator.
 
-Engine's `cc450a6` readiness/context increment passed the coordinator's fresh
-773-case suite (772 passes, one absent historical-save skip). The versioned API is
-published and can be consumed now. Keep its source/uncertainty, explicit-mode,
-actor receipt, conservation, authority and recovery boundaries intact.
+## Scope and stopping condition
 
-First support App/Catalog adoption of `irgs-start-readiness-1`. Keep John and
-unsupported personal contexts held; Henry's optional broad setting and selected
-20-second observation grant no dispatch, institutional power or running civil
-clock. Do not silently attach it to a default or continuing campaign. Publish any
-necessary API correction with exact source and focused interaction evidence.
-App owns the wizard, received civil/elapsed projection, prompt correction and
-three failed consumer expectations; Catalog owns the separate new-contract
-selection. Do not substitute more scenario packs or renamed templates for this
-handoff. After adoption, resume the selected travel capability increment over
-existing Core processes, with native location, commitments, time, received
-arrival and restart/restore checks; preserve the delivered communication API.
+Own IRGS_3_3/ and engine/: shared Core, technical initializers, rules/profiles, provider execution contracts and Kira canon. Develop shared IRGS systems, not Rise alone. The target is
+sustained Solo play in two distinct ordinary campaign contexts, at least one
+non-Rise, with real decisions, consequences, NPC responses, time/resources,
+selected conflict/recovery, configured AI and durable multi-session continuity.
+See the shared plan for mandatory gates and the bounded Alpha content scope.
 
-## Engine handoff support delivered — 26 October 2026
+A declaration, draft, mock, schema, source dossier or plan is not a committed
+world action. Preserve actor knowledge, actual authority/resources, explicit
+review, atomic acceptance and original-result retry/restore. Preserve historical
+source bytes and user data; use synthetic temporary stores for tests. No live
+provider spending is authorized by this continuation.
 
-Read [the adoption recipe](engine/START_ADOPTION_HANDOFF.md),
-[repeatable probe](tools/inspect_start_adoption.py) and
-[fresh execution summary](engine/START_ADOPTION_VALIDATION.json).
-Engine runtime/data remain identical to accepted product `cc450a6`; no API,
-release hash or version changes. Current App `d8e6884` and Catalog `43b3e34`
-are explicitly selected without editing their code, pins or baseline consumers.
+Do not stop after creating another plan. Deliver the first implementation or
+independent evaluation increment in the work order, run appropriate checks,
+publish it and identify the next task. A blocked dependency requires a specific
+handoff request plus progress on independent work, not fabricated functionality.
 
-The six-context probe makes 33 HTTP requests and reports blocked App adoption:
-Henry preflight rejects the option; context/civil/elapsed projection and prompt
-need adoption. It additionally reproduces the immutable App result's incorrectly
-hardcoded courier elapsed axis. Actual Core observation/retry/reload and R00 work.
-Read the handoff for the exact correction boundary and actual Engine examples.
-33 readiness, 32 communication, nine Catalog baseline and five legacy App
-preflight cases pass; the three old App expectations still fail, zero skips in
-these selections. This support increment closes no general DEV or joined gate.
+## Version and integration
 
-Next: support concrete App/Catalog contract feedback and rerun the probe after
-their adoption. App owns START-INT-002/003/004/005; Catalog owns START-INT-006.
-Only then resume selected native travel. Do not start a new opening or timing
-rule to work around missing consumer adoption.
-
-## Source and publication rules
-
-Published unified 3.4.2 remains `ba551af285a6e1eb0766a9d06f83cbc0e5335b35`.
-Received component products: Engine `cc450a6f00a249d2169cdacdfc9c4b1e03f67cc8`,
-App `23184e1e70b6005ad6170edb3843afcaae42e18a`, Catalog `e1778e080385b6ff2bbb93f47f91d0da6e9d6780`.
-Later coordinator guide/patch commits must be read; doc-only descendants do not
-themselves supply another runtime increment. Current App gitlinks still select
-Engine `91b20056e7db651966c9e92925313494917f47b1` and Catalog
-`3f921252e50a0976cb88321b6ff8249a5f12466d`.
-
-Develop shared IRGS systems; Rise is one regression context. Keep one Core and
-nine K-owners, existing six Director categories, actor/source filtering, actual
-authority/resources, reviewed explicit acceptance and atomic original-result
-recovery. Keep declaration, effect, information, outcome and presentation apart.
-Preserve distinctions among causal sequence, storage revision, civil day and
-selected local elapsed time. Do not invent universal timing or NPC decisions.
-
-Use synthetic temporary stores only. Preserve user saves, credentials, personal
-configuration, original archive/source bytes, adopted canon and dated evidence.
-Do not migrate a user campaign. Qualify actual code and exact dependencies;
-refresh only your component hashes after intentional source edits. Update plans,
-push only `IRGS-Engine` and report full commit, tested selections, failures/skips and
-remaining scope. Do not claim a full system, live AI, Windows or C2 qualification.
-
-The coordinator holds joined import until App adoption, Catalog qualification,
-exact compatible pins and all-three approval. The next unified publication is
-**3.4.3**, with coordinated versions across all four repos; components remain
-3.4.2 until that publication is prepared. Retain previous release field 3.3.3 and
-Core compatibility 3.3. Repository publication does not resume another chat.
+Keep this component's edition metadata 3.4.3 during independent development.
+All 3.x editions are Pre-Alpha. The next ordinary unified push is 3.4.4; only
+the coordinator can qualify the compatible all-three set as 4.0.0 Alpha.
+Do not rename Core compatibility 3.3 or change previous_version 3.3.3.
+These documentation commits do not constitute viable runtime increments.
+No chat is resumed by a repository push.
 
 ## Restart message
 
-> Pull IRGS-Engine/main. Follow CHAT_CONTINUATION.md, COORDINATOR_WORK_ORDER.md and
-> COORDINATOR_START_REVIEW_2026_10_26.md. Complete this owner's adoption task,
-> preserve current behavior and information boundaries, execute meaningful
-> checks, publish only this component and report exact source/pins and limits.
+> Pull KingSav3ge/IRGS-Engine/main and follow CHAT_CONTINUATION.md,
+> COORDINATOR_WORK_ORDER.md and ALPHA_4_0_PLAN.md. Implement and qualify the next
+> owner task toward functional Alpha 4.0, preserving current behavior and source
+> boundaries. Push only this component and report the exact source/pins, executed
+> checks, limits and next dependency. All 3.x work is Pre-Alpha.

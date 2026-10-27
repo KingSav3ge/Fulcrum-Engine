@@ -1,5 +1,23 @@
 # IRGS Engine development roadmap
 
+## Active Alpha direction — 27 October 2026
+
+Current product is **3.4.3 Pre-Alpha**. Follow
+[ALPHA_4_0_PLAN.md](ALPHA_4_0_PLAN.md) and
+[COORDINATOR_WORK_ORDER.md](COORDINATOR_WORK_ORDER.md) toward functional
+**4.0.0 Alpha**. No Alpha gate is qualified by these instructions.
+
+Active sequence: ordinary-start communication and selected travel; supported
+intents and continuing resource/social/NPC/conflict play; grounded provider path;
+then cross-context durability and exact-set Alpha qualification. App setup and
+Catalog independent assessment proceed in parallel workstreams.
+
+## Earlier development records and criteria
+
+Dated delivery/next-task records below preserve their original source selections
+and execution scope. Their old pending-3.4.3 ordering is superseded above.
+Stable DEV/C2 completion criteria remain applicable to their stated scope.
+
 ## Current coordinator review — 26 October 2026
 
 The first readiness/context deliveries have been reviewed. Engine API 1 is
