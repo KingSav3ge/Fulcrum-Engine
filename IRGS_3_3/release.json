@@ -405,7 +405,7 @@
     "runtime/run_round8_evidence.py": "4c328bd1a73edff3248d2acbf7c2302d1a5f6b1150c387522ab9b7914960c299",
     "runtime/scale_coverage.py": "41b254fe753449853e89d14043111fa42073803f42f88e749df67da4a8314ed4",
     "runtime/scene_actions.py": "45ed97da6c16f01c9efffb3d5607c25e47d0ddff4082400c78e396a3dc1d6083",
-    "runtime/scene_setup.py": "230aec5b2510ae0fbdd6543690ef07f1b846379db9b568fa501d1d4411fad92d",
+    "runtime/scene_setup.py": "1620ff9f63bb6c65c665f21d90563236fc06abb7effcd84291c0d10c289d563c",
     "runtime/selective_coordinator.py": "d0fc143d863ea5ed1fc0ed025c8aa355ab3ee0551fab4628838f57f4a266787f",
     "runtime/settlement_runtime.py": "77703de381e8b4e8724d9fdde4b502b50da9bb3f8948f03cf4da3f0e87c9915b",
     "runtime/settlement_setup.py": "d942b135ba8eac8f0a6d3b160f36a146219f399da8a7035e095f12c599566f27",
@@ -471,7 +471,8 @@
     "runtime/test_communication_contract.py": "3791d7cd0cdaf14e092a7c5b37f617bb2b0140801a83ea84ec588753d180a55c",
     "data/henry_1415_observation.json": "445d4a5bb16cec51fc4ccfa9d857df40bb82fe3fd7b8d5960702ef41a1425662",
     "runtime/start_readiness.py": "027aa3708d458b11869497cf400273aad66acc8288fd848afd2fd95c863c37f4",
-    "runtime/test_start_readiness.py": "a108e7dce16317ca3dd08f9947da3e5fa168f139c3259b31e233e519e0605fe4"
+    "runtime/test_start_readiness.py": "a108e7dce16317ca3dd08f9947da3e5fa168f139c3259b31e233e519e0605fe4",
+    "runtime/test_ordinary_communication.py": "45765a3cfef78df3563ed8902e5bfff7f2c568b6fd03b881e534a1942727f1b3"
   },
   "existing_save_migration": false,
   "development_designations": {

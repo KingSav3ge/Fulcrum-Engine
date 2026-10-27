@@ -21,6 +21,15 @@ Current edition **3.4.3 Pre-Alpha**; target **4.0.0 Alpha**; previous release fi
    full SHA, exact compatible sources/pins, executed checks, failures/skips,
    remaining gaps and next task to the coordinator.
 
+**A4-ENG-01 in progress — 27 October 2026:** the explicitly reviewed fictional
+`quay-contact-v1` start now initializes a received contact and local speech
+channel through existing Core communication. [Engine/API and App HTTP evidence](engine/ORDINARY_START_COMMUNICATION.md)
+covers actual accepted testimony, retry/reload and co-location rejection. This is
+one non-Rise context, not Alpha qualification; second-context participants and
+independent Catalog/App qualification remain open. Next: complete ordinary
+communication coverage, then A4-ENG-02 travel and early A4-ENG-03 intent DTOs.
+
+
 ## Scope and stopping condition
 
 Own IRGS_3_3/ and engine/: shared Core, technical initializers, rules/profiles, provider execution contracts and Kira canon. Develop shared IRGS systems, not Rise alone. The target is

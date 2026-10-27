@@ -12,6 +12,15 @@ Current Engine queue starts A4-ENG-01 then A4-ENG-02, with A4-ENG-03 DTOs early.
 The earlier App adoption blockers below were fixed and integrated; they are not
 current failures. Wider freeform/NPC/AI-quality work remains unfinished.
 
+**A4-ENG-01 in progress — 27 October 2026:** the explicitly reviewed fictional
+`quay-contact-v1` start now initializes a received contact and local speech
+channel through existing Core communication. [Engine/API and App HTTP evidence](engine/ORDINARY_START_COMMUNICATION.md)
+covers actual accepted testimony, retry/reload and co-location rejection. This is
+one non-Rise context, not Alpha qualification; second-context participants and
+independent Catalog/App qualification remain open. Next: complete ordinary
+communication coverage, then A4-ENG-02 travel and early A4-ENG-03 intent DTOs.
+
+
 ## Earlier development records and criteria
 
 Dated delivery/next-task records below preserve their original source selections
