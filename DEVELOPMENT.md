@@ -1,5 +1,27 @@
 # IRGS Engine development guide
 
+## Coordinator review and world-builder direction — 28 October 2026
+
+Read [the current review](COORDINATOR_REVIEW_2026_10_28.md) and
+[its executed scope](COORDINATOR_REVIEW_2026_10_28.json). This priority supersedes
+older first-task ordering below; existing task IDs and historical evidence remain.
+
+Continue A4-ENG-01's independent current-context qualification and actual offer
+prerequisites; publish A4-ENG-02 selected travel and A4-ENG-03 supported-intent DTOs.
+Do not add NPC consent or elapsed speech merely to make a fixture pass.
+WB-ENG-01 world-authoring contracts can proceed alongside that work.
+
+The user directs a shared development/Creator Workshop world builder:
+[implementation plan and owner tasks](WORLD_BUILDER_PLAN.md).
+The supplied executable is uninspected because it exceeds the attachment tool's
+32 MiB transfer limit. Do not claim recovered code, observed features or a working
+editor. Develop shared data/initialization/editor contracts without creating a
+second simulator or delaying the Alpha gameplay critical path.
+
+Current edition remains 3.4.3 Pre-Alpha. A joined 3.4.4 publication is held for
+the review's fixes, compatible pins, fresh execution capture and final qualification.
+No Alpha gate is closed by this documentation update.
+
 ## Active target: functional Alpha 4.0
 
 The entire **3.x.x series is Pre-Alpha**. Current published edition is **3.4.3**;
