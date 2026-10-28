@@ -12,6 +12,15 @@ intents and continuing resource/social/NPC/conflict play; grounded provider path
 then cross-context durability and exact-set Alpha qualification. App setup and
 Catalog independent assessment proceed in parallel workstreams.
 
+**A4-ENG-02 selected travel — 28 October 2026:** the existing phase contract
+now exposes reviewed Rise travel starts and actor-received phases, with native
+partial progress, pause/resume, commitments, arrival and durable retry. See
+[the contract and current limits](engine/TRAVEL_CAPABILITY_API.md). Dynamic access,
+other travel contexts and independent/coordinator qualification remain open.
+Continue A4-ENG-01 offers/independent evaluation and A4-ENG-03 supported-intent
+DTOs; WB-ENG-01 authoring remains separate. No Alpha gate is closed.
+
+
 **A4-ENG-01 update — 27 October 2026:** reviewed ordinary R00 now initializes
 fictional received introductions and a local `speak` channel. [Rise contract and
 results](engine/RISE_ORDINARY_COMMUNICATION.md) cover real App creation/speech,
