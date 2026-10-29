@@ -31,5 +31,35 @@ class WorldDraftTests(unittest.TestCase):
             self.assertEqual(api.inspect(bad)['status'],'invalid')
             self.assertFalse(api.inspect(bad)['committed'])
 
+    def test_reviewed_mixed_quay_uses_actual_selected_snapshot_and_opening(self):
+        from historical_campaigns import historical_entry
+        from communication_contract import actor_view
+        from shared_runtime import capabilities, prepare_intent, execute_intent
+        from runtime_contracts import WorldScope
+        from test_solo_provider import AtomicTestHost
+        import tempfile
+        draft={'schema_version':api.SCHEMA_VERSION,'draft_id':'quay','classification':'mixed',
+               'profile_id':'historical-quay','choices':{'snapshot_sha256':historical_entry('hyw-1415')['snapshot_sha256'],
+                 'character':{'kind':'new','name':'Synthetic courier','species':'human','opening_id':'quay-contact-v1'}}}
+        before=copy.deepcopy(draft);review=api.validate(draft);self.assertEqual(draft,before)
+        world=api.initialize(draft,draft_digest=review['draft_digest'],review_digest=review['review_digest'],
+                             campaign_id='draft-quay',explicitly_accepted=True)
+        actor=world.s['player_actor_ids'][0]
+        self.assertEqual(world.s['gameplay_started']['authored_opening']['id'],'quay-contact-v1')
+        self.assertEqual(world.s['evidence']['setup:civil-date']['source_ref'],world.s['campaign_time']['civil']['source_ref'])
+        self.assertIsNone(world.s['campaign_time']['civil']['time'])
+        self.assertEqual(actor_view(world,actor,branch_id='branch-1',restore_id='restore-1')['channels'][0]['participants'][0]['actor_id'],'FICTIONAL-QUAY-CONTACT')
+        import json
+        cap=next(c for c in capabilities(world,actor) if json.loads(c.action_json).get('action_id')=='look-quay')
+        request=prepare_intent(world,request_id='observe',actor_id=actor,intention='Look around.',capability_id=cap.capability_id,
+                               branch_id='branch-1',restore_id='restore-1')
+        with tempfile.TemporaryDirectory() as temp:
+            host=AtomicTestHost(temp,world);scope=WorldScope(world.s['campaign_id'],'branch-1','restore-1',world.checksum())
+            result=execute_intent(world,request,current_scope=scope,persist=host.persist,explicitly_accepted=True)
+            self.assertEqual(result['status'],'completed_successfully');self.assertEqual(world.s['elapsed_time']['seconds'],20)
+            saved=host.load();self.assertEqual(saved.s,world.s)
+        draft['choices']['snapshot_sha256']='0'*64
+        self.assertEqual(api.inspect(draft)['status'],'invalid')
+
 
 if __name__=='__main__':unittest.main()

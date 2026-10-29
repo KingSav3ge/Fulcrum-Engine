@@ -408,7 +408,7 @@
     "runtime/scene_setup.py": "1620ff9f63bb6c65c665f21d90563236fc06abb7effcd84291c0d10c289d563c",
     "runtime/selective_coordinator.py": "d0fc143d863ea5ed1fc0ed025c8aa355ab3ee0551fab4628838f57f4a266787f",
     "runtime/settlement_runtime.py": "77703de381e8b4e8724d9fdde4b502b50da9bb3f8948f03cf4da3f0e87c9915b",
-    "runtime/settlement_setup.py": "95e199fc0af0cd97eb57a6c1e435296a017cd4a82f1f209d2e6445e544a0770c",
+    "runtime/settlement_setup.py": "fd0fc6c0ee61896ecf4dd54731f4c9e2b4a7f4b16cd98e1919b513f52c02e8dc",
     "runtime/starting_selection.py": "d9f57d60bef37cd68a1610fab80b19ebb1afbb746ed650be60ed118bc77794e6",
     "runtime/strategic_execution.py": "74cbcb9e3de9ca9354b912a418da6d9c9c401b08797b7c41150d940d9ed029e7",
     "runtime/temporal_registry.py": "fcb7289c1bc57c867a66a8c837085711241e7d75c0589b35563161fa5fe33ba1",
@@ -449,7 +449,7 @@
     "runtime/test_solo_lifecycle.py": "155a7c4b5dcaf922721f75e214f9fc9227db4830858e7e9798ab36e5b80414bd",
     "data/responses/PROVENANCE.json": "3868b157d950637af84b20ef1e846ec21b3bf242c4d577dba83ac3b31cc43f76",
     "data/responses/engine_routine_v1.json": "7091a060fdde8aebd233a0ff68dba4480a04fcd7eea3630eb9bd73fa9490603e",
-    "runtime/communication_runtime.py": "2e36a9f04716128d7997bd3b56db4e160ef5cf5ce59f6d34f16a33158dc494d8",
+    "runtime/communication_runtime.py": "c25286c3112e97b5dc392dbfd0549e9b10212196576ca5f11da3587bf606e9c3",
     "runtime/inference_accounting.py": "a3331784b88d5d24a73e7b60f63fc307f08d6885e5a635c256d54e5de5b2cf2c",
     "runtime/offline_responses.py": "340d47a7776d078ed854008641b0ffe336182b5ea2b59013ac2759e3c7c751fa",
     "runtime/process_runtime.py": "aea12406cc7da04c57424868e25ef3374ce44e36dd2f07159275083338f7df4c",
@@ -477,8 +477,9 @@
     "runtime/test_travel_capability.py": "1fd76263457a50fbebdd773ee362c01e65b8d89c0e32ad371544eac338848a2e",
     "runtime/supported_intent.py": "e529483a0fe793e7461f1dccad3cee81b1ad9bc274a7f10f758992be326d63b3",
     "runtime/test_supported_intent.py": "c8e99156d0ec8131bc35903f17b45169607c2fcf6d3fef35f490f673cbb1b6ce",
-    "runtime/test_world_draft.py": "39db3435b7cd132f7e3f3a3c088f7f4101a0cf35c735e33351181efd2ef3be3e",
-    "runtime/world_draft.py": "36b915165e1cb41fd31ed19e1bc7235bcfd6cc12542083c85dac2b4e4f30373a"
+    "runtime/test_world_draft.py": "d990fe191952f55af7d6b4dc51d23b00b186bd31e0b671df08f90f90da3e4133",
+    "runtime/world_draft.py": "cdef2cc8b4982365cd50d617acdc46c7bbee72f8ca1d5fac5a02fec33a7387fa",
+    "runtime/test_ordinary_offer_profile.py": "d120259a1f3934906d44fe3f936aa32ceed43e44df1583deee14536f52f19055"
   },
   "existing_save_migration": false,
   "development_designations": {

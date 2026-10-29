@@ -20,6 +20,28 @@ def inspect(draft):
                 'errors': [{'code': 'invalid_draft', 'message': str(error)}], 'committed': False}
 
 
+def _quay_review(choices, campaign_id):
+    if not isinstance(choices, dict) or set(choices) != {'snapshot_sha256', 'character'}:
+        raise ValueError('Select the dated snapshot and reviewed fictional character')
+    character = choices['character']
+    if (not isinstance(character, dict) or set(character) != {'kind', 'name', 'species', 'opening_id'}
+            or character.get('kind') != 'new' or character.get('species') != 'human'
+            or character.get('opening_id') != 'quay-contact-v1'
+            or not isinstance(character.get('name'), str) or not character['name'].strip()
+            or len(character['name']) > 100):
+        raise ValueError('Select a named new human and the fictional quay contact opening')
+    from campaign_library import initial_campaign
+    from starting_selection import options_for_world
+    from start_readiness import review_start
+    world = initial_campaign('military', campaign_id, scenario_id='hundred-years-war',
+                             entry_id='hyw-1415', snapshot_sha256=choices['snapshot_sha256'])
+    options = options_for_world(world)
+    review = {'selection_digest': options['selection_digest'],
+              'character': copy.deepcopy(character), 'start_review': review_start(world, character),
+              'snapshot_sha256': choices['snapshot_sha256']}
+    return world, review
+
+
 def validate(draft):
     if not isinstance(draft, dict) or set(draft) != {'schema_version', 'draft_id', 'classification', 'profile_id', 'choices'}:
         raise ValueError('Supply only the supported world draft fields')
@@ -27,14 +49,21 @@ def validate(draft):
         raise ValueError('Unsupported world draft schema')
     if not isinstance(draft['draft_id'], str) or not draft['draft_id'].strip() or len(draft['draft_id']) > 128:
         raise ValueError('Invalid draft identity')
-    if draft['classification'] != 'fictional' or draft['profile_id'] != 'rise-r00':
-        raise ValueError('Only the selected fictional Rise R00 draft is supported')
-    review = rise_preview(copy.deepcopy(draft['choices']))
+    if draft['classification'] == 'fictional' and draft['profile_id'] == 'rise-r00':
+        review = rise_preview(copy.deepcopy(draft['choices']))
+        review_digest = review['review_digest']
+        initializer = 'settlement_setup.initialize'
+    elif draft['classification'] == 'mixed' and draft['profile_id'] == 'historical-quay':
+        _, review = _quay_review(copy.deepcopy(draft['choices']), 'world-draft-review')
+        review_digest = digest(review)
+        initializer = 'campaign_library.initial_campaign + starting_selection.initialize_player'
+    else:
+        raise ValueError('Select a supported fictional Rise or mixed historical-quay profile')
     return {'schema_version': VALIDATION_VERSION, 'draft_id': draft['draft_id'], 'status': 'valid',
-            'classification': 'fictional', 'profile_id': 'rise-r00',
-            'draft_digest': digest(draft), 'review_digest': review['review_digest'],
-            'review': review, 'proposed_initializer': 'settlement_setup.initialize',
-            'unsupported': ['historical or mixed draft', 'custom geography or entities',
+            'classification': draft['classification'], 'profile_id': draft['profile_id'],
+            'draft_digest': digest(draft), 'review_digest': review_digest,
+            'review': review, 'proposed_initializer': initializer,
+            'unsupported': ['arbitrary historical drafts', 'custom geography or entities',
                             'custom scripts and rules', 'world-pack import/export'],
             'committed': False}
 
@@ -47,4 +76,11 @@ def initialize(draft, *, draft_digest, review_digest, campaign_id, explicitly_ac
     reviewed = validate(draft)
     if draft_digest != reviewed['draft_digest'] or review_digest != reviewed['review_digest']:
         raise ValueError('Draft or selected rules changed; review again')
-    return rise_initialize(copy.deepcopy(draft['choices']), review_digest, campaign_id)
+    if draft['profile_id'] == 'rise-r00':
+        return rise_initialize(copy.deepcopy(draft['choices']), review_digest, campaign_id)
+    from starting_selection import initialize_player
+    world, review = _quay_review(copy.deepcopy(draft['choices']), campaign_id)
+    if digest(review) != review_digest:
+        raise ValueError('Selected source or starting options changed; review again')
+    return initialize_player(world, review['character'], selection_digest=review['selection_digest'],
+                             request_ref='explicit-reviewed-world-draft:' + draft_digest)

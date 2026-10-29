@@ -3,7 +3,7 @@
 A4-ENG-03 bounded increment, 29 October 2026; IRGS 3.4.5 Pre-Alpha. Module
 `IRGS_3_3/runtime/supported_intent.py`, schema `irgs-supported-intent-1`.
 This API uses the existing shared actor capabilities and Core execution. It is
-available to a trusted host; App has not yet added a route or UI for it. No
+available to a trusted host; App has a separate shared-runtime intent bridge and has not adopted this module. No
 provider, API key, parser or new simulation rule is required.
 
 ## Review and submission
@@ -41,8 +41,10 @@ Failed persistence leaves the in-memory world unchanged.
 `participant_unavailable` from the actor's existing received channel view. It
 never probes hidden stock or promises consent; actual terms, authority, custody,
 resources and explicit submission remain subject to the existing communication
-contract. Current ordinary Rise and quay starts return `offer_not_selected`.
-No new ordinary offer authority or NPC decision is introduced here.
+contract. The default ordinary Rise and quay starts return `offer_not_selected`; an
+explicit reviewed optional Rise offer profile can expose an attemptable offer.
+See [the current extension](OFFER_AND_DRAFT_EXTENSION.md).
+This module itself does not grant authority or make NPC decisions.
 
 ## Scope and evidence
 

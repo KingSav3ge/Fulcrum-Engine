@@ -1,5 +1,13 @@
 # IRGS continuation development list
 
+**29 October follow-up — A4-ENG-03/WB-ENG-01:** an optional explicitly reviewed
+fictional Rise profile now supplies founder-only offer prerequisites, with no NPC
+consent or automatic transfer. The world-draft API also reviews and initializes
+the selected mixed historical/fictional quay start. [Contract and evidence](engine/OFFER_AND_DRAFT_EXTENSION.md)
+separate real Engine/App HTTP behavior from pending App UI and Catalog adoption.
+Broader NPC, custom world authoring and Alpha qualification remain open.
+
+
 **29 October — A4-ENG-03/WB-ENG-01 bounded increment:** Engine now exposes
 [versioned supported-intent review/result](engine/SUPPORTED_INTENT_API.md) and
 a [limited reviewed fictional Rise draft](engine/WORLD_DRAFT_API.md). Two ordinary
