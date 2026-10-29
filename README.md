@@ -1,4 +1,16 @@
-# IRGS Engine — 3.4.4 Pre-Alpha
+# Fulcrum-Engine — 3.4.6 Pre-Alpha
+
+## Current 3.4.6 direction — 29 October 2026
+
+Current edition: **3.4.6 Pre-Alpha**; previous_version: **3.3.3**. Next unified main publication: **3.4.7**. Functional 4.0.0 Alpha remains unqualified.
+
+WorldWard is developed by T!DEMARCH Studios and powered by Fulcrum Engine. IRGS remains the internal initiative; technical paths, schemas, fixture identities, saves and original archives retain their existing names. Public repositories are KingSav3ge/WorldWard, KingSav3ge/Fulcrum-Engine, KingSav3ge/WORLDWARD-APP-WEB and KingSav3ge/WorldWard-Catalog. Catalog/Atlas product naming remains open.
+
+This edition joins reviewed intentions, protected server-side POSIX operator setup, bounded communication/offer/world-draft contracts, independent Catalog grounding and recovery consumers, and the public branding. The App preserves one chronological reading surface with choices and the retained response form below the newest entry. Optional offers are explicit attempts, not NPC consent or stock transfer. Draft previews create disposable in-memory candidates, not saved campaigns or a general world editor.
+
+Preserve one authoritative Core, the existing nine K owners and six Directors, actor-scoped information, conserved resources/capacity, atomic rejection and original-result recovery. Distinguish causal sequence, revision, elapsed work and civil time. Broader NPC/institution behavior, needs/recovery, selected conflict, arbitrary world authoring, live-model quality, native Windows and full Alpha qualification remain open.
+
+The current CHAT_CONTINUATION.md and COORDINATOR_WORK_ORDER.md supersede older task ordering below. Dated evidence retains its original scope.
 
 [Proposed product naming direction](BRAND_DIRECTION.md) retains IRGS technical identities while naming WorldWard and Fulcrum Engine, subject to clearance.
 
@@ -54,7 +66,7 @@ Current development: [guide](DEVELOPMENT.md) · [chat continuation](CHAT_CONTINU
 
 IRGS develops a persistent world simulation connecting individual action, institutions, resources and history. Its design centers on one shared world, actions constrained by actual authority and resources, and information received by the acting character or institution. See the [Engine model](engine/ENGINE_MODEL.md) for these principles and their current implementation limits.
 
-Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/IRGS-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/IRGS) joins both components.
+Independent Engine development for IRGS, selected Core 3.3. This repository owns `IRGS_3_3/`, the applied design under `engine/`, Engine milestones and source provenance. The App develops separately in [IRGS-APP-WEB](https://github.com/KingSav3ge/WORLDWARD-APP-WEB); [IRGS/main](https://github.com/KingSav3ge/WorldWard) joins both components.
 
 The [shared Engine API](engine/SHARED_SYSTEMS_API.md) now provides common actor/capability views, exact accepted intentions, atomic execution, received records and committed receipts across selected authored-scene and Rise handlers. It bundles Catalog's exact neutral **750 system / 250 draft** depot with 32 recipes and requires no provider or App/Catalog checkout. [Independent qualification](engine/SHARED_SYSTEMS_VALIDATION.json) separates actual non-Rise/Rise effects from four-theme text portability. Unsupported intentions stay unresolved; broader mechanics retain their existing scope.
 
@@ -64,7 +76,7 @@ The [shared Engine API](engine/SHARED_SYSTEMS_API.md) now provides common actor/
 
 [Communication capabilities v1](engine/COMMUNICATION_CAPABILITY_API.md) adds received participant/source and offer views, exact testimony/terms and sanitized atomic execution. Shared views include `communications`; forwarding testimony grants no private offer access. [32 dedicated cases](engine/COMMUNICATION_CAPABILITY_VALIDATION.json) pass, and the full runtime suite runs 740 cases with 739 passes and one prescribed private-save skip. App communication controls and exact-set integration remain separate.
 
-Publish Engine updates to **KingSav3ge/IRGS-Engine**, on its `main` branch. The [development roadmap](ROADMAP.md) separates completed work, work in progress and remaining work; the [DEV checklist](DEVELOPMENT_LIST.md) supplies task IDs and completion criteria, and the [continuation log](CONTINUATION_STATUS.md) records delivered increments and verification limits. Update these records as Engine work progresses.
+Publish Engine updates to **KingSav3ge/Fulcrum-Engine**, on its `main` branch. The [development roadmap](ROADMAP.md) separates completed work, work in progress and remaining work; the [DEV checklist](DEVELOPMENT_LIST.md) supplies task IDs and completion criteria, and the [continuation log](CONTINUATION_STATUS.md) records delivered increments and verification limits. Update these records as Engine work progresses.
 
 ```bash
 python -B tools/verify_components.py --component engine
@@ -76,7 +88,7 @@ Core verification and tests require no App checkout. Python 3.12+ is required; d
 
 Engine source pins are in `IRGS_3_3/release.json`; App pins belong to its repository. Refresh pins after intentional edits, execute meaningful runtime checks, then commit/push `main`. Do not change rules merely to match an imported proposal. General C2 completion remains work; bounded handlers and 37 dated Century starts do not qualify a complete historical simulation.
 
-The App pins an Engine commit through its `Engine` submodule. Qualify the pair before updating that pointer or joined IRGS. See [joined integration instructions](https://github.com/KingSav3ge/IRGS/blob/main/COMPONENT_REPOSITORIES.md). Historical operation/evidence documents retain the source identities of their original joined runs; they are not fresh standalone or all-branch certification.
+The App pins an Engine commit through its `Engine` submodule. Qualify the pair before updating that pointer or joined IRGS. See [joined integration instructions](https://github.com/KingSav3ge/WorldWard/blob/main/COMPONENT_REPOSITORIES.md). Historical operation/evidence documents retain the source identities of their original joined runs; they are not fresh standalone or all-branch certification.
 
 Kira v0.5 is adopted working setting canon, with a [six-region illustrated atlas and regional foundations](IRGS_3_3/catalog/campaigns/kira/atlas/README.md) beside its worldbook. It initializes no player, resources, numerical magic rules or future outcomes. Source/provenance archives remain labelled historical material. No user saves are included or migrated.
 

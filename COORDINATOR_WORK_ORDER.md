@@ -1,26 +1,21 @@
-# Current work order — IRGS-Engine
+# Current work order — Fulcrum-Engine
 
-The [grant-attempt follow-up](engine/GRANT_PREREQUISITES_VALIDATION.json)
-exposes actor-safe selected R00 grant actions alongside the already published
-stock-offer and mixed-quay draft contracts. Actual grant and stock-offer effects
-remain distinct; no hidden status or NPC consent is inferred. Continue compatible
-App/Catalog adoption, broader NPC and institution decisions, needs/recovery,
-conflict and general world authoring. No Alpha gate is closed.
+Current edition: **3.4.6 Pre-Alpha**; previous_version: **3.3.3**. Next unified main publication: **3.4.7**. Functional 4.0.0 Alpha remains unqualified.
 
-Current edition: **3.4.5 Pre-Alpha**. Previous release field: **3.3.3**. Target: functional **4.0.0 Alpha** under ALPHA_4_0_PLAN.md and ALPHA_4_0_ACCEPTANCE.json. All Alpha gates remain open. Next unified edition: **3.4.6**.
+WorldWard is developed by T!DEMARCH Studios and powered by Fulcrum Engine. IRGS remains the internal initiative; technical paths, schemas, fixture identities, saves and original archives retain their existing names. Public repositories are KingSav3ge/WorldWard, KingSav3ge/Fulcrum-Engine, KingSav3ge/WORLDWARD-APP-WEB and KingSav3ge/WorldWard-Catalog. Catalog/Atlas product naming remains open.
 
-This release adopts the user-requested chronological story UI: one reading surface, oldest available entries first, then current choices and the retained response form. Drafts, received statuses, exact result text, source gaps and original request recovery remain. App UI implementation: `7d687616b588b2fda3c4f58d445f82d5a13111e9`; exact release pins are recorded by the coordinator in joined COMPONENTS.json. Engine/Catalog product behavior is the qualified 3.4.4 baseline; their current release changes align guides and edition metadata. This is not a new Alpha or gameplay-resolution claim.
+This edition joins reviewed intentions, protected server-side POSIX operator setup, bounded communication/offer/world-draft contracts, independent Catalog grounding and recovery consumers, and the public branding. The App preserves one chronological reading surface with choices and the retained response form below the newest entry. Optional offers are explicit attempts, not NPC consent or stock transfer. Draft previews create disposable in-memory candidates, not saved campaigns or a general world editor.
 
-Develop IRGS across campaigns and themes, retaining one authoritative Core, nine K owners and the existing six Director categories. Rise R00 is one fictional regression slice. Ordinary speech remains received testimony; an offer is not consent or fulfillment. Storage revision, causal sequence, elapsed work and civil time remain distinct. Full C2, wider autonomous NPC/institution decisions, needs/recovery, selected conflict and sustained AI play remain unfinished. Historical Details is complete; preserve original archive records and canon.
+Preserve one authoritative Core, the existing nine K owners and six Directors, actor-scoped information, conserved resources/capacity, atomic rejection and original-result recovery. Distinguish causal sequence, revision, elapsed work and civil time. Broader NPC/institution behavior, needs/recovery, selected conflict, arbitrary world authoring, live-model quality, native Windows and full Alpha qualification remain open.
 
-## Required next delivery
+## Next implementation
 
-**A4-ENG-03: supported-intent contracts and ordinary offer prerequisites.**
+**A4-ENG-01/03 and WB-ENG-01: consequences, contract adoption and draft-host boundaries.**
 
-Publish explicit, versioned intent/review/result DTOs for selected executable operations. Preserve the player’s exact wording, supported/unsupported distinction, explicit confirmation, authority checks and immutable request recovery. Address remaining ordinary offer prerequisites without inferring NPC consent. Demonstrate the contract in two independently initialized ordinary contexts including non-Rise; R00 alone does not establish shared support.
+Supported-intent review, communication review, grant-attempt prerequisites, optional reviewed household offers and two bounded draft profiles are delivered. Preserve the existing shared-intent and communication APIs while App adopts newer DTOs. Continue meaningful ordinary consequences and selected NPC/institution decisions through the existing Core/K owners; publish exact prerequisites without inferring consent or hidden eligibility. Define atomic host creation/retry/restore for bounded drafts before claiming a Creator playtest workflow.
 
-## Acceptance and handoff
+## Development and handoff
 
-Demonstrate the actual selected behavior through ordinary creation and interaction in two supported contexts including non-Rise when claiming a shared capability. Preserve actor privacy, causal/time distinctions, conserved stock/capacity, atomic rejection and immutable retry. Do not add privileged fixture setup to ordinary actor instructions. Publish early interfaces and exact dependent source selections; continue independent requirements while another owner implements its contract.
+Preserve edits and local commits; fetch the correct origin and fast-forward only clean compatible source. Read AGENTS.md and this current work order. Do not reset, clean or auto-stash over user work. Use temporary synthetic stores; never open private campaign saves for qualification. Refresh only the owning component hashes after intentional changes, then verify and run relevant real HTTP/browser journeys. Report exact commit, pins, actual checks, skips, limitations and remaining work. Historical evidence is not a fresh execution. Push only this owner repository; the coordinator reviews all three compatible deliveries and runs the full versioned joined/package gate. Work orders and watcher reports do not wake chats, implement tasks or qualify a live model/Windows host.
 
-Keep the stable task IDs and wider DEV/C2 gaps in ALPHA_4_0_PLAN.md. Report implemented scope, source SHA, actual checks/skips and remaining requirements. Preserve original supplied archives, old fixture guards/IDs and accurately dated qualification records. Push only IRGS-Engine/main. Follow CHAT_CONTINUATION.md for the development loop.
+Follow ALPHA_4_0_PLAN.md, ALPHA_4_0_ACCEPTANCE.json and WORLD_BUILDER_PLAN.md. Preserve original supplied archives, accurate historical evidence, saves and personal settings. Remove superseded generated distributions only after their replacements pass.
