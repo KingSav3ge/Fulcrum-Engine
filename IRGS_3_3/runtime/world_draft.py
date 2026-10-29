@@ -1,4 +1,4 @@
-"""Bounded data-only draft contract for the existing reviewed Rise initializer.
+"""Bounded data-only draft contract for two existing reviewed initializers.
 
 A draft is not a campaign. No paths, scripts, hidden rules or creator data are
 executed. Durable storage, atomic publication and access control belong to host.
@@ -84,3 +84,23 @@ def initialize(draft, *, draft_digest, review_digest, campaign_id, explicitly_ac
         raise ValueError('Selected source or starting options changed; review again')
     return initialize_player(world, review['character'], selection_digest=review['selection_digest'],
                              request_ref='explicit-reviewed-world-draft:' + draft_digest)
+
+
+def preview_initialization(draft):
+    """Build a disposable candidate and return only its controlled actor projection.
+
+    This is not a persisted campaign or authorization. Preview identities cannot
+    be used for creation or submission; a host must review actual creation anew.
+    """
+    reviewed = validate(draft)
+    campaign_id = 'draft-preview-' + reviewed['draft_digest'][:24]
+    candidate = initialize(draft, draft_digest=reviewed['draft_digest'],
+        review_digest=reviewed['review_digest'], campaign_id=campaign_id, explicitly_accepted=True)
+    actor = candidate.s['player_actor_ids'][0]
+    from shared_runtime import actor_view
+    known = actor_view(candidate, actor, branch_id='ephemeral-preview', restore_id='ephemeral-preview')
+    return {'schema_version': 'irgs-world-initialization-preview-1',
+            'draft_id': reviewed['draft_id'], 'draft_digest': reviewed['draft_digest'],
+            'review_digest': reviewed['review_digest'], 'profile_id': reviewed['profile_id'],
+            'status': 'preview_only', 'committed': False, 'requires_explicit_acceptance': True,
+            'preview_identities_reusable': False, 'actor_view': known}

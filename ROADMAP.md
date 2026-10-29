@@ -1,5 +1,14 @@
 # IRGS Engine development roadmap
 
+**29 October continuation — A4-ENG-03/WB-ENG-01:** the versioned intent
+contract now supports explicit communication review and actual native speech/
+offer execution, with exact immutable results and no inferred consent. The
+world-draft contract can preview either selected initializer in a disposable
+candidate with actor-filtered output. [Contract and evidence](engine/COMMUNICATION_INTENT_PREVIEW.md)
+keep App/Catalog adoption, host playtest persistence, wider authoring and Alpha
+qualification open.
+
+
 **29 October follow-up — A4-ENG-03/WB-ENG-01:** an optional explicitly reviewed
 fictional Rise profile now supplies founder-only offer prerequisites, with no NPC
 consent or automatic transfer. The world-draft API also reviews and initializes

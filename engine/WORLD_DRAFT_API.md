@@ -56,3 +56,10 @@ own versioned validation and reviewed initializer before they can be accepted.
 See [the current two-context extension](OFFER_AND_DRAFT_EXTENSION.md) and its
 [executed evidence](OFFER_AND_DRAFT_VALIDATION.json). The earlier validation
 record remains dated at its actual source.
+
+## Disposable initialization preview — 29 October 2026
+
+`preview_initialization(draft)` returns a scoped controlled-actor view from a
+disposable in-memory candidate for either selected profile. It does not save a
+campaign, and preview identities cannot authorize the later world. See
+[details and evidence](COMMUNICATION_INTENT_PREVIEW.md).

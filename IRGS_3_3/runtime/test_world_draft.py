@@ -61,5 +61,31 @@ class WorldDraftTests(unittest.TestCase):
         draft['choices']['snapshot_sha256']='0'*64
         self.assertEqual(api.inspect(draft)['status'],'invalid')
 
+    def test_disposable_preview_is_scoped_and_does_not_publish_or_mutate_draft(self):
+        from historical_campaigns import historical_entry
+        rise=self.draft()
+        quay={'schema_version':api.SCHEMA_VERSION,'draft_id':'quay-preview','classification':'mixed',
+              'profile_id':'historical-quay','choices':{'snapshot_sha256':historical_entry('hyw-1415')['snapshot_sha256'],
+                'character':{'kind':'new','name':'Synthetic courier','species':'human','opening_id':'quay-contact-v1'}}}
+        def keys(value):
+            if isinstance(value,dict):
+                return set(value) | set().union(*(keys(v) for v in value.values()))
+            if isinstance(value,list):return set().union(*(keys(v) for v in value))
+            return set()
+        for draft in (rise,quay):
+            with self.subTest(profile=draft['profile_id']):
+                original=copy.deepcopy(draft);preview=api.preview_initialization(draft)
+                self.assertEqual(draft,original);self.assertEqual(preview['status'],'preview_only')
+                self.assertFalse(preview['committed']);self.assertFalse(preview['preview_identities_reusable'])
+                self.assertTrue(preview['requires_explicit_acceptance'])
+                self.assertTrue({'state','stocks','historical_start','entity_registry','params_digest'}.isdisjoint(keys(preview['actor_view'])))
+                selected=api.validate(draft)
+                actual=api.initialize(draft,draft_digest=selected['draft_digest'],review_digest=selected['review_digest'],
+                                      campaign_id='real-synthetic-'+draft['profile_id'],explicitly_accepted=True)
+                if draft['profile_id']=='rise-r00':
+                    self.assertEqual(actual.s['clock'],0)
+                if draft['profile_id']=='historical-quay':
+                    self.assertNotEqual(preview['actor_view']['actor_id'],actual.s['player_actor_ids'][0])
+
 
 if __name__=='__main__':unittest.main()

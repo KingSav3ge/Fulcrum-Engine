@@ -53,9 +53,18 @@ ordinary reviewed Rise and fictional quay creation, two sequential selected
 operations in each, real blocked shortcut and successful effects, actual wrong-
 origin rejection, clarification/unsupported input, no-effect review/unaccepted submission,
 atomic host persistence, exact original retry after later work and restore fence.
-`test_supported_intent.py` supplies executable calls. The new DTO wraps only the
-selected shared scene/settlement action adapters; communication and phase APIs
-remain their separate existing contracts. General freeform parsing, offer
+`test_supported_intent.py` supplies executable calls. The original DTO wraps the selected shared scene/settlement action adapters;
+the communication extension below also reuses its existing native handler.
+Phase APIs retain their separate contract. General freeform parsing, offer
 prerequisites, NPC consent and live AI remain open. App/Catalog need independently
 versioned adoption, exact pins and reviewer checks. No Alpha gate is qualified.
 See [validation evidence](SUPPORTED_INTENT_VALIDATION.json).
+
+## Communication intent extension — 29 October 2026
+
+Selected speech, offers and received-offer commands now have explicit
+`review_communication`, `prepare_communication` and `execute_communication`
+methods over the existing native communication handler. See the
+[contract and limits](COMMUNICATION_INTENT_PREVIEW.md). General language
+interpretation and App adoption remain open; the prior evidence above remains
+at its originally tested source.

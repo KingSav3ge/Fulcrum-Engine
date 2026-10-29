@@ -3,6 +3,7 @@
 A host authenticates the actor and retains the native request privately. Text is
 never parsed into an operation and no review, rejection or draft commits a world.
 """
+import copy
 import json
 
 from irgs_reference import digest
@@ -25,6 +26,83 @@ def offer_prerequisites(world, *, actor_id, channel_id, recipient, branch_id, re
             'channel_id': channel_id, 'recipient': recipient,
             'requires_explicit_terms': True, 'requires_explicit_acceptance': True,
             'authority_and_resources': 'checked_on_execution', 'committed': False}
+
+
+def review_communication(world, *, actor_id, intention, channel_id, recipient, command, details,
+                         branch_id, restore_id):
+    """Review an explicit selected communication without testing hidden feasibility."""
+    import communication_contract as communication
+    if not isinstance(intention, str) or not intention.strip() or len(intention) > 4096:
+        raise ValueError('Supply exact intention text using 1–4096 characters')
+    for value in (channel_id, recipient, command):
+        if value is not None and (not isinstance(value, str) or not value.strip() or len(value) > 256):
+            raise ValueError('Invalid selected communication identity')
+    if details is not None:
+        if not isinstance(details, dict):
+            raise ValueError('Communication details must be an object')
+        try:
+            encoded = json.dumps(details, ensure_ascii=False, allow_nan=False)
+        except (TypeError, ValueError, RecursionError):
+            raise ValueError('Communication details must be bounded data') from None
+        if len(encoded) > 4096:
+            raise ValueError('Communication details exceed the supported limit')
+    scope = WorldScope(world.s['campaign_id'], branch_id, restore_id, world.checksum()); scope.validate()
+    # Authenticate actor independently of whether the requested command exists.
+    communication.actor_view(world, actor_id, branch_id=branch_id, restore_id=restore_id)
+    selection = None
+    if command is None or channel_id is None or recipient is None or details is None:
+        status = 'clarification_required'
+    elif command not in ('speak', 'offer', 'accept', 'decline', 'withdraw', 'counteroffer'):
+        status = 'unsupported'
+    else:
+        try:
+            communication.prepare(world, request_id='review-only', actor=actor_id, recipient=recipient,
+                channel_id=channel_id, command=command, details=details, intention=intention,
+                source_ref='explicit-communication-review', branch_id=branch_id, restore_id=restore_id)
+        except communication.CommunicationUnavailable as error:
+            status = 'clarification_required' if error.code == 'invalid_command' else 'unsupported'
+        else:
+            status = 'supported'
+            selection = {'operation_id': 'execute_local_communication', 'channel_id': channel_id,
+                         'recipient': recipient, 'command': command, 'details': copy.deepcopy(details)}
+    identity = 'intent-review:' + digest([SCHEMA_VERSION, scope.campaign_id, branch_id, restore_id,
+        scope.state_digest, actor_id, intention, channel_id, recipient, command, details, selection])
+    return {'schema_version': SCHEMA_VERSION, 'review_id': identity, 'actor_id': actor_id,
+            'intention': intention, 'status': status, 'selection': selection,
+            'authorization': 'checked_on_execution', 'requires_explicit_acceptance': True,
+            'committed': False, 'provider_calls': 0}
+
+
+def prepare_communication(world, *, request_id, actor_id, intention, channel_id, recipient, command,
+                          details, review_id, branch_id, restore_id, source_ref='explicit-player-submission'):
+    import communication_contract as communication
+    reviewed = review_communication(world, actor_id=actor_id, intention=intention, channel_id=channel_id,
+        recipient=recipient, command=command, details=details, branch_id=branch_id, restore_id=restore_id)
+    if reviewed['status'] != 'supported':
+        raise shared.SharedActionUnavailable('intent_not_supported')
+    if review_id != reviewed['review_id']:
+        raise shared.SharedActionUnavailable('review_stale')
+    return communication.prepare(world, request_id=request_id, actor=actor_id, recipient=recipient,
+        channel_id=channel_id, command=command, details=details, intention=intention,
+        source_ref=source_ref, branch_id=branch_id, restore_id=restore_id)
+
+
+def execute_communication(world, request, *, current_scope, persist, explicitly_accepted):
+    import communication_contract as communication
+    from communication_runtime import CommunicationRequest
+    if not isinstance(request, CommunicationRequest):
+        raise shared.SharedActionUnavailable('invalid_request')
+    if not callable(persist):
+        raise shared.SharedActionUnavailable('persistence_required')
+    def public(result):
+        return {'schema_version': SCHEMA_VERSION, 'request_id': request.request_id,
+                'actor_id': request.actor, 'intention': request.intention,
+                'operation_id': 'execute_local_communication', 'status': result['status'],
+                'communication': result, 'receipt': result['receipt'], 'presentation': result['presentation']}
+    def bridge(expected_scope, candidate_save, result):
+        persist(expected_scope, candidate_save, public(result))
+    return public(communication.execute(world, request, current_scope=current_scope,
+        persist=bridge, explicitly_accepted=explicitly_accepted))
 
 
 def review(world, *, actor_id, intention, capability_id, branch_id, restore_id):

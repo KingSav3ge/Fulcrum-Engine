@@ -475,11 +475,12 @@
     "runtime/test_ordinary_communication.py": "45765a3cfef78df3563ed8902e5bfff7f2c568b6fd03b881e534a1942727f1b3",
     "runtime/test_rise_start_communication.py": "1e69605536dca1ac8a0e731a0749a732e2fc9af1316f4044fee4801ad6bcfb53",
     "runtime/test_travel_capability.py": "1fd76263457a50fbebdd773ee362c01e65b8d89c0e32ad371544eac338848a2e",
-    "runtime/supported_intent.py": "e529483a0fe793e7461f1dccad3cee81b1ad9bc274a7f10f758992be326d63b3",
+    "runtime/supported_intent.py": "8d6c380038e37a810030782d593b970de2454e0e6e5cbe5d4ab6ef96b29fd3af",
     "runtime/test_supported_intent.py": "c8e99156d0ec8131bc35903f17b45169607c2fcf6d3fef35f490f673cbb1b6ce",
-    "runtime/test_world_draft.py": "d990fe191952f55af7d6b4dc51d23b00b186bd31e0b671df08f90f90da3e4133",
-    "runtime/world_draft.py": "cdef2cc8b4982365cd50d617acdc46c7bbee72f8ca1d5fac5a02fec33a7387fa",
-    "runtime/test_ordinary_offer_profile.py": "d120259a1f3934906d44fe3f936aa32ceed43e44df1583deee14536f52f19055"
+    "runtime/test_world_draft.py": "395e728c172108e7668c0ed59fe64a51fa25e2a2b6b5bd0d92a02295834f8ff6",
+    "runtime/world_draft.py": "2f3bc49b4945dcfdfbb13c411cdd4c1bb0b36c2705f66a72159d8017b11af752",
+    "runtime/test_ordinary_offer_profile.py": "d120259a1f3934906d44fe3f936aa32ceed43e44df1583deee14536f52f19055",
+    "runtime/test_intent_communication.py": "51697202838181daabc794dd97ec0cb09c47688f5e204c5bca3e9429916c3585"
   },
   "existing_save_migration": false,
   "development_designations": {
