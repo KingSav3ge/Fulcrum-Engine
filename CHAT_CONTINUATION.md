@@ -1,5 +1,13 @@
 # Continue IRGS-Engine development
 
+**29 October — grant-attempt follow-up:** `irgs-grant-offer-prerequisites-1`
+exposes only the existing selected R00 grant attempts, with no inspection of
+hidden offer, location or authority. Independent tests exercise the published
+R00 and mixed quay draft initializers, separate grant acceptance, stock-offer
+independence and immutable retries. See [intent API](engine/SUPPORTED_INTENT_API.md)
+and [execution evidence](engine/GRANT_PREREQUISITES_VALIDATION.json). App and
+Catalog adoption, general NPC decisions and Alpha qualification remain open.
+
 Current edition: **3.4.5 Pre-Alpha**. Previous release field: **3.3.3**. Target: functional **4.0.0 Alpha** under ALPHA_4_0_PLAN.md and ALPHA_4_0_ACCEPTANCE.json. All Alpha gates remain open. Next unified edition: **3.4.6**.
 
 This release adopts the user-requested chronological story UI: one reading surface, oldest available entries first, then current choices and the retained response form. Drafts, received statuses, exact result text, source gaps and original request recovery remain. App UI implementation: `7d687616b588b2fda3c4f58d445f82d5a13111e9`; exact release pins are recorded by the coordinator in joined COMPONENTS.json. Engine/Catalog product behavior is the qualified 3.4.4 baseline; their current release changes align guides and edition metadata. This is not a new Alpha or gameplay-resolution claim.

@@ -11,6 +11,25 @@ from runtime_contracts import AcceptedIntent, WorldScope
 import shared_runtime as shared
 
 SCHEMA_VERSION = 'irgs-supported-intent-1'
+GRANT_PREREQUISITES_VERSION = 'irgs-grant-offer-prerequisites-1'
+
+
+def grant_offer_prerequisites(world, *, actor_id):
+    """Expose only selected grant attempts, not hidden offer or eligibility state."""
+    capabilities = shared.capabilities(world, actor_id)
+    selected = {json.loads(cap.action_json).get('action_id'): cap for cap in capabilities
+                if cap.operation_id == shared.SETTLEMENT}
+    actions = []
+    for action in ('request_grant', 'accept_grant'):
+        if action in selected:
+            cap = selected[action]
+            actions.append({'action_id': action, 'capability_id': cap.capability_id,
+                            'title': cap.title, 'source_refs': list(cap.source_refs)})
+    return {'schema_version': GRANT_PREREQUISITES_VERSION, 'actor_id': actor_id,
+            'status': 'attempts_selected' if len(actions) == 2 else 'not_selected',
+            'actions': actions if len(actions) == 2 else [],
+            'offer_status': 'not_inspected', 'authority_and_location': 'checked_on_execution',
+            'consent_status': 'not_inferred', 'explicit_acceptance_required': True, 'committed': False}
 
 
 def offer_prerequisites(world, *, actor_id, channel_id, recipient, branch_id, restore_id):

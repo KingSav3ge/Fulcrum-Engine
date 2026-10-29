@@ -1,5 +1,9 @@
 # Current Engine continuation
 
+**29 October follow-up:** actor-safe grant-attempt prerequisites and the
+independence of grant and stock-offer outcomes have [fresh evidence](engine/GRANT_PREREQUISITES_VALIDATION.json).
+Compatible App/Catalog adoption and wider Alpha systems remain outstanding.
+
 **29 October continuation — A4-ENG-03/WB-ENG-01:** the versioned intent
 contract now supports explicit communication review and actual native speech/
 offer execution, with exact immutable results and no inferred consent. The

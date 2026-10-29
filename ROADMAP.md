@@ -1,5 +1,9 @@
 # IRGS Engine development roadmap
 
+**29 October follow-up:** [actor-safe grant attempts](engine/GRANT_PREREQUISITES_VALIDATION.json)
+and their independent interaction with the selected stock-offer profile are
+tested across R00 and the fictional quay. Broader systems and adoption remain open.
+
 **29 October continuation — A4-ENG-03/WB-ENG-01:** the versioned intent
 contract now supports explicit communication review and actual native speech/
 offer execution, with exact immutable results and no inferred consent. The

@@ -46,6 +46,29 @@ explicit reviewed optional Rise offer profile can expose an attemptable offer.
 See [the current extension](OFFER_AND_DRAFT_EXTENSION.md).
 This module itself does not grant authority or make NPC decisions.
 
+`grant_offer_prerequisites(world, actor_id=...)` separately reports the
+existing Rise `request_grant` and `accept_grant` capability identities when
+selected for the controlled actor. `attempts_selected` is not an offer, consent,
+authority or a success prediction: `offer_status` is `not_inspected`, consent
+is `not_inferred`, and location and authority are checked on execution. Other
+contexts return `not_selected`; no hidden location, mandate, stock or grant is
+examined to construct the menu. Use `review`, `prepare` and `execute` for each
+actual attempt. The existing R00 procedure may offer the bounded fictional grant;
+the player must explicitly submit a separate acceptance. No goods transfer.
+This selected scripted procedure is distinct from an optional stock offer and
+does not create general NPC decisions. Speech remains testimony even when it
+contains words such as “I accept.”
+
+For a selected R00 founder, the result has `schema_version` set to
+`irgs-grant-offer-prerequisites-1`, `status: attempts_selected`, and two ordered
+`actions` containing `action_id`, actor-specific `capability_id`, `title` and
+received `source_refs`. It also has `offer_status: not_inspected`,
+`consent_status: not_inferred`, `authority_and_location: checked_on_execution`,
+`explicit_acceptance_required: true` and `committed: false`. An unsupported
+context reports `status: not_selected` and an empty action list. Use the existing
+`irgs-supported-intent-1` review and immutable result/retry DTOs for execution;
+this prerequisite response is not itself a pending native request.
+
 ## Scope and evidence
 
 Six focused tests across this module and the initial world-draft contract include

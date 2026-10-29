@@ -1,5 +1,9 @@
 # IRGS continuation development list
 
+**29 October follow-up:** the selected grant-attempt contract and its separate
+stock-offer behavior have [executed evidence](engine/GRANT_PREREQUISITES_VALIDATION.json).
+General NPC decisions, needs, conflict and editor integration remain open.
+
 **29 October continuation — A4-ENG-03/WB-ENG-01:** the versioned intent
 contract now supports explicit communication review and actual native speech/
 offer execution, with exact immutable results and no inferred consent. The
