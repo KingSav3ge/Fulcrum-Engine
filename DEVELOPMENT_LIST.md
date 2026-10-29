@@ -1,5 +1,14 @@
 # IRGS continuation development list
 
+**29 October — selected invitation decision and draft-host boundary:** the existing
+fictional R00 Core procedure now records an actor-scoped refusal when Oren's
+selected repair/provision conditions are unmet; later agreement requires a new
+explicit invitation. [Decision and prerequisites](engine/INVITATION_DECISION.md).
+[Draft host creation/retry/restore contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md)
+is a design handoff only, not an implemented Creator playtest. Broader independent
+NPC and institution decisions, cross-context qualification, App adoption and
+atomic host implementation remain open.
+
 **29 October follow-up:** the selected grant-attempt contract and its separate
 stock-offer behavior have [executed evidence](engine/GRANT_PREREQUISITES_VALIDATION.json).
 General NPC decisions, needs, conflict and editor integration remain open.

@@ -1,5 +1,14 @@
 # IRGS Engine development roadmap
 
+**29 October — selected invitation decision and draft-host boundary:** the existing
+fictional R00 Core procedure now records an actor-scoped refusal when Oren's
+selected repair/provision conditions are unmet; later agreement requires a new
+explicit invitation. [Decision and prerequisites](engine/INVITATION_DECISION.md).
+[Draft host creation/retry/restore contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md)
+is a design handoff only, not an implemented Creator playtest. Broader independent
+NPC and institution decisions, cross-context qualification, App adoption and
+atomic host implementation remain open.
+
 **29 October follow-up:** [actor-safe grant attempts](engine/GRANT_PREREQUISITES_VALIDATION.json)
 and their independent interaction with the selected stock-offer profile are
 tested across R00 and the fictional quay. Broader systems and adoption remain open.

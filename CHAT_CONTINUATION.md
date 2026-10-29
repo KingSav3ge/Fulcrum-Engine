@@ -1,5 +1,14 @@
 # Continue Fulcrum-Engine
 
+**29 October — selected invitation decision and draft-host boundary:** the existing
+fictional R00 Core procedure now records an actor-scoped refusal when Oren's
+selected repair/provision conditions are unmet; later agreement requires a new
+explicit invitation. [Decision and prerequisites](engine/INVITATION_DECISION.md).
+[Draft host creation/retry/restore contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md)
+is a design handoff only, not an implemented Creator playtest. Broader independent
+NPC and institution decisions, cross-context qualification, App adoption and
+atomic host implementation remain open.
+
 Current edition: **3.4.6 Pre-Alpha**; previous_version: **3.3.3**. Next unified main publication: **3.4.7**. Functional 4.0.0 Alpha remains unqualified.
 
 WorldWard is developed by T!DEMARCH Studios and powered by Fulcrum Engine. IRGS remains the internal initiative; technical paths, schemas, fixture identities, saves and original archives retain their existing names. Public repositories are KingSav3ge/WorldWard, KingSav3ge/Fulcrum-Engine, KingSav3ge/WORLDWARD-APP-WEB and KingSav3ge/WorldWard-Catalog. Catalog/Atlas product naming remains open.
