@@ -1,5 +1,12 @@
 # Current Engine continuation
 
+## Coordinated 3.4.5 continuation
+
+A4-ENG-03: supported-intent contracts and ordinary offer prerequisites. Publish explicit, versioned intent/review/result DTOs for selected executable operations. Preserve the player’s exact wording, supported/unsupported distinction, explicit confirmation, authority checks and immutable request recovery. Address remaining ordinary offer prerequisites without inferring NPC consent. Demonstrate the contract in two independently initialized ordinary contexts including non-Rise; R00 alone does not establish shared support.
+
+No Engine runtime change is part of the UI-adoption release. Maintain the stable DEV IDs and actual implementation evidence below.
+
+
 ## Coordinated 3.4.4 Pre-Alpha continuation
 
 Current coordinated edition: **3.4.4 Pre-Alpha**; previous release field: **3.3.3**.

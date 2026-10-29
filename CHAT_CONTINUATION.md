@@ -1,124 +1,25 @@
-# Continue IRGS Engine toward functional Alpha 4.0
+# Continue IRGS-Engine development
 
-## Coordinated 3.4.4 Pre-Alpha continuation
+Current edition: **3.4.5 Pre-Alpha**. Previous release field: **3.3.3**. Target: functional **4.0.0 Alpha** under ALPHA_4_0_PLAN.md and ALPHA_4_0_ACCEPTANCE.json. All Alpha gates remain open. Next unified edition: **3.4.6**.
 
-Current coordinated edition: **3.4.4 Pre-Alpha**; previous release field: **3.3.3**.
-The selected travel and ordinary communication increment preserves one Core,
-explicit acceptance, actor filtering, conserved stock/time and original-result
-recovery. No Alpha gate is closed and live/provider/Windows qualification remains open.
+This release adopts the user-requested chronological story UI: one reading surface, oldest available entries first, then current choices and the retained response form. Drafts, received statuses, exact result text, source gaps and original request recovery remain. App UI implementation: `7d687616b588b2fda3c4f58d445f82d5a13111e9`; exact release pins are recorded by the coordinator in joined COMPONENTS.json. Engine/Catalog product behavior is the qualified 3.4.4 baseline; their current release changes align guides and edition metadata. This is not a new Alpha or gameplay-resolution claim.
 
-Selected travel and ordinary speech are delivered within their stated rules. Next: A4-ENG-03 supported-intent contracts, remaining ordinary offer prerequisites and WB-ENG-01 world-draft/initialization contracts. Keep non-Rise evidence and wider DEV/C2 gaps explicit.
+Develop IRGS across campaigns and themes, retaining one authoritative Core, nine K owners and the existing six Director categories. Rise R00 is one fictional regression slice. Ordinary speech remains received testimony; an offer is not consent or fulfillment. Storage revision, causal sequence, elapsed work and civil time remain distinct. Full C2, wider autonomous NPC/institution decisions, needs/recovery, selected conflict and sustained AI play remain unfinished. Historical Details is complete; preserve original archive records and canon.
 
-This current ordering supersedes earlier review and pending-3.4.3/3.4.4 notes below.
-Original tested source identities and older evidence remain unchanged.
-The coordinator owns the exact all-three integration and final package review.
-Every later unified main push increments the edition; next is 3.4.5 Pre-Alpha.
-Continue toward the shared Alpha 4.0 functional gates and World Builder plan.
+## First implementation
 
-## Coordinator review and world-builder direction — 28 October 2026
+**A4-ENG-03: supported-intent contracts and ordinary offer prerequisites.**
 
-Read [the current review](COORDINATOR_REVIEW_2026_10_28.md) and
-[its executed scope](COORDINATOR_REVIEW_2026_10_28.json). This priority supersedes
-older first-task ordering below; existing task IDs and historical evidence remain.
+Publish explicit, versioned intent/review/result DTOs for selected executable operations. Preserve the player’s exact wording, supported/unsupported distinction, explicit confirmation, authority checks and immutable request recovery. Address remaining ordinary offer prerequisites without inferring NPC consent. Demonstrate the contract in two independently initialized ordinary contexts including non-Rise; R00 alone does not establish shared support.
 
-Continue A4-ENG-01's independent current-context qualification and actual offer
-prerequisites; publish A4-ENG-02 selected travel and A4-ENG-03 supported-intent DTOs.
-Do not add NPC consent or elapsed speech merely to make a fixture pass.
-WB-ENG-01 world-authoring contracts can proceed alongside that work.
+## Resume and deliver
 
-The user directs a shared development/Creator Workshop world builder:
-[implementation plan and owner tasks](WORLD_BUILDER_PLAN.md).
-The uploaded executable remains uninspected/unmatched after the transfer limit,
-but the public v0.35.4 GPL source has now been assessed separately:
-[reference findings](WORLD_BUILDER_REFERENCE_ASSESSMENT.md).
-Do not claim binary equivalence, runtime qualification or an implemented editor.
-Use the observed source workflows to inform original IRGS contracts and UI,
-keeping one Core and the Alpha gameplay critical path.
+1. Preserve edits and local commits, verify the correct GitHub origin, fetch main and fast-forward only a clean compatible checkout. Read AGENTS.md and the current work order. Do not reset, clean or auto-stash over user work.
+2. Implement the next bounded owner task; publish versioned contracts early when another owner depends on them. Keep unsupported behavior explicit.
+3. Use synthetic stores and relevant actual HTTP/browser checks. Review/cancel must not commit; retry/reload/restore must preserve the original result and effects. Do not open private campaign saves or call a paid model without a configured eligible route and finite authorized budget.
+4. Refresh only the owning component hashes after product edits and verify them. Report actual passed/failed/skipped/unrun checks, complete source SHAs and exact dependency pins. Historical logs are not new execution.
+5. Update task status and push only this owner repository. The coordinator qualifies and packages the compatible set before publishing joined main. Guide-only changes do not complete the broader owner gameplay deliverable.
 
-Current edition remains 3.4.3 Pre-Alpha. A joined 3.4.4 publication is held for
-the review's fixes, compatible pins, fresh execution capture and final qualification.
-No Alpha gate is closed by this documentation update.
+## Shared World Builder track
 
-Current edition **3.4.3 Pre-Alpha**; target **4.0.0 Alpha**; previous release field
-**3.3.3**. Updated 27 October 2026. User directions take precedence.
-
-## On resume
-
-1. Preserve local edits, verify origin is KingSav3ge/IRGS-Engine, fetch main and
-   fast-forward only when safe. Do not discard work, force-push or use an
-   unrelated checkout. Read AGENTS.md.
-2. Read [the shared Alpha plan](ALPHA_4_0_PLAN.md),
-   [acceptance register](ALPHA_4_0_ACCEPTANCE.json) and
-   [your work order](COORDINATOR_WORK_ORDER.md). They supersede old next-task
-   ordering. The start-context adoption set is already integrated in 3.4.3;
-   dated pending-adoption reports are history, not a current blocker.
-3. Start: **A4-ENG-01 ordinary-start participants/channels, then A4-ENG-02 selected native travel. Publish A4-ENG-03 supported-intent DTOs early.**
-4. Publish versioned interface/evaluation handoffs early. Continue independent
-   tasks while another owner's implementation is pending. Test real ordinary
-   creation/interaction, not only a privileged fixture.
-5. Update your task status and evidence; push only this component. Report the
-   full SHA, exact compatible sources/pins, executed checks, failures/skips,
-   remaining gaps and next task to the coordinator.
-
-**A4-ENG-02 selected travel — 28 October 2026:** the existing phase contract
-now exposes reviewed Rise travel starts and actor-received phases, with native
-partial progress, pause/resume, commitments, arrival and durable retry. See
-[the contract and current limits](engine/TRAVEL_CAPABILITY_API.md). Dynamic access,
-other travel contexts and independent/coordinator qualification remain open.
-Continue A4-ENG-01 offers/independent evaluation and A4-ENG-03 supported-intent
-DTOs; WB-ENG-01 authoring remains separate. No Alpha gate is closed.
-
-
-**A4-ENG-01 update — 27 October 2026:** reviewed ordinary R00 now initializes
-fictional received introductions and a local `speak` channel. [Rise contract and
-results](engine/RISE_ORDINARY_COMMUNICATION.md) cover real App creation/speech,
-privacy, stale review, movement rejection and recovery; the prior non-Rise
-quay context remains supported. Offers/authority and independent Catalog
-qualification remain open. Continue A4-ENG-01; selected travel and early
-A4-ENG-03 intent DTOs remain next. No Alpha gate is closed.
-
-
-**Prior A4-ENG-01 quay increment — 27 October 2026:** the explicitly reviewed fictional
-`quay-contact-v1` start now initializes a received contact and local speech
-channel through existing Core communication. [Engine/API and App HTTP evidence](engine/ORDINARY_START_COMMUNICATION.md)
-covers actual accepted testimony, retry/reload and co-location rejection. This is
-one non-Rise context, not Alpha qualification. At that time, a second context
-remained open; the R00 increment above now covers its initial speech. Offers,
-independent qualification and broader continuing play remain open.
-
-
-## Scope and stopping condition
-
-Own IRGS_3_3/ and engine/: shared Core, technical initializers, rules/profiles, provider execution contracts and Kira canon. Develop shared IRGS systems, not Rise alone. The target is
-sustained Solo play in two distinct ordinary campaign contexts, at least one
-non-Rise, with real decisions, consequences, NPC responses, time/resources,
-selected conflict/recovery, configured AI and durable multi-session continuity.
-See the shared plan for mandatory gates and the bounded Alpha content scope.
-
-A declaration, draft, mock, schema, source dossier or plan is not a committed
-world action. Preserve actor knowledge, actual authority/resources, explicit
-review, atomic acceptance and original-result retry/restore. Preserve historical
-source bytes and user data; use synthetic temporary stores for tests. No live
-provider spending is authorized by this continuation.
-
-Do not stop after creating another plan. Deliver the first implementation or
-independent evaluation increment in the work order, run appropriate checks,
-publish it and identify the next task. A blocked dependency requires a specific
-handoff request plus progress on independent work, not fabricated functionality.
-
-## Version and integration
-
-Keep this component's edition metadata 3.4.3 during independent development.
-All 3.x editions are Pre-Alpha. The next ordinary unified push is 3.4.4; only
-the coordinator can qualify the compatible all-three set as 4.0.0 Alpha.
-Do not rename Core compatibility 3.3 or change previous_version 3.3.3.
-These documentation commits do not constitute viable runtime increments.
-No chat is resumed by a repository push.
-
-## Restart message
-
-> Pull KingSav3ge/IRGS-Engine/main and follow CHAT_CONTINUATION.md,
-> COORDINATOR_WORK_ORDER.md and ALPHA_4_0_PLAN.md. Implement and qualify the next
-> owner task toward functional Alpha 4.0, preserving current behavior and source
-> boundaries. Push only this component and report the exact source/pins, executed
-> checks, limits and next dependency. All 3.x work is Pre-Alpha.
+Follow WORLD_BUILDER_PLAN.md. Engine owns original world-draft/validation/initialization contracts; App owns the common development/Creator Workshop editor; Catalog owns original world-pack examples and source dossiers. Coordinate through published contracts. No imported vendor code, runtime-qualified binary or implemented editor is implied by the reference assessment. Keep the Alpha gameplay critical path active.
