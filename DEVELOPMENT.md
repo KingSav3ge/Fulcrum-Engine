@@ -8,6 +8,15 @@ Develop IRGS across campaigns and themes, retaining one authoritative Core, nine
 
 Read AGENTS.md, CHAT_CONTINUATION.md and COORDINATOR_WORK_ORDER.md. The continuation and work order are the current implementation instructions; dated evidence retains its original source selection.
 
+**29 October — A4-ENG-03/WB-ENG-01 bounded increment:** Engine now exposes
+[versioned supported-intent review/result](engine/SUPPORTED_INTENT_API.md) and
+a [limited reviewed fictional Rise draft](engine/WORLD_DRAFT_API.md). Two ordinary
+contexts exercise real selected effects/refusals and immutable retry. Offer
+authority, App adoption, general parsing, non-Rise world drafts and full Alpha
+qualification remain open. Current product naming direction is
+[recorded separately](BRAND_DIRECTION.md), with IRGS technical identities retained.
+
+
 ## Current task
 
 **A4-ENG-03: supported-intent contracts and ordinary offer prerequisites.**

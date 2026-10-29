@@ -1,5 +1,14 @@
 # Current Engine continuation
 
+**29 October — A4-ENG-03/WB-ENG-01 bounded increment:** Engine now exposes
+[versioned supported-intent review/result](engine/SUPPORTED_INTENT_API.md) and
+a [limited reviewed fictional Rise draft](engine/WORLD_DRAFT_API.md). Two ordinary
+contexts exercise real selected effects/refusals and immutable retry. Offer
+authority, App adoption, general parsing, non-Rise world drafts and full Alpha
+qualification remain open. Current product naming direction is
+[recorded separately](BRAND_DIRECTION.md), with IRGS technical identities retained.
+
+
 ## Coordinated 3.4.5 continuation
 
 A4-ENG-03: supported-intent contracts and ordinary offer prerequisites. Publish explicit, versioned intent/review/result DTOs for selected executable operations. Preserve the player’s exact wording, supported/unsupported distinction, explicit confirmation, authority checks and immutable request recovery. Address remaining ordinary offer prerequisites without inferring NPC consent. Demonstrate the contract in two independently initialized ordinary contexts including non-Rise; R00 alone does not establish shared support.

@@ -474,7 +474,11 @@
     "runtime/test_start_readiness.py": "a108e7dce16317ca3dd08f9947da3e5fa168f139c3259b31e233e519e0605fe4",
     "runtime/test_ordinary_communication.py": "45765a3cfef78df3563ed8902e5bfff7f2c568b6fd03b881e534a1942727f1b3",
     "runtime/test_rise_start_communication.py": "1e69605536dca1ac8a0e731a0749a732e2fc9af1316f4044fee4801ad6bcfb53",
-    "runtime/test_travel_capability.py": "1fd76263457a50fbebdd773ee362c01e65b8d89c0e32ad371544eac338848a2e"
+    "runtime/test_travel_capability.py": "1fd76263457a50fbebdd773ee362c01e65b8d89c0e32ad371544eac338848a2e",
+    "runtime/supported_intent.py": "e529483a0fe793e7461f1dccad3cee81b1ad9bc274a7f10f758992be326d63b3",
+    "runtime/test_supported_intent.py": "c8e99156d0ec8131bc35903f17b45169607c2fcf6d3fef35f490f673cbb1b6ce",
+    "runtime/test_world_draft.py": "39db3435b7cd132f7e3f3a3c088f7f4101a0cf35c735e33351181efd2ef3be3e",
+    "runtime/world_draft.py": "36b915165e1cb41fd31ed19e1bc7235bcfd6cc12542083c85dac2b4e4f30373a"
   },
   "existing_save_migration": false,
   "development_designations": {

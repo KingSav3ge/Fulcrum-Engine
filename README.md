@@ -1,5 +1,7 @@
 # IRGS Engine — 3.4.4 Pre-Alpha
 
+[Proposed product naming direction](BRAND_DIRECTION.md) retains IRGS technical identities while naming WorldWard and Fulcrum Engine, subject to clearance.
+
 ## Current 3.4.5 guidance — 29 October 2026
 
 Current edition: **3.4.5 Pre-Alpha**. Previous release field: **3.3.3**. Target: functional **4.0.0 Alpha** under ALPHA_4_0_PLAN.md and ALPHA_4_0_ACCEPTANCE.json. All Alpha gates remain open. Next unified edition: **3.4.6**.
