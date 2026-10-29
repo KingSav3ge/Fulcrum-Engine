@@ -1,5 +1,12 @@
 # Continue Fulcrum-Engine
 
+**29 October — non-Rise selected decision:** the separately reviewed mixed quay
+opening `quay-contact-decision-v1` lets the fictional worker explicitly decline
+a carry request while preserving custody, actor-scoped testimony and the existing
+intent/retry API. [Scope and prerequisites](engine/QUAY_CONTACT_DECISION.md).
+This is one fixed authored decision, not general NPC or institution support.
+The [draft host contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md) remains design-only.
+
 **29 October — selected invitation decision and draft-host boundary:** the existing
 fictional R00 Core procedure now records an actor-scoped refusal when Oren's
 selected repair/provision conditions are unmet; later agreement requires a new
