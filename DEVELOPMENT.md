@@ -1,34 +1,18 @@
 # Fulcrum-Engine development guide
 
-**29 October — non-Rise selected decision:** the separately reviewed mixed quay
-opening `quay-contact-decision-v1` lets the fictional worker explicitly decline
-a carry request while preserving custody, actor-scoped testimony and the existing
-intent/retry API. [Scope and prerequisites](engine/QUAY_CONTACT_DECISION.md).
-This is one fixed authored decision, not general NPC or institution support.
-The [draft host contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md) remains design-only.
+Current edition: **3.4.7 Pre-Alpha**; previous_version: **3.3.3**. Next unified main publication: **3.4.8**. Functional 4.0.0 Alpha remains unqualified.
 
-**29 October — selected invitation decision and draft-host boundary:** the existing
-fictional R00 Core procedure now records an actor-scoped refusal when Oren's
-selected repair/provision conditions are unmet; later agreement requires a new
-explicit invitation. [Decision and prerequisites](engine/INVITATION_DECISION.md).
-[Draft host creation/retry/restore contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md)
-is a design handoff only, not an implemented Creator playtest. Broader independent
-NPC and institution decisions, cross-context qualification, App adoption and
-atomic host implementation remain open.
+WorldWard is developed by T!DEMARCH Studios and powered by Fulcrum Engine. IRGS remains the internal initiative. Public repositories are KingSav3ge/WorldWard, KingSav3ge/Fulcrum-Engine, KingSav3ge/WORLDWARD-APP-WEB and KingSav3ge/WorldWard-Catalog. Preserve existing technical paths, schema/fixture IDs, original archives, saves and personal settings; Catalog/Atlas product naming remains open.
 
-Current edition: **3.4.6 Pre-Alpha**; previous_version: **3.3.3**. Next unified main publication: **3.4.7**. Functional 4.0.0 Alpha remains unqualified.
+This edition adopts selected R00 invitation refusal/later agreement and an opt-in fictional quay worker refusal, versioned communication reviews with legacy recovery, explicit optional household-offer setup, and independent consequence/two-profile draft consumers. The composer now reviews grant requests and acceptance separately using Engine-supplied capabilities and exact player words. A completed conversation can be a refusal; an offered proposal is not consent or a transfer. These are bounded authored decisions, not a general NPC model or an implemented Creator world editor.
 
-WorldWard is developed by T!DEMARCH Studios and powered by Fulcrum Engine. IRGS remains the internal initiative; technical paths, schemas, fixture identities, saves and original archives retain their existing names. Public repositories are KingSav3ge/WorldWard, KingSav3ge/Fulcrum-Engine, KingSav3ge/WORLDWARD-APP-WEB and KingSav3ge/WorldWard-Catalog. Catalog/Atlas product naming remains open.
-
-This edition joins reviewed intentions, protected server-side POSIX operator setup, bounded communication/offer/world-draft contracts, independent Catalog grounding and recovery consumers, and the public branding. The App preserves one chronological reading surface with choices and the retained response form below the newest entry. Optional offers are explicit attempts, not NPC consent or stock transfer. Draft previews create disposable in-memory candidates, not saved campaigns or a general world editor.
-
-Preserve one authoritative Core, the existing nine K owners and six Directors, actor-scoped information, conserved resources/capacity, atomic rejection and original-result recovery. Distinguish causal sequence, revision, elapsed work and civil time. Broader NPC/institution behavior, needs/recovery, selected conflict, arbitrary world authoring, live-model quality, native Windows and full Alpha qualification remain open.
+Preserve one authoritative Core, nine K owners and the existing six Directors, actor-scoped information, conserved resources/capacity, atomic rejection and original-result recovery. Revision, causal sequence, elapsed work and civil time remain distinct. Broader NPC/institution behavior, needs/recovery, consequential conflict, arbitrary world authoring, live-provider quality, native Windows and functional Alpha qualification remain open.
 
 ## Next implementation
 
-**A4-ENG-01/03 and WB-ENG-01: consequences, contract adoption and draft-host boundaries.**
+**A4-ENG-01/03: broader consequences and selected needs/recovery.**
 
-Supported-intent review, communication review, grant-attempt prerequisites, optional reviewed household offers and two bounded draft profiles are delivered. Preserve the existing shared-intent and communication APIs while App adopts newer DTOs. Continue meaningful ordinary consequences and selected NPC/institution decisions through the existing Core/K owners; publish exact prerequisites without inferring consent or hidden eligibility. Define atomic host creation/retry/restore for bounded drafts before claiming a Creator playtest workflow.
+Bounded R00 invitation refusal/later agreement and an opt-in non-Rise quay refusal are delivered through the existing Core and immutable request contracts. Continue the next explicitly selected shared needs/recovery or institution/consequence slice in two ordinary contexts, documenting rules and authority before implementation. Preserve the nine K owners, six Directors, private information and conservation. The bounded draft-host atomic creation/restore contract is available for App adoption; it remains design-only until implemented and qualified.
 
 ## Development and handoff
 
