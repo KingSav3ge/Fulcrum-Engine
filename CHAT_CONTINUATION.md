@@ -4,10 +4,11 @@
 [host contract](engine/DRAFT_HOST_ATOMIC_CONTRACT.md) distinguishes
 pre-publication rejection from post-replace confirmation pending, separates
 historical public handles from private restore guards, and requires same-request
-recovery. [Characterization cases](engine/CREATOR_DURABILITY_CASES.md) await
-App-owner reconciliation and executable host tests. This review branch implements
-no durable creation, route or gameplay behavior and does not adopt uninspected
-owner-workspace changes. Rise profile, implementation and Alpha gates stay open.
+recovery. [Characterization cases](engine/CREATOR_DURABILITY_CASES.md) incorporate the
+App owner's review of local-owner authorization and the public save/branch ID.
+Final DTO agreement, executable host tests and durable creation remain open.
+This review branch implements no route or gameplay behavior and does not adopt
+uninspected owner-workspace changes. Rise and Alpha gates stay open.
 
 
 Current edition: **3.4.8 Pre-Alpha**; previous_version: **3.3.3**.
