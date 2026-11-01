@@ -34,8 +34,8 @@ responses and trusted host state; raw state must never become browser output.
 
 1. **Review and cancel:** Preview both bounded drafts. Capture campaign listing,
    save bytes and creation index before/after validation, cancellation and
-   unaccepted creation. Assert no world, request receipt or membership is
-   published; preview identities cannot authorize a subsequent action.
+   unaccepted creation. Assert no world, request receipt or new creation binding
+   is published; preview identities cannot authorize a subsequent action.
 2. **Pre-publication failure:** Fail temporary write, file flush, file fsync and
    replace separately. Where the host can prove replace never happened, expect
    definite rejection and no visible campaign, owner record or result. Reusing
