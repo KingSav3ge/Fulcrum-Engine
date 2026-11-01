@@ -41,10 +41,19 @@ def notice(s, actor, at, key, text):
     records[key] = {'text': text, 'recorded_at': at, 'elapsed_seconds': s['elapsed_time']['seconds']}
 
 
+def _reserved_material(s, household, material, *, excluding=None):
+    """Unconsumed inputs reserved by active projects in this household.
+
+    Internal Core accounting only; this does not reserve a building place,
+    establish an allowance, transfer stock, or expose another actor's records.
+    """
+    return sum(p['timber'] if material == 'timber' else 1 if material == 'axe' else 0
+               for key, p in s['projects'].items()
+               if key != excluding and p['household'] == household and p['status'] == 'active')
+
+
 def _free(s, household, material, *, excluding=None):
-    reserved = sum(p['timber'] if material == 'timber' else 1 if material == 'axe' else 0
-                   for key, p in s['projects'].items()
-                   if key != excluding and p['household'] == household and p['status'] == 'active')
+    reserved = _reserved_material(s, household, material, excluding=excluding)
     seed = s['households'][household]['seed_reserve'] if material == 'grain' else 0
     return s['stocks'][household].get(material, 0) - reserved - seed
 
