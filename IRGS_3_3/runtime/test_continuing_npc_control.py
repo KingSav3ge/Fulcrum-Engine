@@ -128,13 +128,18 @@ class ContinuingNpcControlTests(unittest.TestCase):
         self.assertEqual([c.public() for c in shared.capabilities(self.world, 'founder')], before_menu)
         request = self.prepare('invite', 'not-an-npc', 'Would you move?')
         before, writes = self.world.save(), self.host.writes
+        unchanged = {key: copy.deepcopy(self.world.s[key]) for key in
+                     ('settlement_receipts', 'elapsed_time', 'campaign_time', 'stocks')}
         with self.assertRaises(shared.SharedActionUnavailable) as err:
             self.submit(request)
         self.assertEqual(err.exception.code, 'action_unavailable')
         self.assertEqual(self.world.save(), before)
         self.assertEqual(self.host.writes, writes)
+        for key, value in unchanged.items():
+            self.assertEqual(self.world.s[key], value, key)
         self.assertNotIn('oren-move', self.world.s['migrations'])
-        self.assertNotIn('shared:not-an-npc:invitation', self.world.s['settlement_receipts']['oren'])
+        self.assertNotIn('shared:not-an-npc:invitation',
+                         self.world.s['settlement_receipts'].get('oren', {}))
 
     def test_earlier_agreement_does_not_direct_now_controlled_person(self):
         original_request, original = self.agree()

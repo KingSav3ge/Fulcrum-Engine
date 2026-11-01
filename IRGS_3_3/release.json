@@ -437,7 +437,7 @@
     "runtime/test_character_background.py": "db2f7e34e790423a016b49a678fdde7c33ce89c276c5d7b3174ae3974ac00068",
     "runtime/test_communication_contract.py": "8a4dc68a9cf7198639c1e49b9d752903072f8c2397b6ffd2ef9fefcf2c2ffe6f",
     "runtime/test_communication_runtime.py": "bb546ffe702ef86a47696248cd993599b27a845eb8baf339437e6ae8b6c34d3a",
-    "runtime/test_continuing_npc_control.py": "c500863dc7bbf8e5279fcf3dc8093ff1b7a2d153c407008268a96e6b7e5ae2f2",
+    "runtime/test_continuing_npc_control.py": "7679a8659697f5f184cb671fdb76ece35a02e2728e98a1fffaf64cde62509f48",
     "runtime/test_core_domains.py": "a5745af305821e5ca625b966dc9fe0236ae71d6475baeb38ad1c62111252e73c",
     "runtime/test_draft_intent_offers.py": "7432973b245c2e8e5d544e58d5d71ea0d4a14904e7354ff2c38be713b82ff814",
     "runtime/test_economic_integration.py": "09fe797e425f64d44f19203db7eaa15277be24ddc1a517aaf710394b92be6b11",
