@@ -232,6 +232,10 @@ def operate_settlement_action(core, s, at, p):
         project['status'] = 'paused'
         message = 'The shelter work is paused. Its progress is retained and its inputs are released.'
     elif action == 'invite':
+        # This selected decision belongs to the actual NPC, never to a player.
+        # Recheck current existence/control instead of assuming the setup persists.
+        from player_actions import _present
+        assert 'oren' not in core.player_ids(s) and _present(s, 'oren')
         assert site == 'commons' and location(s, 'oren') == site and 'camp' in s['settlements']
         assert 'oren-move' not in s['migrations']
         _permission(s, household, 'camp')
@@ -251,6 +255,10 @@ def operate_settlement_action(core, s, at, p):
             # is a new explicit request and is evaluated against the then-current state.
             message = 'You describe the camp. Oren declines to move at this time. No departure or labor agreement is made.'
     elif action == 'arrange_departure':
+        # The founder cannot direct a now-player-controlled or absent person,
+        # even when an earlier NPC agreement remains in history.
+        from player_actions import _present
+        assert 'oren' not in core.player_ids(s) and _present(s, 'oren')
         assert site == 'commons'
         _permission(s, household, 'camp')
         migration = s['migrations']['oren-move']
