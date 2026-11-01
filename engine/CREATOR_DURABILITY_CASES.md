@@ -16,7 +16,11 @@ the campaign path, then calls `sync_parent`. A parent-sync exception can follow
 visibility of the complete replacement. `Store.action_result` retries the
 directory sync for certain existing gameplay requests before returning a saved
 result. `IRGS_Web/assistance.py::SoloService.rotate_restore` changes a private
-guard in separate metadata before restore. The existing
+guard in separate metadata before restore. The current Store uses a process-local
+lock, not verified cross-process serialization. The App authenticates one local
+owner with explicit Creator mode, not separate user accounts or memberships.
+The save ID is public and also used as Engine branch ID; the private restore
+guard and state digest are distinct. The existing
 `test_intent_bridge.IntentBridgeTests.test_failed_save_restart_and_uncertain_sync_recover_original_once`
 covers a gameplay request, not Creator creation or crash durability. App's
 `sync_parent` is a no-op on Windows; do not infer Windows durability from POSIX.
@@ -46,8 +50,9 @@ responses and trusted host state; raw state must never become browser output.
    exactly once. Assert actor-filtered view and unchanged physical effects.
 4. **Repeated uncertainty and unauthorized callers:** Keep directory sync
    failing over status/retry and assert the result remains pending; altered
-   bound payload conflicts without mutation. Deny another principal and forged
-   campaign/handle without disclosing whether the request exists.
+   bound payload conflicts without mutation. Deny an unauthenticated session,
+   non-Creator mode and forged request/save/handle without disclosing whether
+   the request exists. Do not invent separate App accounts for this test.
 5. **Restart on each side of publication:** Interrupt before replace, after
    replace but before directory sync, and after confirmed sync before the
    response. Restart the real host. The last case returns the identical original
@@ -58,17 +63,19 @@ responses and trusted host state; raw state must never become browser output.
    silently creating again. Simulate loss with isolated filesystem fixtures;
    distinguish injected faults from real filesystem crash qualification.
 6. **Concurrency and collision:** Send identical requests from separate host
-   processes, then same request ID with changed draft/owner/campaign and two
-   distinct requests for the same campaign identity. Assert one coherent tuple,
-   one initializer/effect at most, exact original result for identical retries,
-   safe conflicts for the others and no cross-owner disclosure. In-process
-   threading alone does not establish multi-process serialization.
-7. **Historical versus live scope:** Place distinctive synthetic markers in
-   the internal branch, restore guard, state digest, unrelated actor and raw
-   draft. Assert none occurs anywhere in public pending/confirmed responses,
-   including nested projections. The optional public history handle is random,
-   separately stored and non-authorizing; omitting it is valid. An attempt to
-   submit it as current authority fails.
+   processes, then same request ID with changed draft or save and two distinct
+   requests for the same save identity. Assert one coherent tuple, one
+   initializer/effect at most, exact original result for identical retries, and
+   safe conflicts. Test authorization using the real local-owner/session/Creator
+   guards; do not forge unimplemented account identities. In-process threading
+   alone does not establish multi-process serialization.
+7. **Historical versus live scope:** The validated public save ID may be
+   returned and is also the existing Engine branch ID; assert it is not treated
+   as authorization. Put distinctive synthetic markers in private restore guard,
+   state digest, unrelated actor and raw draft, then audit all nested public
+   pending/confirmed fields for those markers. The optional history handle should
+   initially be omitted; if later selected, it is random, separately stored and
+   non-authorizing. An attempt to submit it as current authority fails.
 8. **Restore and discarded future:** Create and play, preserve the original
    receipt, prepare a later action, restore earlier state with a fresh private
    guard, then attempt that action and old current-view guards. They must fail.
@@ -78,10 +85,10 @@ responses and trusted host state; raw state must never become browser output.
    both campaign and guard persistence; never expose a mixed restored state.
 9. **Trash, deletion and evidence retention:** Exercise authorized trash,
    restore, retained tombstone and eventual retention expiry. A creation retry
-   must not resurrect a trashed/deleted campaign or reveal another owner's
-   information. Missing or inconsistent request/receipt/ownership evidence is
-   recovery-required until the host proves a safe disposition; no automatic
-   replacement is allowed.
+   must not resurrect a trashed/deleted campaign or reveal protected data to
+   an unauthorized session. Missing or inconsistent request/receipt/local-owner
+   binding evidence is recovery-required until the host proves a safe
+   disposition; no automatic replacement is allowed.
 10. **Later play and full replay:** After confirmed creation, commit a supported
     action, reload/restart and replay the original creation request. Assert the
     original initial actor view, not the newer world view, and no second effects,
@@ -93,3 +100,16 @@ hour; success means a supported exact result, not broader Alpha qualification.
 The coordinator and App owner must explicitly settle DTO names, visibility,
 transport/status codes, retention and crash-recovery implementation. This file
 does not assert their agreement or implement any route.
+
+## App-owner review and proposed primitive characterization
+
+The App owner reviewed Engine `4053b5a2454b10cbe539b57ae265aaf6f34a5979`
+and agreed with the proposed pending/rejection distinction and non-authorizing
+history while identifying the local-owner and public save-ID boundaries reflected
+above. Its immediate proposed slice is executable fault injection around the real
+`Store.write`: verify old bytes survive a pre-replace failure, the complete new
+record may be visible after parent-sync failure, and confirmation sync leaves the
+campaign bytes unchanged. Those App tests are separately owned and have not been
+run or incorporated here. Passing them would characterize the primitive only,
+not establish Creator creation, atomic restore, cross-process safety or Windows
+durability.
