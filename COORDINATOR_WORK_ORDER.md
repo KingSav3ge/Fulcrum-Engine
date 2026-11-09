@@ -1,5 +1,44 @@
 # Current work order — Fulcrum-Engine
 
+## Current continuation — 9 November 2026
+
+Current component edition: **3.4.9 Pre-Alpha**, previous_version **3.3.3**.
+Engine [PR #1](https://github.com/KingSav3ge/Fulcrum-Engine/pull/1) is merged at
+`e7b7212f0d339eb186eac401edd8da2bf6db1359`. Do not repeat that consolidation.
+The next joined publication after 3.4.9 is 3.5.0 and remains coordinator-owned;
+this guide correction changes no version or runtime rule.
+
+The accepted increment preserves existing material reservations and rechecks
+Oren's current control/presence before invitation or departure. Creator host
+durability/restore documents remain proposals; there is no durable-create endpoint.
+Launcher identity candidate `6b88eb6` remains excluded with its native Windows
+execution denial intact. No Alpha gate is qualified.
+
+Read [the accepted source and continuation record](engine/CONSOLIDATION_3_4_9_STATUS.md)
+before further changes. Coordinator execution at `cc6f967` recorded 37 focused
+passes and 820 safe-suite tests: 819 passes, one explicit private-save policy skip.
+These are retained results, not a new execution on 9 November.
+
+Continue through the existing Core, nine K owners and six Directors. Shared
+needs/recovery and continuing NPC/institution decisions in R00 and the selected
+ordinary non-Rise context remain unfinished. Select a bounded behavior under
+adopted rules before a runtime change. An unselected Rise profile/council proposal
+does not authorize runtime allowances or automatically block independent shared
+work. Durable Creator requires the App-owned storage/recovery guarantees before
+enablement. The stopped optional institution proposal is not resumed by this
+documentation update.
+
+Preserve original review refs and inaccessible owner snapshots; no unknown local
+changes have been adopted. Preserve technical namespaces, saves/settings, actor
+privacy, conserved stock/time, atomic rejection and immutable original receipts.
+Only the coordinator integrates and publishes the next joined edition.
+
+## Earlier dated guidance
+
+The records below retain their original source/evidence scope. Their current-version
+and pending-merge wording is superseded by this continuation entry.
+
+
 Current edition: **3.4.8 Pre-Alpha**; previous_version: **3.3.3**.
 Next unified main publication: **3.4.9**. Functional Alpha 4.0 remains unqualified.
 
