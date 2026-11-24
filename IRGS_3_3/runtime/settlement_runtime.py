@@ -397,6 +397,10 @@ def operate_settlement_action(core, s, at, p):
                    + ' Fatigue is cleared.' + (' Hunger is not changed by resting.' if any(s['needs'][a]['hungry'] for a in resting) else ''))
     elif action == 'request_relief':
         assert _needs_on(s), 'the reviewed needs profile is required'
+        # Elin's relief decision belongs to the actual NPC. Recheck current
+        # existence and control rather than assuming the setup persists.
+        from player_actions import _present
+        assert 'elin' not in core.player_ids(s) and _present(s, 'elin')
         assert site == 'commons' and location(s, 'elin') == site
         steward = s['organizations']['steward']
         assert steward['active'] and steward.get('store') == 'steward-store'

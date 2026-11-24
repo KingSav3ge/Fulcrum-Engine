@@ -134,6 +134,15 @@ class NeedsReliefTests(unittest.TestCase):
             self.act(w, 'wait_hour')
         self.assertFalse(any(o['status'] == 'open' for o in w.s['relief_obligations'].values()))
 
+    def test_no_relief_decision_when_elin_is_player_controlled(self):
+        w = self.world(needs_profile=NEEDS_PROFILE)
+        self.until_shortfall(w)
+        w.s['player_actor_ids'].append('elin')  # synthetic changed-control fixture
+        w = CoreWorld.load(w.save())
+        self.rejected(w, 'request_relief')
+        self.assertEqual(w.s['stocks']['steward-store']['grain'], 8)
+        self.assertEqual(w.s['relief_obligations'], {})
+
     def test_fatigue_holds_a_project_mid_hour_and_rest_lets_it_resume(self):
         w = self.world(needs_profile=NEEDS_PROFILE)
         w.s['needs']['founder']['worked_since_rest'] = 14400 - 600  # direct fixture state
